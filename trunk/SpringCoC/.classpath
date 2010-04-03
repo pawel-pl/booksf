@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="core/target/classes" path="core/src/main/java"/>
+	<classpathentry excluding="**" kind="src" output="core/target/classes" path="core/src/main/resources"/>
+	<classpathentry kind="src" output="core/target/test-classes" path="core/src/test/java"/>
+	<classpathentry excluding="**" kind="src" output="core/target/test-classes" path="core/src/test/resources"/>
+	<classpathentry kind="src" output="frontend/target/classes" path="frontend/src/main/java"/>
+	<classpathentry excluding="**" kind="src" output="frontend/target/classes" path="frontend/src/main/resources"/>
+	<classpathentry kind="src" output="frontend/target/test-classes" path="frontend/src/test/java"/>
+	<classpathentry excluding="**" kind="src" output="frontend/target/test-classes" path="frontend/src/test/resources"/>
+	<classpathentry kind="src" output="model/target/classes" path="model/src/main/java"/>
+	<classpathentry excluding="**" kind="src" output="model/target/classes" path="model/src/main/resources"/>
+	<classpathentry kind="src" output="model/target/test-classes" path="model/src/test/java"/>
+	<classpathentry excluding="**" kind="src" output="model/target/test-classes" path="model/src/test/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
