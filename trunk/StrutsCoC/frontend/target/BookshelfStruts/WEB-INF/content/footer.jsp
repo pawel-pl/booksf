@@ -1,0 +1,1 @@
+<div id="footer"><s:text name="struts.coc.sample"/></div>
