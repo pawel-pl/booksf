@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<context:annotation-config />
+	
+	<!-- *********************************************  -->
+	<!-- ***************** HANDLERS ******************  -->
+	<!-- *********************************************  -->
+
+	<bean
+		class="bookshelf.frontend.handler.SelectedUrlHandlerMapping">
+		<property name="order" value="0" />
+		<property name="urls">
+			<set>
+				<value>/wellcome.do</value>
+			</set>
+		</property>
+        <property name="interceptors">
+            <list>
+                <ref local="localeChangeInterceptor"/>
+            </list>
+        </property>
+	</bean>
+	
+	<bean
+		class="bookshelf.frontend.handler.SelectedUrlHandlerMapping">
+		<property name="order" value="1" />
+		<property name="urls">
+			<set>
+				<value>/addCustomer.do</value>
+			</set>
+		</property>
+        <property name="interceptors">
+            <list>
+                <ref local="accessInterceptor"/>
+            </list>
+        </property>
+	</bean>
+	
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="order" value="2" />
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="webBindingInitializer">
+			<bean class="bookshelf.frontend.binding.BindingInitializer"/>
+		</property>
+	</bean>
+
+	<!-- *********************************************  -->
+	<!-- ************** CONTROLLERS  *****************  -->
+	<!-- *********************************************  -->
+
+	<bean id="baseController" class="bookshelf.frontend.controller.BaseController" abstract="true"/>
+	<bean class="bookshelf.frontend.controller.LoginController" parent="baseController">
+		<property name="validator" ref="loginValidator"/>
+	</bean>
+	<bean class="bookshelf.frontend.controller.MenuController" parent="baseController"/>
+	<bean class="bookshelf.frontend.controller.AddBookController" parent="baseController">
+		<property name="validator" ref="selectedBooksValidator"/>
+	</bean>
+	<bean class="bookshelf.frontend.controller.RemoveBookController" parent="baseController">
+		<property name="validator" ref="selectedBooksValidator"/>
+	</bean>
+	<bean class="bookshelf.frontend.controller.EditCustomerController" parent="baseController">
+		<property name="validator" ref="externalSourceValidator"/>
+	</bean>
+	<bean class="bookshelf.frontend.controller.AddCustomerController" parent="baseController">
+		<property name="validator" ref="externalSourceValidator"/>
+	</bean>
+	<bean class="bookshelf.frontend.controller.BookEditListController" parent="baseController">
+		<property name="validator" ref="editBookListValidator"/>
+	</bean>
+	<bean class="bookshelf.frontend.controller.EditBookController" parent="baseController">
+		<property name="validator" ref="editBookValidator"/>
+	</bean>
+	<bean class="bookshelf.frontend.controller.AccessDeniedController"/>
+	<bean class="bookshelf.frontend.controller.LogoutController"/>
+
+	<!-- *********************************************  -->
+	<!-- *************** VALIDATORS  *****************  -->
+	<!-- *********************************************  -->
+	
+    <bean id="externalSourceValidator" class="org.springmodules.validation.bean.BeanValidator">
+        <property name="configurationLoader" ref="configurationLoader"/>
+    </bean>
+
+    <bean id="configurationLoader" class="org.springmodules.validation.bean.conf.loader.xml.DefaultXmlBeanValidationConfigurationLoader">
+        <property name="resource" value="classpath:/validation/validation.xml"/>
+    </bean>
+	
+	<bean id ="loginValidator" class="bookshelf.frontend.validator.LoginValidator" parent="baseController"/>
+	<bean id ="selectedBooksValidator" class="bookshelf.frontend.validator.SelectedBooksValidator" parent="baseController"/>
+	<bean id ="editBookListValidator" class="bookshelf.frontend.validator.EditBookListValidator" parent="baseController"/>
+	<bean id ="editBookValidator" class="bookshelf.frontend.validator.EditBookValidator" parent="baseController"/>
+	
+	<!-- *********************************************  -->
+	<!-- ************** VIEW RESOLVER  ***************  -->
+	<!-- *********************************************  -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+		<property name="order" value="1" />
+	</bean>
+	
+	<!-- *********************************************  -->
+	<!-- *********** EXCEPTION RESOLVER  *************  -->
+	<!-- *********************************************  -->
+    <bean id="exceptionResolver" class="bookshelf.frontend.exception.BookshelfExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="java.lang.Exception">errorpage</prop>
+            </props>
+        </property>
+    </bean>
+    
+    <!-- *********************************************  -->
+	<!-- ************** MESSAGE SOURCE ***************  -->
+	<!-- *********************************************  -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="bookshelf"/>
+	</bean>
+	
+    <!-- *********************************************  -->
+	<!-- **************** INTERCEPTORS ***************  -->
+	<!-- *********************************************  -->
+	<bean id="accessInterceptor" class="bookshelf.frontend.interceptor.AccessInterceptor"/>
+	
+	<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+    	<property name="paramName" value="lang" />
+    </bean>		
+    <!--i18n-->
+    <bean id="defaultLocale" class="java.util.Locale">
+      <constructor-arg value="pl" />
+    </bean>
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+      <property name="defaultLocale" ref="defaultLocale" />
+    </bean>
+
+</beans>
