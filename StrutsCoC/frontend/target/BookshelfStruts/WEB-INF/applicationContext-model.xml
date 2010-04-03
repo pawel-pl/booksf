@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	   http://www.springframework.org/schema/jee
+       http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+	default-lazy-init="false">
+
+	<context:annotation-config />
+
+	<!-- *********************************************  -->
+	<!-- **************** DB CONFIGURATION ***********  -->
+	<!-- *********************************************  -->
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceJndi" />
+		<property name="annotatedClasses">
+			<list>
+			    <value>bookshelf.model.object.User</value>
+			    <value>bookshelf.model.object.Role</value>
+			    <value>bookshelf.model.object.Customer</value>
+			    <value>bookshelf.model.object.Book</value>
+			    <value>bookshelf.model.object.BookStatus</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.format_sql" >${hibernate.format.sql}</prop>
+				<prop key="hibernate.max_fetch_depth">${hibernate.max.fetch.depth}</prop>
+				<prop key="hibernate.generate_statistic">${hibernate.generate.statistic}</prop>
+				<prop key="hibernate.use_sql_comments" >${hibernate.use.sql.comments}</prop>
+				<prop key="hibernate.cache.use_query_cache">${hibernate.cache.use.query.cache}</prop>
+				<prop key="hibernate.cache.provider_class">${hibernate.cache.provider}</prop>			
+				<prop key="hibernate.cache.use_second_level_cache">${hibernate.use.secend.level.cache}</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<jee:jndi-lookup id="dataSourceJndi" lookup-on-startup="false" proxy-interface="javax.sql.DataSource" jndi-name="${jndi.name}" />
+	
+	<tx:annotation-driven transaction-manager="transactionManager" />
+    
+    <!-- *********************************************  -->
+	<!-- ********************* DAO'S *****************  -->
+	<!-- *********************************************  -->
+	
+	<bean id="baseDao" class="bookshelf.model.dao.BaseDao" abstract="true">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="userDao" class="bookshelf.model.dao.user.UserDaoImpl" parent="baseDao"/>
+	<bean id="customerDao" class="bookshelf.model.dao.customer.CustomerDaoImpl" parent="baseDao"/>
+	<bean id="bookDao" class="bookshelf.model.dao.book.BookDaoImpl" parent="baseDao"/>
+	
+    <!-- *********************************************  -->
+	<!-- ****************** BINDER'S *****************  -->
+	<!-- *********************************************  -->
+	
+	<bean id="baseBinder" class="bookshelf.model.binder.BaseBinder" abstract="true"/>
+	<bean id="userBinder" class="bookshelf.model.binder.UserBinder" parent="baseBinder"/>
+	<bean id="customerBinder" class="bookshelf.model.binder.CustomerBinder" parent="baseBinder"/>
+	<bean id="bookBinder" class="bookshelf.model.binder.BookBinder" parent="baseBinder"/>
+	
+    <!-- *********************************************  -->
+	<!-- ****************** SERVICES'S ***************  -->
+	<!-- *********************************************  -->
+	
+	<bean id="userService" class="bookshelf.model.service.user.UserServiceImpl"/>
+	<bean id="customerService" class="bookshelf.model.service.customer.CustomerServiceImpl"/>
+	<bean id="bookService" class="bookshelf.model.service.book.BookServiceImpl"/>
+
+</beans>
