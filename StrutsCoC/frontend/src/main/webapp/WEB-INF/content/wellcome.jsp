@@ -4,41 +4,42 @@
 			
 			if(document.URL.match(new RegExp("\\?","g")))
 			{
-				if(document.URL.match(new RegExp("lang=","g")))
+				if(document.URL.match(new RegExp("request_locale=","g")))
 				{
 					var string = document.URL;
-					var reg = new RegExp("lang=.*","g");
-					string = string.replace(reg,"lang="+lang);
+					var reg = new RegExp("request_locale=.*","g");
+					string = string.replace(reg,"request_locale="+lang);
 					window.location.replace(string);
 				}
 				else
 				{
-					window.location.replace(document.URL+"&lang="+lang);
+					window.location.replace(document.URL+"&request_locale="+lang);
 				}
 			}
 			else
 			{
-				window.location.replace(document.URL+"?lang="+lang);
+				window.location.replace(document.URL+"?request_locale="+lang);
 			}
 		}
    </SCRIPT>
-			<%-- <form name="langForm">
+			<form name="langForm">
 				<div class="header" style="margin-left: 0px;">
 					<table>
 						<tr>
 							<td style="text-align: left">
-								<h3><span>${user.login}<spring:message code="wellcome.login.label"/></span></h3>
+								<h3><span>${user.login}<s:text name="wellcome.login.label"/></span></h3>
 							</td>
 							<td>
-								<span style="float: right"><spring:message code="lang.select.label"/></span>
+								<span style="float: right"><s:text name="lang.select.label"/></span>
 								<br><select id="langSelectBox" style="float: right" onclick="changeLang(document.langForm.langSelectBox.value);">
-	  								<option value="pl"><spring:message code="lang.select.polish"/></option>
-	  								<option value="en"><spring:message code="lang.select.english"/></option>
+	  								<option value="pl"><s:text name="lang.select.polish"/></option>
+	  								<option value="en"><s:text name="lang.select.english"/></option>
 								</select>
 							</td>
 						</tr>
 					</table>
-				</div>--%>
+				</div>
+			</form>	
 				
 				<div id="rightSide">
 				    <div class="content">
