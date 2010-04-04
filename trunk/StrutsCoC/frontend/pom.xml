@@ -47,14 +47,14 @@
 										<exclude>BookshelfSupport_pl.properties</exclude>
 									</excludes>
 								</resource>
-								<resource>
+								<!-- <resource>
 									<directory>src/main/resources/validation</directory>
 									<filtering>false</filtering>
 									<includes>
 										<include>*.*</include>
 									</includes>
 									<targetPath>../classes</targetPath>
-								</resource>
+								</resource> -->
 								<resource>
 									<directory>src/main/resources/</directory>
 									<filtering>false</filtering>

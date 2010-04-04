@@ -179,6 +179,10 @@ div.content table {
 	width: 100%;
 }
 
+label{
+ font-weight:bold;	
+}
+
 div.content table td {
 	color: #3C4741;
 	padding: 7px 5px 7px 16px;
