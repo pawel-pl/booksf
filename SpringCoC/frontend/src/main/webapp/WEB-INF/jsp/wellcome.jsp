@@ -39,6 +39,7 @@
 						</tr>
 					</table>
 				</div>
+			</form>	
 				
 				<div id="rightSide">
 				    <div class="content">
