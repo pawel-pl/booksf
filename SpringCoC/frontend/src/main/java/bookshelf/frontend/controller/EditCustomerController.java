@@ -38,6 +38,16 @@ public class EditCustomerController extends BaseController {
 			LOG.debug("Preparing form to show customers for edit");
 		}
 		
+		if(custId == null){
+			ErrorMsgHolder msgHolder = new ErrorMsgHolder();
+			msgHolder.addError("request.param.can.not.found", new Object[]{"bookId"});
+			Map<String, Object> attribs = new HashMap<String, Object>();
+			attribs.put(WebConst.ATTRIBUTE.GLOBAL_ERROR, msgHolder);
+			attribs.put(WebConst.ATTRIBUTE.CUSTOMERS, customerFacade.findAllCustomers());
+			
+			return new ModelAndView(WebConst.VIEWS.CUST_LIST_TO_EDIT, attribs);
+		}
+		
 		Customer cust = customerFacade.getCustomerById(custId.intValue());
 		
 		if (cust == null) {
