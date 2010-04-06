@@ -10,81 +10,81 @@
 			<div id="top">
 		        <img id="logo" src="images/logo.jpg" alt="Bookshelf">
 		        <div id="userIdent">
-					<p><span><spring:message code="user.login.label" text="user.login.label"/></span>${user.login}</p>
+					<p><span><s:text name="user.login.label"/></span>${user.login}</p>
 		        </div>
 			</div>
 		
 			<div id="rightSide" style="float: left; margin-left: 3%;">
 				<div class="content">
 				    <div class="header" style="margin-left: 0px;">
-						<h4><span><spring:message code="rent.book.title"/></span></h4>
+						<h4><span><s:text name="rent.book.title"/></span></h4>
 					    <layout:globalErrors/>
 					</div>
 					
 			<table border="0" cellpadding="0" cellspacing="0">
 				<tr>
 					<td colspan="2">
-						<b><spring:message code="customer.info.titel"/></b>
+						<b><s:text name="customer.info.titel"/></b>
 					</td>	
 				</tr>
 				<tr>
 					<td>
-						<b><spring:message code="customers.first.name"/></b><span>${customer.firstName}</span>
+						<b><s:text name="customers.first.name"/></b><span><s:property value="customer.firstName"/></span>
 					</td>
 					<td>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<b><spring:message code="customers.last.name"/></b><span>${customer.lastName}</span>
+						<b><s:text name="customers.last.name"/></b><span><s:property value="customer.lastName"/></span>
 					</td>
 					<td>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<b><spring:message code="customers.email.address"/></b><span>${customer.email}</span>
+						<b><s:text name="customers.email.address"/></b><span><s:property value="customer.email"/></span>
 					</td>
 					<td>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<b><spring:message code="customers.birth.day"/></b><span>${customer.birthDay}</span>
+						<b><s:text name="customers.birth.day"/></b><span><s:property value="customer.birthDay"/></span>
 					</td>
 					<td>
 					</td>
 				</tr>				
 			</table>
-			<form:form method="POST" action="addBook.do" modelAttribute="freeBooks">
+			<s:form action="add-book">
 				<table border="0" cellpadding="0" cellspacing="0">
-					<form:hidden path="customerId"/>
+					<s:hidden key="customer.id"/>
 					<tr>
 						<td colspan="2">
-							<b><spring:message code="available.books.titel"/></b>
+							<b><s:text name="available.books.titel"/></b>
 						</td>	
 					</tr>
 					<tr class="head">
-						<th style="width:20px"><spring:message code="rent.book.choose.table.header"/></th>
-						<th style="width:30%"><spring:message code="cust.book.titel"/></th>
-						<th style="width:30%"><spring:message code="cust.book.author.first.name"/></th>
-						<th style="width:30%"><spring:message code="cust.book.author.last.name"/></th>
+						<th style="width:20px"><s:text name="rent.book.choose.table.header"/></th>
+						<th style="width:30%"><s:text name="cust.book.titel"/></th>
+						<th style="width:30%"><s:text name="cust.book.author.first.name"/></th>
+						<th style="width:30%"><s:text name="cust.book.author.last.name"/></th>
 					</tr>
-					<c:forEach items="${freeBooks.books}" var="book">
+					<s:iterator value="selectedBooks.books">
 						<tr>
 							<td style="width:20px; text-align:left;">
-								<form:checkbox path="selectedBooks" value="${book.id}" cssStyle="width:20px"/>
+								<s:checkbox theme="simple" name="selectedBooks.selectedBooks" fieldValue="%{getId()}" cssStyle="width:20px"/>
 							</td>
-							<td style="width:30%; text-align:left;">${book.titel}</td>
-							<td style="width:30%; text-align:left;">${book.authorName}</td>
-							<td style="width:30%; text-align:left;">${book.authorLastName}</td>
+							<td style="width:30%; text-align:left;"><s:property value="titel"/></td>
+							<td style="width:30%; text-align:left;"><s:property value="authorName"/></td>
+							<td style="width:30%; text-align:left;"><s:property value="authorLastName"/></td>
 
 						</tr>
-					</c:forEach>				
+					</s:iterator>				
 				</table>
-				<p class="submit"><input type="submit" value="<spring:message code="book.add"/>"/></p>
-			</form:form>	
-					<div class="leftButton"><a href="customer.do?custId=${customer.id}"><img  src="images/btn_wstecz.gif" alt="Back" ></a></div>
+				<p class="submit"><input type="submit" name="method:rentBook" value="<s:text name="book.add"/>"/></p>
+			</s:form>	
+					<div class="leftButton"><a href="customer.action?customer.id=${customer.id}"><img  src="images/btn_wstecz.gif" alt="Back" ></a></div>
 				</div>
 			</div>
 			<%@ include file="footer.jsp" %>

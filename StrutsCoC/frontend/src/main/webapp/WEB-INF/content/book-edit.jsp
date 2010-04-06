@@ -10,39 +10,33 @@
 			<div id="top">
 		        <img id="logo" src="images/logo.jpg" alt="Bookshelf">
 		        <div id="userIdent">
-					<p><span><spring:message code="user.login.label" text="user.login.label"/></span>${user.login}</p>
+					<p><span><s:text name="user.login.label"/></span>${user.login}</p>
 		        </div>
 			</div>
 		
 			<div id="rightSide" style="float: left; margin-left: 3%;">
 				<div class="content">
 				    <div class="header" style="margin-left: 0px;">
-						<h4><span><spring:message code="book.edit.titel"/></span></h4>
+						<h4><span><s:text name="book.edit.titel"/></span></h4>
 					    <layout:globalErrors/>
 					</div>
 					
-						<form:form method="POST" action="editBook.do" modelAttribute="book">
+						<s:form action="book-edit">
+							<s:hidden key="book.id"/>
 							<table border="0" cellpadding="0" cellspacing="0">
-								
 									<tr>
-										<td><b><spring:message code="cust.book.titel"/>:</b></td>
 										<td>
-											<form:input path="titel" maxlength="30"/>
-		                                   	<br/><span class="errorInf"><form:errors path="titel"/></span>
+											<s:textfield key="book.titel" maxlength="30"/>
 										</td>
 									</tr>
 									<tr>
-										<td><b><spring:message code="cust.book.author.first.name"/>:</b></td>
 										<td>
-											<form:input path="authorName" maxlength="30"/>
-		                                   	<br/><span class="errorInf"><form:errors path="authorName"/></span>
+											<s:textfield key="book.authorName" maxlength="30"/>
 										</td>
 									</tr>
 									<tr>
-										<td><b><spring:message code="cust.book.author.last.name"/>:</b></td>
 										<td>
-											<form:input path="authorLastName" maxlength="30"/>
-		                                   	<br/><span class="errorInf"><form:errors path="authorLastName"/></span>
+											<s:textfield key="book.authorLastName" maxlength="30"/>
 										</td>
 									</tr>
 		                    		<tr>
@@ -52,8 +46,8 @@
 										</td>
 									</tr>
 							</table>
-		                	<p class="submit"><input type="submit" value="<spring:message code="save.data"/>"/></p>
-						</form:form>
+		                	<p class="submit"><input type="submit" name="method:submit" value="<s:text name="save.data"/>"/></p>
+						</s:form>
 					<div class="leftButton"><a href="bookListToEdit.do"><img  src="images/btn_wstecz.gif" alt="Back" ></a></div>
 				</div>
 			</div>

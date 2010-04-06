@@ -26,7 +26,7 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Customer> findAllCustomers() throws Exception {
+	public List<Customer> findAllCustomers() {
 		
 		if(LOG.isDebugEnabled()){
 			LOG.debug("Calling method to find all customers");
@@ -46,7 +46,7 @@ public class CustomerServiceImpl implements CustomerService {
 		return customers == null ? Collections.EMPTY_LIST : customers;
 	}
 
-	public Customer getCustomerById(Integer custId) {
+	public Customer getCustomerById(Long custId) {
 		
 		if (custId == null) {
 			throw new IllegalArgumentException("Customer id can not be null");
@@ -56,7 +56,7 @@ public class CustomerServiceImpl implements CustomerService {
 			LOG.debug("Calling method to get customer with id "+custId);
 		}
 	
-		Customer cust = customerDao.get(custId.longValue());
+		Customer cust = customerDao.get(custId);
 
 		
 		if(LOG.isDebugEnabled()){

@@ -17,7 +17,7 @@ public class CustomerFacadeImpl implements CustomerFacade {
 	@Qualifier(value="customerService")
 	private CustomerService customerService;
 	
-	public List<Customer> findAllCustomers() throws Exception {
+	public List<Customer> findAllCustomers() {
 		
 		if(LOG.isDebugEnabled()){
 			LOG.debug("Calling method to find all customers");
@@ -35,7 +35,7 @@ public class CustomerFacadeImpl implements CustomerFacade {
 		customerService.saveCustomer(cust);
 	}
 	
-	public Customer getCustomerById(Integer custId) {
+	public Customer getCustomerById(Long custId) {
 		
 		return customerService.getCustomerById(custId);
 	}

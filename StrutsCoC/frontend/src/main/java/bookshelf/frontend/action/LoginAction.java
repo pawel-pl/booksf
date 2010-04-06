@@ -6,14 +6,16 @@ import java.util.Arrays;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.apache.struts2.interceptor.SessionAware;
 import org.apache.struts2.interceptor.validation.SkipValidation;
 import org.springframework.util.StringUtils;
 
-import static bookshelf.core.constants.WebConst.*;
+import bookshelf.core.constants.WebConst.ACTIONS;
+import bookshelf.core.constants.WebConst.ATTRIBUTE;
+import bookshelf.core.constants.WebConst.RESULT;
+import bookshelf.core.constants.WebConst.VIEWS;
 import bookshelf.core.facade.user.UserFacade;
 import bookshelf.core.validation.ValidationHelper;
 import bookshelf.model.object.User;
@@ -38,12 +40,13 @@ public class LoginAction extends BookshelfSupport implements SessionAware {
 	@Override
 	public String execute() {
 		
-		LOG.debug("LoginAction execute");
+		if(LOG.isDebugEnabled()){
+			LOG.debug("LoginAction execute");
+		}
+		
         return SUCCESS;      
     }
 	
-
-	@Action("/loginExecute")
 	public String login() throws Exception{
 		
 		if(user == null){

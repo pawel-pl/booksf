@@ -21,7 +21,7 @@
 					    <layout:globalErrors/>
 					</div>
 					<div class="loading">
-						<s:form action="loginExecute">
+						<s:form action="login">
 							<table border="0" cellpadding="0" cellspacing="0" id="loginTable">
 									<tr>
 										<td>
@@ -37,7 +37,7 @@
 										<td>&nbsp;</td>
 									</tr>
 							</table>
-							<s:submit src="images/btn_dalej.gif" type="image" cssStyle="float: left; margin-left: 83%;"/>
+							<s:submit method="login" src="images/btn_dalej.gif" type="image" cssStyle="float: left; margin-left: 83%;"/>
 						</s:form>
 					</div>
 				</div>

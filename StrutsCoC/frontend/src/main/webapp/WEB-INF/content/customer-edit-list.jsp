@@ -28,7 +28,7 @@
 			<div id="rightSide" style="float: left; margin-left: 3%;">
 				<div class="content">
 				    <div class="header" style="margin-left: 0px;">
-						<h4><span><s:text name="customers.titel.label"/></span></h4>
+						<h4><span><s:text name="customer.edit.list.titel"/></span></h4>
 					    <layout:globalErrors/>
 					</div>
 					
@@ -41,11 +41,11 @@
 						<s:iterator value="customers" status="rowstatus">
     						<s:if test="#rowstatus.odd == false">
 						    	<tr class="adTableRowGrey"
-             							onclick="DoNav('customer.action?customer.id=<s:property value="id"/>');">
+             							onclick="DoNav('customer-edit.action?customer.id=<s:property value="id"/>');">
     						</s:if>
     						<s:else>
 						    	<tr class="adTableRowWhite"
-             							onclick="DoNav('customer.action?customer.id=<s:property value="id"/>');"> 
+             							onclick="DoNav('customer-edit.action?customer.id=<s:property value="id"/>');"> 
    			 				</s:else>
 							
 								<td style="width:60px; text-align:left;"><s:property value="firstName"/></td>
