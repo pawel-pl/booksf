@@ -3,22 +3,12 @@ package bookshelf.model.object;
 import java.util.List;
 
 public class SelectedBooksDTO {
-
-	private Long customerId;
 	
 	private Long bookId;
 	
 	private List<Book> books;
 	
 	private List<Long> selectedBooks;
-
-	public Long getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
-	}
 
 	public List<Book> getBooks() {
 		return books;
@@ -46,7 +36,7 @@ public class SelectedBooksDTO {
 
 	@Override
 	public String toString() {
-		return "FreeBooksDTO [books=" + books + ", customerId=" + customerId
+		return "FreeBooksDTO [books=" + books
 				+ ", selectedBooks=" + selectedBooks + "]";
 	}
 	

@@ -79,4 +79,8 @@ public class Customer extends BaseModelImpl{
 		this.books = books;
 	}
 	
+	public boolean hasBooks(){
+		
+		return this.books != null && !this.books.isEmpty();
+	}
 }
