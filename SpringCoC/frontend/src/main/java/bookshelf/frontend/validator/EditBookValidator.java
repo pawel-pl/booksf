@@ -61,7 +61,7 @@ public class EditBookValidator implements Validator {
 		}
 		
 		if(errors.hasErrors()){
-			errors.reject("form.contains.incorrect.data", "Login or passoword is incorrect");
+			errors.reject("form.contains.incorrect.data");
 		}
 	}
 }

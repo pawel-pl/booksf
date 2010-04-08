@@ -35,7 +35,7 @@ public class EditBookController extends BaseController {
 	public Object prepareForm(@RequestParam("bookId") Long bookId, Model model) throws Exception {
 		
 		if (LOG.isDebugEnabled()) {
-			LOG.debug("Preparing form to show customers for edit");
+			LOG.debug("Preparing form to show book for edit");
 		}
 		
 		if(bookId == null){

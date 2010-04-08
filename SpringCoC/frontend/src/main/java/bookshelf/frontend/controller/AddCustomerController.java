@@ -53,9 +53,6 @@ public class AddCustomerController extends BaseController{
 		
 		customerFacade.saveOrUpdateCustomer(customer);
 		
-/*		return new ModelAndView(WebConst.VIEWS.CUST_LIST_TO_EDIT,
-				WebConst.ATTRIBUTE.CUSTOMERS, customerFacade.findAllCustomers());*/
-		
 		return new RedirectView(WebConst.ACTIONS.WELLCOME);
 	}
 }

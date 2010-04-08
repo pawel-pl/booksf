@@ -42,7 +42,7 @@ public class BookEditListController extends BaseController {
 	public Object submitForm(SelectedBooksDTO allBooks, BindingResult result, Model model) throws Exception {
 		
 		if (LOG.isDebugEnabled()) {
-			LOG.debug("Processing add book...");
+			LOG.debug("Processing edit book...");
 		}
 		
 		validate(allBooks, result);
