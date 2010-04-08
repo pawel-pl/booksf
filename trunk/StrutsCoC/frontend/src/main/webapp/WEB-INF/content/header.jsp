@@ -13,6 +13,6 @@
 					<p><span><s:text name="user.login.label"/></span>${user.login}</p>
 		        </div>
 		        <div id="logout">
-					<p><span><a href="<s:url action="Logout"/>"><s:text name="user.logout.label"/></a></span></p>
+					<p><span><a href="<s:url action="logout"/>"><s:text name="user.logout.label"/></a></span></p>
 		        </div>
 			</div>

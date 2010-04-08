@@ -16,6 +16,7 @@ public class WebConst {
 		public static final String REMOVE_BOOK = "removeBook.jsp";
 		public static final String CUSTOMER_EDIT_LIST = "customer-edit-list.jsp";
 		public static final String CUSTOMER_EDIT_FORM = "customer-edit.jsp";
+		public static final String CUSTOMER_ADD_FORM = "customer-add.jsp";
 		public static final String BOOK_EDIT_LIST = "book-edit-list.jsp";
 		public static final String BOOK_EDIT_FORM = "book-edit.jsp";
 	}

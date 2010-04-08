@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="<%=CONTENT_TYPE%>">
-		<title>Customers</title>
+		<title>Edit customers list</title>
 	    <link href="css/bookshelf.css" rel="stylesheet" type="text/css" media="screen, projection">
 	</head>
 	<body>

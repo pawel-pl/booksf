@@ -6,10 +6,12 @@ import org.apache.log4j.Logger;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.apache.struts2.interceptor.validation.SkipValidation;
+import org.springframework.util.StringUtils;
 
 import bookshelf.core.constants.WebConst.RESULT;
 import bookshelf.core.constants.WebConst.VIEWS;
 import bookshelf.core.facade.book.BookFacade;
+import bookshelf.core.validation.ValidationHelper;
 import bookshelf.model.object.Book;
 import bookshelf.model.object.SelectedBooksDTO;
 
@@ -46,7 +48,6 @@ public class BookEditAction extends BookshelfSupport{
 			return RESULT.BOOK_EDIT_LIST;
 		}
 		
-		//TODO validate
 		book = bookFacade.getBookById(book.getId());
 		
 		if (book == null) {
@@ -61,12 +62,48 @@ public class BookEditAction extends BookshelfSupport{
 	
 	public String submit() throws Exception {
 		
-		//TODO validate
-		
 		bookFacade.saveBook(book);
 		selectedBooks = bookFacade.findAllBooks();
 		
 		return RESULT.BOOK_EDIT_LIST;
+	}
+	
+	@Override
+	public void validate() {
+
+		if (!StringUtils.hasLength(book.getAuthorName())) {
+			addFieldError("book.authorName", getText("field.required",
+					Arrays.asList(new Object[]{"authorName"})));
+		}
+		
+		if (!StringUtils.hasLength(book.getAuthorLastName())) {
+			addFieldError("book.authorLastName", getText("field.required",
+					Arrays.asList(new Object[]{"authorLastName"})));
+		}
+		
+		if(!ValidationHelper.hasMinLength(book.getAuthorName(), ValidationHelper.LOGIN_MIN_LENGTH)){
+			addFieldError("book.authorName", getText("field.min.lenght",
+					Arrays.asList(new Object[]{"authorName", ValidationHelper.LOGIN_MIN_LENGTH})));
+		}
+		
+		if(!ValidationHelper.hasMinLength(book.getAuthorLastName(), ValidationHelper.PASSWORD_MIN_LENGTH)){
+			addFieldError("book.authorLastName", getText("field.min.lenght",
+					Arrays.asList(new Object[]{"authorLastName", ValidationHelper.PASSWORD_MIN_LENGTH})));
+		}
+		
+		if (!StringUtils.hasLength(book.getTitel())) {
+			addFieldError("book.titel", getText("field.required",
+					Arrays.asList(new Object[]{"titel"})));
+		}
+		
+		if(!ValidationHelper.hasMinLength(book.getTitel(), ValidationHelper.LOGIN_MIN_LENGTH)){
+			addFieldError("book.titel", getText("field.min.lenght",
+					Arrays.asList(new Object[]{"titel", ValidationHelper.LOGIN_MIN_LENGTH})));
+		}
+		
+		if(hasErrors()){
+			addActionError(getText("form.contains.incorrect.data"));
+		}
 	}
 
 	public SelectedBooksDTO getSelectedBooks() {

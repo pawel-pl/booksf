@@ -19,7 +19,7 @@ import bookshelf.model.object.Customer;
 	  @Result(name=Action.INPUT, location=VIEWS.CUSTOMER_EDIT_FORM),
 	  @Result(name=RESULT.CUSTOMER_EDIT_LIST, location=VIEWS.CUSTOMER_EDIT_LIST)
 	})
-public class CustomerEditAction extends BookshelfSupport{
+public class CustomerEditAction extends CustomerBaseAction {
 
 	private static final long serialVersionUID = -2743573843173490648L;
 
@@ -59,8 +59,6 @@ public class CustomerEditAction extends BookshelfSupport{
     }
 
 	public String submit() throws Exception {
-	
-		//TODO validate
 		
 		customerFacade.saveOrUpdateCustomer(customer);
 		customers = customerFacade.findAllCustomers();
