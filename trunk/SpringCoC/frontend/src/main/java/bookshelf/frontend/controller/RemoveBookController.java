@@ -51,7 +51,7 @@ public class RemoveBookController extends BaseController {
 	public Object prepareForm(@RequestParam("custId") Long custId, Model model) throws Exception {
 		
 		if (LOG.isDebugEnabled()) {
-			LOG.debug("Preparing form to show availableBooks");
+			LOG.debug("Preparing form to show book for remove");
 		}
 		
 		Customer cust = customerFacade.getCustomerById(custId.intValue());
