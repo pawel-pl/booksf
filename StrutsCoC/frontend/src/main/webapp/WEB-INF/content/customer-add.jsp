@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="<%=CONTENT_TYPE%>">
-		<title>Edit Customer</title>
+		<title>Add customer</title>
 	    <link href="css/bookshelf.css" rel="stylesheet" type="text/css" media="screen, projection">
 	</head>
 	<body>
@@ -17,11 +17,11 @@
 			<div id="rightSide" style="float: left; margin-left: 3%;">
 				<div class="content">
 				    <div class="header" style="margin-left: 0px;">
-						<h4><span><s:text name="customer.edit.titel"/></span></h4>
+						<h4><span><s:text name="customer.add.titel"/></span></h4>
 					    <layout:globalErrors/>
 					</div>
 					
-						<s:form action="customer-edit">
+						<s:form action="customer-add">
 							<table border="0" cellpadding="0" cellspacing="0">
 								<s:hidden key="customer.id"/>
 									<tr>
@@ -51,9 +51,9 @@
 										</td>
 									</tr>
 							</table>
-		                	<p class="submit"><input type="submit" name="method:submit" value="<s:text name="save.data"/>"/></p>
+		                	<p class="submit"><input type="submit" name="method:submit" value="<s:text name="add.customer"/>"/></p>
 						</s:form>
-					<div class="leftButton"><a href="<s:url action="customer-edit-list"/>"><img  src="images/btn_wstecz.gif" alt="Back" ></a></div>
+					<div class="leftButton"><a href="wellcome.do"><img  src="images/btn_wstecz.gif" alt="Back" ></a></div>
 				</div>
 			</div>
 			<%@ include file="footer.jsp" %>
