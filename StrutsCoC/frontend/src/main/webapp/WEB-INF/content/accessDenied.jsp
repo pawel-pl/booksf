@@ -11,7 +11,7 @@
 	<div id="top">
         <img id="logo" src="images/logo.jpg" alt="Bookshelf">
         <div id="userIdent">
-			<p><span><spring:message code="user.login.label" text="user.login.label"/></span>${user.login}</p>
+			<p><span><s:text name="user.login.label"/></span>${user.login}</p>
         </div>
 	</div>
 
@@ -19,7 +19,7 @@
 
 		<div class="content">
 		    <div class="header" style="margin-left: 0px; border-bottom:1px solid #D0DFB3;">
-				<h3><span><spring:message code="access.denied.titel" /></span></h3>
+				<h3><span><s:text name="access.denied.titel" /></span></h3>
 			</div>
 
 		</div>
@@ -27,12 +27,12 @@
     		<table class="infoAppTable" style="width: 70%">
 				<tr>
 					<td class="infoTd">
-						<spring:message code="access.denied.info"/>
+						<s:text name="access.denied.info"/>
 					</td>			
 				</tr> 								
 			</table>
 		</div>
-		<div class="leftButton"><a href="wellcome.do"><img  src="images/btn_wstecz.gif" alt="OK" ></a></div>
+		<div class="leftButton"><a href="<s:url action="wellcome"/>"><img  src="images/btn_wstecz.gif" alt="Back" ></a></div>
 	</div>
 </div>
 </body>

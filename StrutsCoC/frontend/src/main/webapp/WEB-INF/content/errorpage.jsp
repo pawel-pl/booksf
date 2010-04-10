@@ -11,7 +11,7 @@
 	<div id="top">
         <img id="logo" src="images/logo.jpg" alt="Bookshelf">
         <div id="userIdent">
-			<p><span><spring:message code="user.login.label" text="user.login.label"/></span>${user.login}</p>
+			<p><span><s:text name="user.login.label"/></span>${user.login}</p>
         </div>
 	</div>
 
@@ -19,62 +19,61 @@
 
 		<div class="content">
 		    <div class="header" style="margin-left: 0px; border-bottom:1px solid #D0DFB3;">
-				<h3><span><spring:message code="fatal.error.titel" /></span></h3>
+				<h3><span><s:text name="fatal.error.titel" /></span></h3>
 			</div>
 		    <div class="header" style="margin-left: 0px;">
-				<h4><span><spring:message code="error.details.info" /></span></h4>		
+				<h4><span><s:text name="error.details.info" /></span></h4>		
 			</div>
 		</div>
 		<div class = "commentForm"> 
     		<table class="infoAppTable" style="width: 70%">
 				<tr>
 					<td colspan="2" class="titleTd">
-						<spring:message code="error.details.info.date"/>
+						<s:text name="error.details.info.date"/>
 					</td>
 			
 					<td class="infoTd">
-						${edh.date}
+						<s:property value="%{date}"/>
 					</td>			
 				</tr> 
 				<tr>
 					<td colspan="2" class="titleTd">
-						<spring:message code="error.details.info.sessoin.id"/>
+						<s:text name="error.details.info.sessoin.id"/>
 					</td>
 			
 					<td class="infoTd">
-						${edh.sessionId}
+						<s:property value="%{sessionId}"/>
 					</td>			
 				</tr>
 				<tr>
 					<td colspan="2" class="titleTd">
-						<spring:message code="error.details.info.message"/>
+						<s:text name="error.details.info.message"/>
 					</td>
-			
 					<td class="infoTd">
-						${edh.message}
+						<s:property value="%{message}"/>
 					</td>			
 				</tr>
 				<tr>
 					<td colspan="2" class="titleTd">
-						<spring:message code="error.details.info.location"/>
+						<s:text name="error.details.info.location"/>
 					</td>
 			
 					<td class="infoTd">
-						${edh.location}
+						<s:property value="%{location}"/>
 					</td>			
 				</tr>
 				<tr>
 					<td colspan="2" class="titleTd">
-						<spring:message code="error.details.info.stack.trace"/>
+						<s:text name="error.details.info.stack.trace"/>
 					</td>
 			
 					<td class="infoTd">
-						${edh.fullStackTrace}
+						<s:property value="%{fullStackTrace}"/>
 					</td>			
 				</tr>								
 			</table>
 		</div>
-		<div class="leftButton"><a href="wellcome.do"><img  src="images/btn_wstecz.gif" alt="OK" ></a></div>
+		<div class="leftButton"><a href="<s:url action="wellcome"/>"><img  src="images/btn_wstecz.gif" alt="Back" ></a></div>
 	</div>
 </div>
 </body>

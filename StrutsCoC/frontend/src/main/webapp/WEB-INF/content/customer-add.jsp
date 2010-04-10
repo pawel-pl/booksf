@@ -53,7 +53,7 @@
 							</table>
 		                	<p class="submit"><input type="submit" name="method:submit" value="<s:text name="add.customer"/>"/></p>
 						</s:form>
-					<div class="leftButton"><a href="wellcome.do"><img  src="images/btn_wstecz.gif" alt="Back" ></a></div>
+					<div class="leftButton"><a href="<s:url action="wellcome"/>"><img  src="images/btn_wstecz.gif" alt="Back" ></a></div>
 				</div>
 			</div>
 			<%@ include file="footer.jsp" %>
