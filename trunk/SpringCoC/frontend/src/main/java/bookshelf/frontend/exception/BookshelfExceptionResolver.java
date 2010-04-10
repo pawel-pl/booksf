@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 import org.springframework.web.util.WebUtils;
@@ -14,13 +15,15 @@ import bookshelf.core.exception.holder.ExceptionDataHolder;
 
 public class BookshelfExceptionResolver extends SimpleMappingExceptionResolver {
 
+	public static final Logger LOG = Logger.getLogger(BookshelfExceptionResolver.class);
+	
 	private static final Integer LENGTH = 85;
 
 	@Override
 	public ModelAndView resolveException(HttpServletRequest request,
 			HttpServletResponse response, Object handler, Exception ex) {
 		
-		System.out.println(handler);
+		LOG.fatal("Exception was thrown ", ex);
 		
 		ExceptionDataHolder exh = new ExceptionDataHolder();
 		
