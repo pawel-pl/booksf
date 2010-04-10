@@ -47,6 +47,7 @@
 										<exclude>BookshelfSupport_pl.properties</exclude>
 										<exclude>xwork-conversion.properties</exclude>
 										<exclude>struts.properties</exclude>
+										<exclude>struts.xml</exclude>
 									</excludes>
 								</resource>
 								<resource>
