@@ -19,6 +19,8 @@ public class WebConst {
 		public static final String CUSTOMER_ADD_FORM = "customer-add.jsp";
 		public static final String BOOK_EDIT_LIST = "book-edit-list.jsp";
 		public static final String BOOK_EDIT_FORM = "book-edit.jsp";
+		public static final String ACCESS_DENIED= "accessDenied.jsp";
+		public static final String ERROR= "errorpage.jsp";
 	}
 	
 	public static class ACTIONS {
@@ -32,5 +34,7 @@ public class WebConst {
 		public static final String CUSTOMER_EDIT_LIST = "customerEditList";
 		public static final String BOOK_EDIT_LIST = "bookEditList";
 		public static final String RENT_BOOK = "rentBook";
+		public static final String ACCESS_DENIED= "accessDenied";
+		public static final String ERROR= "error";
 	}
 }
