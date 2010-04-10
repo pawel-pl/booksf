@@ -3,6 +3,8 @@ package bookshelf.frontend.action;
 import static com.opensymphony.xwork2.Action.INPUT;
 
 import org.apache.log4j.Logger;
+import org.apache.struts2.convention.annotation.InterceptorRef;
+import org.apache.struts2.convention.annotation.InterceptorRefs;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.apache.struts2.interceptor.validation.SkipValidation;
@@ -13,9 +15,13 @@ import bookshelf.core.constants.WebConst.VIEWS;
 import bookshelf.core.facade.customer.CustomerFacade;
 import bookshelf.model.object.Customer;
 
+@InterceptorRefs({
+    @InterceptorRef("access")
+})
 @Results({
 	  @Result(name=RESULT.WELLCOME, location=ACTIONS.WELLCOME, type="redirect"),
-	  @Result(name=INPUT, location=VIEWS.CUSTOMER_ADD_FORM)
+	  @Result(name=INPUT, location=VIEWS.CUSTOMER_ADD_FORM),
+	  @Result(name=RESULT.ACCESS_DENIED, location=VIEWS.ACCESS_DENIED)
 	})
 public class CustomerAddAction extends CustomerBaseAction {
 
