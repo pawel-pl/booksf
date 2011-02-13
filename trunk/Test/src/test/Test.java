@@ -1,6 +1,7 @@
 package test;
 
 import java.awt.Color;
+import java.util.Map;
 
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -9,6 +10,7 @@ import net.sf.jasperreports.view.JasperViewer;
 import ar.com.fdvs.dj.core.DynamicJasperHelper;
 import ar.com.fdvs.dj.core.layout.ClassicLayoutManager;
 import ar.com.fdvs.dj.domain.AutoText;
+import ar.com.fdvs.dj.domain.CustomExpression;
 import ar.com.fdvs.dj.domain.DynamicReport;
 import ar.com.fdvs.dj.domain.Style;
 import ar.com.fdvs.dj.domain.builders.ColumnBuilder;
@@ -61,6 +63,25 @@ public class Test {
   		 * column, the ColumnBuilder.getNew() method returns a new instance
   		 * of the builder
   		 */
+  		
+ 		AbstractColumn countCol = ColumnBuilder.getNew()		//creates a new instance of a ColumnBuilder
+			.setCustomExpression(
+                new CustomExpression() {
+                        public Object evaluate(Map fields, Map variables, Map parameters) {
+                                //Integer count = (Integer) variables.get("REPORT_COUNT");
+                                return (Integer) variables.get("REPORT_COUNT");
+                        }
+
+                        public String getClassName() {
+                                return Integer.class.getName();
+                        }
+
+                }
+			)
+			.setTitle("Count")											//the title for the column
+			.setWidth(55)									//the width of the column
+			.build();	
+ 		
  		AbstractColumn columnState = ColumnBuilder.getNew()		//creates a new instance of a ColumnBuilder
  			.setColumnProperty("state", String.class.getName())			//defines the field of the data source that this column will show, also its type
  			.setTitle("State")											//the title for the column
@@ -104,6 +125,7 @@ public class Test {
  		 * We add the columns to the report (through the builder) in the order
  		 * we want them to appear
  		 */
+ 		drb.addColumn(countCol);
  		drb.addColumn(columnState);
  		drb.addColumn(columnBranch);
  		drb.addColumn(columnaProductLine);
