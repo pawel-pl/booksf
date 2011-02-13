@@ -1,0 +1,10 @@
+<projectDescription>
+  <name>ear</name>
+  <comment/>
+  <projects>
+    <project>core</project>
+    <project>frontend</project>
+  </projects>
+  <buildSpec/>
+  <natures/>
+</projectDescription>
