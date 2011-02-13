@@ -1,0 +1,8 @@
+*** Settings ***
+Library         robot.server.ejb.test.BeanTestLibrary
+
+*** Test Cases ***
+FindAllProducts
+    ${products}=  Find All Products
+    Should Not Be Empty  ${products}
+
