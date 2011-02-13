@@ -1,0 +1,183 @@
+13:40:05.547 INFO - Java: Sun Microsystems Inc. 16.3-b01
+13:40:05.547 INFO - OS: Windows XP 5.1 x86
+13:40:05.562 INFO - v2.0 [a2], with Core v2.0 [a2]
+13:40:05.625 INFO - RemoteWebDriver instances should connect to: http://127.0.0.1:4449/wd/hub
+13:40:05.625 INFO - Version Jetty/5.1.x
+13:40:05.625 INFO - Started HttpContext[/selenium-server/driver,/selenium-server/driver]
+13:40:05.625 INFO - Started HttpContext[/selenium-server,/selenium-server]
+13:40:05.625 INFO - Started HttpContext[/,/]
+13:40:05.687 INFO - Started org.openqa.jetty.jetty.servlet.ServletHandler@19134f4
+13:40:05.687 INFO - Started HttpContext[/wd,/wd]
+13:40:05.687 INFO - Started SocketListener on 0.0.0.0:4449
+13:40:05.687 INFO - Started org.openqa.jetty.jetty.Server@17ace8d
+13:40:06.797 INFO - Checking Resource aliases
+13:40:06.797 INFO - Command request: getNewBrowserSession[*firefox, http://localhost:8080/EjbTestApp, ] on session null
+13:40:06.812 INFO - creating new remote session
+13:40:06.859 INFO - Allocated session 0112008c511948089d1c20f11021e40b for http://localhost:8080/EjbTestApp, launching...
+13:40:06.859 WARN - It looks like your baseUrl (http://localhost:8080/EjbTestApp) is pointing to a file, not a directory (it doesn't end with a /).  We're going to have to strip off the last part of the pathname.
+13:40:06.891 INFO - Preparing Firefox profile...
+13:40:09.047 INFO - Launching Firefox...
+13:40:12.437 INFO - Got result: OK,0112008c511948089d1c20f11021e40b on session 0112008c511948089d1c20f11021e40b
+13:40:12.437 INFO - Command request: setTimeout[5000.0, ] on session 0112008c511948089d1c20f11021e40b
+13:40:12.468 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:12.468 INFO - Command request: open[http://localhost:8080/EjbTestApp, ] on session 0112008c511948089d1c20f11021e40b
+13:40:12.531 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:12.531 INFO - Command request: getSpeed[, ] on session 0112008c511948089d1c20f11021e40b
+13:40:12.531 INFO - Got result: OK,0 on session 0112008c511948089d1c20f11021e40b
+13:40:12.547 INFO - Command request: setSpeed[1000, ] on session 0112008c511948089d1c20f11021e40b
+13:40:12.547 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:12.562 INFO - Command request: isElementPresent[xpath=//*[@id='form'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:13.578 INFO - Got result: OK,false on session 0112008c511948089d1c20f11021e40b
+13:40:13.781 INFO - Command request: isElementPresent[xpath=//*[@id='form'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:14.812 INFO - Got result: OK,false on session 0112008c511948089d1c20f11021e40b
+13:40:15.015 INFO - Command request: isElementPresent[xpath=//*[@id='form'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:16.031 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:16.031 INFO - Command request: getSpeed[, ] on session 0112008c511948089d1c20f11021e40b
+13:40:16.031 INFO - Got result: OK,1000 on session 0112008c511948089d1c20f11021e40b
+13:40:16.031 INFO - Command request: setSpeed[1000, ] on session 0112008c511948089d1c20f11021e40b
+13:40:16.031 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:16.031 INFO - Command request: click[xpath=//*[@id='iconform:menuGroup'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:17.078 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:17.078 INFO - Command request: click[xpath=//*[@id='tablehideform:mi3'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:18.093 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:18.093 INFO - Command request: waitForPageToLoad[5000.0, ] on session 0112008c511948089d1c20f11021e40b
+13:40:19.125 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:19.125 INFO - Command request: isElementPresent[xpath=//*[@id='addForm'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:20.140 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:20.140 INFO - Command request: isElementPresent[xpath=//*[@id='addForm:name'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:21.156 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:21.156 INFO - Command request: isElementPresent[xpath=//*[@id='addForm:quan'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:22.171 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:22.171 INFO - Command request: isElementPresent[xpath=//*[@id='addForm:price'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:23.203 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:23.218 INFO - Command request: isElementPresent[xpath=//*[@id='addForm:description'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:24.234 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:24.234 INFO - Command request: isElementPresent[xpath=//*[@id='addForm:supList'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:25.265 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:25.265 INFO - Command request: type[xpath=//*[@id='addForm:name'], new prod 1] on session 0112008c511948089d1c20f11021e40b
+13:40:26.296 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:26.296 INFO - Command request: type[xpath=//*[@id='addForm:quan'], 34] on session 0112008c511948089d1c20f11021e40b
+13:40:27.312 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:27.312 INFO - Command request: type[xpath=//*[@id='addForm:price'], 34] on session 0112008c511948089d1c20f11021e40b
+13:40:28.327 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:28.343 INFO - Command request: type[xpath=//*[@id='addForm:description'], description] on session 0112008c511948089d1c20f11021e40b
+13:40:29.359 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:29.359 INFO - Command request: type[xpath=//*[@id='addForm:supListvalue'], 1] on session 0112008c511948089d1c20f11021e40b
+13:40:30.374 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:30.374 INFO - Command request: click[xpath=//*[@id='addForm:addProduct'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:31.390 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:31.406 INFO - Command request: getAlert[, ] on session 0112008c511948089d1c20f11021e40b
+13:40:32.421 INFO - Got result: OK,Product was added on session 0112008c511948089d1c20f11021e40b
+13:40:32.421 INFO - Command request: getSpeed[, ] on session 0112008c511948089d1c20f11021e40b
+13:40:32.421 INFO - Got result: OK,1000 on session 0112008c511948089d1c20f11021e40b
+13:40:32.421 INFO - Command request: setSpeed[1000, ] on session 0112008c511948089d1c20f11021e40b
+13:40:32.421 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:32.421 INFO - Command request: click[xpath=//*[@id='iconform:menuGroup'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:33.452 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:33.452 INFO - Command request: click[xpath=//*[@id='tablehideform:mi1'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:34.484 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:34.484 INFO - Command request: waitForPageToLoad[5000.0, ] on session 0112008c511948089d1c20f11021e40b
+13:40:35.499 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:35.515 INFO - Command request: click[xpath=//*[@id='products:productsList:9:editBtn'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:36.530 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:36.530 INFO - Command request: isElementPresent[xpath=//*[@id='editProductForm'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:37.546 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:37.546 INFO - Command request: isElementPresent[xpath=//*[@id='editProductForm:name'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:38.577 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:38.577 INFO - Command request: isElementPresent[xpath=//*[@id='editProductForm:quan'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:39.593 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:39.593 INFO - Command request: isElementPresent[xpath=//*[@id='editProductForm:price'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:40.608 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:40.608 INFO - Command request: isElementPresent[xpath=//*[@id='editProductForm:description'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:41.640 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:41.640 INFO - Command request: type[xpath=//*[@id='editProductForm:name'], edited text 9] on session 0112008c511948089d1c20f11021e40b
+13:40:42.655 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:42.671 INFO - Command request: type[xpath=//*[@id='editProductForm:quan'], 9] on session 0112008c511948089d1c20f11021e40b
+13:40:43.686 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:43.686 INFO - Command request: type[xpath=//*[@id='editProductForm:price'], 9] on session 0112008c511948089d1c20f11021e40b
+13:40:44.702 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:44.718 INFO - Command request: type[xpath=//*[@id='editProductForm:description'], edited text 9] on session 0112008c511948089d1c20f11021e40b
+13:40:45.733 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:45.733 INFO - Command request: click[xpath=//*[@id='editProductForm:editProduct'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:46.764 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:46.764 INFO - Command request: isElementPresent[xpath=//*[@id='products:productsList'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:47.780 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:47.780 INFO - Command request: isTextPresent[edited text 9, ] on session 0112008c511948089d1c20f11021e40b
+13:40:48.811 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:48.811 INFO - Command request: getSpeed[, ] on session 0112008c511948089d1c20f11021e40b
+13:40:48.811 INFO - Got result: OK,1000 on session 0112008c511948089d1c20f11021e40b
+13:40:48.811 INFO - Command request: setSpeed[1000, ] on session 0112008c511948089d1c20f11021e40b
+13:40:48.811 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:48.811 INFO - Command request: click[xpath=//*[@id='iconform:menuGroup'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:49.843 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:49.843 INFO - Command request: click[xpath=//*[@id='tablehideform:mi2'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:50.874 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:50.874 INFO - Command request: waitForPageToLoad[5000.0, ] on session 0112008c511948089d1c20f11021e40b
+13:40:51.889 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:51.889 INFO - Command request: isElementPresent[xpath=//*[@id='searchForm'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:52.905 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:52.905 INFO - Command request: isElementPresent[xpath=//*[@id='searchForm:name'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:53.921 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:53.921 INFO - Command request: isElementPresent[xpath=//*[@id='searchForm:quan'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:54.952 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:54.952 INFO - Command request: type[xpath=//*[@id='searchForm:name'], edited text 9] on session 0112008c511948089d1c20f11021e40b
+13:40:55.967 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:55.967 INFO - Command request: type[xpath=//*[@id='searchForm:quan'], 1] on session 0112008c511948089d1c20f11021e40b
+13:40:56.983 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:56.983 INFO - Command request: click[xpath=//*[@id='searchForm:search'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:58.014 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:58.014 INFO - Command request: isElementPresent[xpath=//*[@id='resultForm:taskList'], ] on session 0112008c511948089d1c20f11021e40b
+13:40:59.030 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:40:59.030 INFO - Command request: getSpeed[, ] on session 0112008c511948089d1c20f11021e40b
+13:40:59.030 INFO - Got result: OK,1000 on session 0112008c511948089d1c20f11021e40b
+13:40:59.030 INFO - Command request: setSpeed[1000, ] on session 0112008c511948089d1c20f11021e40b
+13:40:59.030 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:40:59.045 INFO - Command request: click[xpath=//*[@id='iconform:menuGroup'], ] on session 0112008c511948089d1c20f11021e40b
+13:41:00.061 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:41:00.061 INFO - Command request: click[xpath=//*[@id='tablehideform:mi1'], ] on session 0112008c511948089d1c20f11021e40b
+13:41:01.092 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:41:01.092 INFO - Command request: waitForPageToLoad[5000.0, ] on session 0112008c511948089d1c20f11021e40b
+13:41:02.108 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:41:02.108 INFO - Command request: click[xpath=//*[@id='products:productsList:9:removeBtn'], ] on session 0112008c511948089d1c20f11021e40b
+13:41:03.139 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:41:03.139 INFO - Command request: isElementPresent[xpath=//*[@id='products:productsList'], ] on session 0112008c511948089d1c20f11021e40b
+13:41:04.155 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:41:04.170 INFO - Command request: isTextPresent[edited text 9, ] on session 0112008c511948089d1c20f11021e40b
+13:41:05.186 INFO - Got result: OK,false on session 0112008c511948089d1c20f11021e40b
+13:41:05.186 INFO - Command request: getSpeed[, ] on session 0112008c511948089d1c20f11021e40b
+13:41:05.186 INFO - Got result: OK,1000 on session 0112008c511948089d1c20f11021e40b
+13:41:05.186 INFO - Command request: setSpeed[1000, ] on session 0112008c511948089d1c20f11021e40b
+13:41:05.186 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:41:05.202 INFO - Command request: click[xpath=//*[@id='iconform:menuGroup'], ] on session 0112008c511948089d1c20f11021e40b
+13:41:06.217 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:41:06.217 INFO - Command request: click[xpath=//*[@id='tablehideform:mi2'], ] on session 0112008c511948089d1c20f11021e40b
+13:41:07.248 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:41:07.248 INFO - Command request: waitForPageToLoad[5000.0, ] on session 0112008c511948089d1c20f11021e40b
+13:41:08.264 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:41:08.264 INFO - Command request: isElementPresent[xpath=//*[@id='searchForm'], ] on session 0112008c511948089d1c20f11021e40b
+13:41:09.280 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:41:09.280 INFO - Command request: isElementPresent[xpath=//*[@id='searchForm:name'], ] on session 0112008c511948089d1c20f11021e40b
+13:41:10.311 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:41:10.311 INFO - Command request: isElementPresent[xpath=//*[@id='searchForm:quan'], ] on session 0112008c511948089d1c20f11021e40b
+13:41:11.326 INFO - Got result: OK,true on session 0112008c511948089d1c20f11021e40b
+13:41:11.326 INFO - Command request: type[xpath=//*[@id='searchForm:name'], edited text 9] on session 0112008c511948089d1c20f11021e40b
+13:41:12.358 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:41:12.358 INFO - Command request: type[xpath=//*[@id='searchForm:quan'], 1] on session 0112008c511948089d1c20f11021e40b
+13:41:13.389 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:41:13.389 INFO - Command request: click[xpath=//*[@id='searchForm:search'], ] on session 0112008c511948089d1c20f11021e40b
+13:41:14.404 INFO - Got result: OK on session 0112008c511948089d1c20f11021e40b
+13:41:14.420 INFO - Command request: isElementPresent[xpath=//*[@id='resultForm:taskList'], ] on session 0112008c511948089d1c20f11021e40b
+13:41:15.436 INFO - Got result: OK,false on session 0112008c511948089d1c20f11021e40b
+13:41:15.639 INFO - Command request: isElementPresent[xpath=//*[@id='resultForm:taskList'], ] on session 0112008c511948089d1c20f11021e40b
+13:41:16.654 INFO - Got result: OK,false on session 0112008c511948089d1c20f11021e40b
+13:41:16.857 INFO - Command request: isElementPresent[xpath=//*[@id='resultForm:taskList'], ] on session 0112008c511948089d1c20f11021e40b
+13:41:17.873 INFO - Got result: OK,false on session 0112008c511948089d1c20f11021e40b
+13:41:18.076 INFO - Command request: isElementPresent[xpath=//*[@id='resultForm:taskList'], ] on session 0112008c511948089d1c20f11021e40b
+13:41:19.092 INFO - Got result: OK,false on session 0112008c511948089d1c20f11021e40b
+13:41:19.295 INFO - Command request: isElementPresent[xpath=//*[@id='resultForm:taskList'], ] on session 0112008c511948089d1c20f11021e40b
+13:41:20.311 INFO - Got result: OK,false on session 0112008c511948089d1c20f11021e40b
+13:41:20.420 INFO - Command request: shutDownSeleniumServer[, ] on session null
+13:41:20.420 INFO - Shutdown command received
+13:41:20.420 INFO - initiating shutdown
+13:41:20.420 INFO - Got result: OK on session null
+13:41:20.920 INFO - Shutting down...

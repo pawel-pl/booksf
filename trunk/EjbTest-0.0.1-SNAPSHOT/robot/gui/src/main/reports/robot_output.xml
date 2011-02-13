@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20100722 13:40:06.719" generator="Robot 2.1.3 (Python 2.6.5 on win32)">
+<suite source="e:\java\workspace\ejbtest\robot\gui\src\main\testcases\beantest.txt" name="Beantest">
+<doc></doc>
+<metadata>
+</metadata>
+<test critical="yes" name="Open Browser" timeout="">
+<doc></doc>
+<kw type="kw" name="SeleniumLibrary.Open Browser" timeout="">
+<doc>Opens a new browser instance to given url.</doc>
+<arguments>
+<arg>http://${address}${context}</arg>
+<arg>firefox</arg>
+</arguments>
+<msg timestamp="20100722 13:40:12.530" html="no" level="INFO">Opening browser 'firefox' to base url 'http://localhost:8080/EjbTestApp'</msg>
+<status status="PASS" endtime="20100722 13:40:12.530" starttime="20100722 13:40:06.766"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20100722 13:40:12.530" starttime="20100722 13:40:06.766"></status>
+</test>
+<test critical="yes" name="MenuTest" timeout="">
+<doc></doc>
+<kw type="kw" name="SeleniumLibrary.Set Selenium Speed" timeout="">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${delay}</arg>
+</arguments>
+<status status="PASS" endtime="20100722 13:40:12.546" starttime="20100722 13:40:12.530"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Wait Until Page Contains Element" timeout="">
+<doc>Waits until element specified with `locator` appears on current page or `timeout` expires.</doc>
+<arguments>
+<arg>xpath=//*[@id='form']</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" endtime="20100722 13:40:16.030" starttime="20100722 13:40:12.546"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20100722 13:40:16.030" starttime="20100722 13:40:12.530"></status>
+</test>
+<test critical="yes" name="AddProduct" timeout="">
+<doc></doc>
+<kw type="kw" name="SeleniumLibrary.Set Selenium Speed" timeout="">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${delay}</arg>
+</arguments>
+<status status="PASS" endtime="20100722 13:40:16.030" starttime="20100722 13:40:16.030"></status>
+</kw>
+<kw type="kw" name="SelectFromMenu" timeout="">
+<doc></doc>
+<arguments>
+<arg>tablehideform:mi3</arg>
+</arguments>
+<kw type="kw" name="SeleniumLibrary.Click Element" timeout="">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='iconform:menuGroup']</arg>
+<arg>dont_wait</arg>
+</arguments>
+<msg timestamp="20100722 13:40:17.078" html="no" level="INFO">Clicking element 'xpath=//*[@id='iconform:menuGroup']'.</msg>
+<status status="PASS" endtime="20100722 13:40:17.078" starttime="20100722 13:40:16.030"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Element" timeout="">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='${item}']</arg>
+</arguments>
+<msg timestamp="20100722 13:40:19.125" html="no" level="INFO">Clicking element 'xpath=//*[@id='tablehideform:mi3']'.</msg>
+<status status="PASS" endtime="20100722 13:40:19.125" starttime="20100722 13:40:17.078"></status>
+</kw>
+<status status="PASS" endtime="20100722 13:40:19.125" starttime="20100722 13:40:16.030"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Wait Until Page Contains Element" timeout="">
+<doc>Waits until element specified with `locator` appears on current page or `timeout` expires.</doc>
+<arguments>
+<arg>xpath=//*[@id='addForm']</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" endtime="20100722 13:40:20.140" starttime="20100722 13:40:19.125"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain Textfield" timeout="">
+<doc>Verifies text field identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='addForm:name']</arg>
+</arguments>
+<msg timestamp="20100722 13:40:21.155" html="no" level="INFO">Current page contains text field 'xpath=//*[@id='addForm:name']'.</msg>
+<status status="PASS" endtime="20100722 13:40:21.155" starttime="20100722 13:40:20.140"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain Textfield" timeout="">
+<doc>Verifies text field identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='addForm:quan']</arg>
+</arguments>
+<msg timestamp="20100722 13:40:22.171" html="no" level="INFO">Current page contains text field 'xpath=//*[@id='addForm:quan']'.</msg>
+<status status="PASS" endtime="20100722 13:40:22.171" starttime="20100722 13:40:21.155"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain Textfield" timeout="">
+<doc>Verifies text field identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='addForm:price']</arg>
+</arguments>
+<msg timestamp="20100722 13:40:23.203" html="no" level="INFO">Current page contains text field 'xpath=//*[@id='addForm:price']'.</msg>
+<status status="PASS" endtime="20100722 13:40:23.203" starttime="20100722 13:40:22.171"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain Element" timeout="">
+<doc>Verifies element identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='addForm:description']</arg>
+</arguments>
+<msg timestamp="20100722 13:40:24.233" html="no" level="INFO">Current page contains element 'xpath=//*[@id='addForm:description']'.</msg>
+<status status="PASS" endtime="20100722 13:40:24.233" starttime="20100722 13:40:23.203"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain Element" timeout="">
+<doc>Verifies element identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='addForm:supList']</arg>
+<arg>new prod 1</arg>
+</arguments>
+<msg timestamp="20100722 13:40:25.265" html="no" level="INFO">Current page contains element 'xpath=//*[@id='addForm:supList']'.</msg>
+<status status="PASS" endtime="20100722 13:40:25.265" starttime="20100722 13:40:24.233"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='addForm:name']</arg>
+<arg>new prod 1</arg>
+</arguments>
+<msg timestamp="20100722 13:40:26.296" html="no" level="INFO">Typing text 'new prod 1' into text field 'xpath=//*[@id='addForm:name']'</msg>
+<status status="PASS" endtime="20100722 13:40:26.296" starttime="20100722 13:40:25.265"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='addForm:quan']</arg>
+<arg>34</arg>
+</arguments>
+<msg timestamp="20100722 13:40:27.312" html="no" level="INFO">Typing text '34' into text field 'xpath=//*[@id='addForm:quan']'</msg>
+<status status="PASS" endtime="20100722 13:40:27.312" starttime="20100722 13:40:26.296"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='addForm:price']</arg>
+<arg>34</arg>
+</arguments>
+<msg timestamp="20100722 13:40:28.342" html="no" level="INFO">Typing text '34' into text field 'xpath=//*[@id='addForm:price']'</msg>
+<status status="PASS" endtime="20100722 13:40:28.342" starttime="20100722 13:40:27.312"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='addForm:description']</arg>
+<arg>description</arg>
+</arguments>
+<msg timestamp="20100722 13:40:29.358" html="no" level="INFO">Typing text 'description' into text field 'xpath=//*[@id='addForm:description']'</msg>
+<status status="PASS" endtime="20100722 13:40:29.358" starttime="20100722 13:40:28.342"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='addForm:supListvalue']</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20100722 13:40:30.374" html="no" level="INFO">Typing text '1' into text field 'xpath=//*[@id='addForm:supListvalue']'</msg>
+<status status="PASS" endtime="20100722 13:40:30.374" starttime="20100722 13:40:29.358"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Button" timeout="">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='addForm:addProduct']</arg>
+<arg>dont_wait</arg>
+</arguments>
+<msg timestamp="20100722 13:40:31.390" html="no" level="INFO">Clicking button 'xpath=//*[@id='addForm:addProduct']'.</msg>
+<status status="PASS" endtime="20100722 13:40:31.390" starttime="20100722 13:40:30.374"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Alert Should Be Present" timeout="">
+<doc>Verifies an alert is present and dismisses it.</doc>
+<arguments>
+<arg>Product was added</arg>
+</arguments>
+<status status="PASS" endtime="20100722 13:40:32.421" starttime="20100722 13:40:31.390"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20100722 13:40:32.421" starttime="20100722 13:40:16.030"></status>
+</test>
+<test critical="yes" name="EditProduct" timeout="">
+<doc></doc>
+<kw type="kw" name="SeleniumLibrary.Set Selenium Speed" timeout="">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${delay}</arg>
+</arguments>
+<status status="PASS" endtime="20100722 13:40:32.421" starttime="20100722 13:40:32.421"></status>
+</kw>
+<kw type="kw" name="SelectFromMenu" timeout="">
+<doc></doc>
+<arguments>
+<arg>tablehideform:mi1</arg>
+</arguments>
+<kw type="kw" name="SeleniumLibrary.Click Element" timeout="">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='iconform:menuGroup']</arg>
+<arg>dont_wait</arg>
+</arguments>
+<msg timestamp="20100722 13:40:33.451" html="no" level="INFO">Clicking element 'xpath=//*[@id='iconform:menuGroup']'.</msg>
+<status status="PASS" endtime="20100722 13:40:33.451" starttime="20100722 13:40:32.421"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Element" timeout="">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='${item}']</arg>
+</arguments>
+<msg timestamp="20100722 13:40:35.499" html="no" level="INFO">Clicking element 'xpath=//*[@id='tablehideform:mi1']'.</msg>
+<status status="PASS" endtime="20100722 13:40:35.499" starttime="20100722 13:40:33.451"></status>
+</kw>
+<status status="PASS" endtime="20100722 13:40:35.499" starttime="20100722 13:40:32.421"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Element" timeout="">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='products:productsList:${rowId}:editBtn']</arg>
+<arg>dont_wait</arg>
+</arguments>
+<msg timestamp="20100722 13:40:36.529" html="no" level="INFO">Clicking element 'xpath=//*[@id='products:productsList:9:editBtn']'.</msg>
+<status status="PASS" endtime="20100722 13:40:36.529" starttime="20100722 13:40:35.499"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Wait Until Page Contains Element" timeout="">
+<doc>Waits until element specified with `locator` appears on current page or `timeout` expires.</doc>
+<arguments>
+<arg>xpath=//*[@id='editProductForm']</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" endtime="20100722 13:40:37.546" starttime="20100722 13:40:36.529"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain Textfield" timeout="">
+<doc>Verifies text field identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='editProductForm:name']</arg>
+</arguments>
+<msg timestamp="20100722 13:40:38.576" html="no" level="INFO">Current page contains text field 'xpath=//*[@id='editProductForm:name']'.</msg>
+<status status="PASS" endtime="20100722 13:40:38.576" starttime="20100722 13:40:37.546"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain Textfield" timeout="">
+<doc>Verifies text field identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='editProductForm:quan']</arg>
+</arguments>
+<msg timestamp="20100722 13:40:39.592" html="no" level="INFO">Current page contains text field 'xpath=//*[@id='editProductForm:quan']'.</msg>
+<status status="PASS" endtime="20100722 13:40:39.592" starttime="20100722 13:40:38.576"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain Textfield" timeout="">
+<doc>Verifies text field identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='editProductForm:price']</arg>
+</arguments>
+<msg timestamp="20100722 13:40:40.608" html="no" level="INFO">Current page contains text field 'xpath=//*[@id='editProductForm:price']'.</msg>
+<status status="PASS" endtime="20100722 13:40:40.608" starttime="20100722 13:40:39.592"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain Textfield" timeout="">
+<doc>Verifies text field identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='editProductForm:description']</arg>
+</arguments>
+<msg timestamp="20100722 13:40:41.640" html="no" level="INFO">Current page contains text field 'xpath=//*[@id='editProductForm:description']'.</msg>
+<status status="PASS" endtime="20100722 13:40:41.640" starttime="20100722 13:40:40.608"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='editProductForm:name']</arg>
+<arg>edited text ${rowId}</arg>
+</arguments>
+<msg timestamp="20100722 13:40:42.654" html="no" level="INFO">Typing text 'edited text 9' into text field 'xpath=//*[@id='editProductForm:name']'</msg>
+<status status="PASS" endtime="20100722 13:40:42.654" starttime="20100722 13:40:41.640"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='editProductForm:quan']</arg>
+<arg>${rowId}</arg>
+</arguments>
+<msg timestamp="20100722 13:40:43.686" html="no" level="INFO">Typing text '9' into text field 'xpath=//*[@id='editProductForm:quan']'</msg>
+<status status="PASS" endtime="20100722 13:40:43.686" starttime="20100722 13:40:42.654"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='editProductForm:price']</arg>
+<arg>${rowId}</arg>
+</arguments>
+<msg timestamp="20100722 13:40:44.701" html="no" level="INFO">Typing text '9' into text field 'xpath=//*[@id='editProductForm:price']'</msg>
+<status status="PASS" endtime="20100722 13:40:44.701" starttime="20100722 13:40:43.686"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='editProductForm:description']</arg>
+<arg>edited text ${rowId}</arg>
+</arguments>
+<msg timestamp="20100722 13:40:45.733" html="no" level="INFO">Typing text 'edited text 9' into text field 'xpath=//*[@id='editProductForm:description']'</msg>
+<status status="PASS" endtime="20100722 13:40:45.733" starttime="20100722 13:40:44.701"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Button" timeout="">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='editProductForm:editProduct']</arg>
+<arg>dont_wait</arg>
+</arguments>
+<msg timestamp="20100722 13:40:46.763" html="no" level="INFO">Clicking button 'xpath=//*[@id='editProductForm:editProduct']'.</msg>
+<status status="PASS" endtime="20100722 13:40:46.763" starttime="20100722 13:40:45.733"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Wait Until Page Contains Element" timeout="">
+<doc>Waits until element specified with `locator` appears on current page or `timeout` expires.</doc>
+<arguments>
+<arg>xpath=//*[@id='products:productsList']</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" endtime="20100722 13:40:47.779" starttime="20100722 13:40:46.763"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain" timeout="">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>edited text ${rowId}</arg>
+</arguments>
+<msg timestamp="20100722 13:40:48.811" html="no" level="INFO">Current page contains text 'edited text 9'.</msg>
+<status status="PASS" endtime="20100722 13:40:48.811" starttime="20100722 13:40:47.779"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20100722 13:40:48.811" starttime="20100722 13:40:32.421"></status>
+</test>
+<test critical="yes" name="SearchTest" timeout="">
+<doc></doc>
+<kw type="kw" name="SeleniumLibrary.Set Selenium Speed" timeout="">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${delay}</arg>
+</arguments>
+<status status="PASS" endtime="20100722 13:40:48.811" starttime="20100722 13:40:48.811"></status>
+</kw>
+<kw type="kw" name="SelectFromMenu" timeout="">
+<doc></doc>
+<arguments>
+<arg>tablehideform:mi2</arg>
+</arguments>
+<kw type="kw" name="SeleniumLibrary.Click Element" timeout="">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='iconform:menuGroup']</arg>
+<arg>dont_wait</arg>
+</arguments>
+<msg timestamp="20100722 13:40:49.842" html="no" level="INFO">Clicking element 'xpath=//*[@id='iconform:menuGroup']'.</msg>
+<status status="PASS" endtime="20100722 13:40:49.842" starttime="20100722 13:40:48.811"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Element" timeout="">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='${item}']</arg>
+</arguments>
+<msg timestamp="20100722 13:40:51.888" html="no" level="INFO">Clicking element 'xpath=//*[@id='tablehideform:mi2']'.</msg>
+<status status="PASS" endtime="20100722 13:40:51.888" starttime="20100722 13:40:49.842"></status>
+</kw>
+<status status="PASS" endtime="20100722 13:40:51.888" starttime="20100722 13:40:48.811"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Wait Until Page Contains Element" timeout="">
+<doc>Waits until element specified with `locator` appears on current page or `timeout` expires.</doc>
+<arguments>
+<arg>xpath=//*[@id='searchForm']</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" endtime="20100722 13:40:52.904" starttime="20100722 13:40:51.888"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain Textfield" timeout="">
+<doc>Verifies text field identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='searchForm:name']</arg>
+</arguments>
+<msg timestamp="20100722 13:40:53.921" html="no" level="INFO">Current page contains text field 'xpath=//*[@id='searchForm:name']'.</msg>
+<status status="PASS" endtime="20100722 13:40:53.921" starttime="20100722 13:40:52.904"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain Textfield" timeout="">
+<doc>Verifies text field identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='searchForm:quan']</arg>
+</arguments>
+<msg timestamp="20100722 13:40:54.951" html="no" level="INFO">Current page contains text field 'xpath=//*[@id='searchForm:quan']'.</msg>
+<status status="PASS" endtime="20100722 13:40:54.951" starttime="20100722 13:40:53.921"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='searchForm:name']</arg>
+<arg>edited text ${rowId}</arg>
+</arguments>
+<msg timestamp="20100722 13:40:55.967" html="no" level="INFO">Typing text 'edited text 9' into text field 'xpath=//*[@id='searchForm:name']'</msg>
+<status status="PASS" endtime="20100722 13:40:55.967" starttime="20100722 13:40:54.951"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='searchForm:quan']</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20100722 13:40:56.983" html="no" level="INFO">Typing text '1' into text field 'xpath=//*[@id='searchForm:quan']'</msg>
+<status status="PASS" endtime="20100722 13:40:56.983" starttime="20100722 13:40:55.967"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Button" timeout="">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='searchForm:search']</arg>
+<arg>dont_wait</arg>
+</arguments>
+<msg timestamp="20100722 13:40:58.013" html="no" level="INFO">Clicking button 'xpath=//*[@id='searchForm:search']'.</msg>
+<status status="PASS" endtime="20100722 13:40:58.013" starttime="20100722 13:40:56.983"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Wait Until Page Contains Element" timeout="">
+<doc>Waits until element specified with `locator` appears on current page or `timeout` expires.</doc>
+<arguments>
+<arg>xpath=//*[@id='resultForm:taskList']</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" endtime="20100722 13:40:59.029" starttime="20100722 13:40:58.013"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20100722 13:40:59.029" starttime="20100722 13:40:48.811"></status>
+</test>
+<test critical="yes" name="RemoveProduct" timeout="">
+<doc></doc>
+<kw type="kw" name="SeleniumLibrary.Set Selenium Speed" timeout="">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${delay}</arg>
+</arguments>
+<status status="PASS" endtime="20100722 13:40:59.029" starttime="20100722 13:40:59.029"></status>
+</kw>
+<kw type="kw" name="SelectFromMenu" timeout="">
+<doc></doc>
+<arguments>
+<arg>tablehideform:mi1</arg>
+</arguments>
+<kw type="kw" name="SeleniumLibrary.Click Element" timeout="">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='iconform:menuGroup']</arg>
+<arg>dont_wait</arg>
+</arguments>
+<msg timestamp="20100722 13:41:00.061" html="no" level="INFO">Clicking element 'xpath=//*[@id='iconform:menuGroup']'.</msg>
+<status status="PASS" endtime="20100722 13:41:00.061" starttime="20100722 13:40:59.029"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Element" timeout="">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='${item}']</arg>
+</arguments>
+<msg timestamp="20100722 13:41:02.108" html="no" level="INFO">Clicking element 'xpath=//*[@id='tablehideform:mi1']'.</msg>
+<status status="PASS" endtime="20100722 13:41:02.108" starttime="20100722 13:41:00.061"></status>
+</kw>
+<status status="PASS" endtime="20100722 13:41:02.108" starttime="20100722 13:40:59.029"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Element" timeout="">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='products:productsList:${rowId}:removeBtn']</arg>
+<arg>dont_wait</arg>
+</arguments>
+<msg timestamp="20100722 13:41:03.138" html="no" level="INFO">Clicking element 'xpath=//*[@id='products:productsList:9:removeBtn']'.</msg>
+<status status="PASS" endtime="20100722 13:41:03.138" starttime="20100722 13:41:02.108"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Wait Until Page Contains Element" timeout="">
+<doc>Waits until element specified with `locator` appears on current page or `timeout` expires.</doc>
+<arguments>
+<arg>xpath=//*[@id='products:productsList']</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" endtime="20100722 13:41:04.154" starttime="20100722 13:41:03.138"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Not Contain" timeout="">
+<doc>Verifies the current page does not contain `text`.</doc>
+<arguments>
+<arg>edited text ${rowId}</arg>
+</arguments>
+<msg timestamp="20100722 13:41:05.186" html="no" level="INFO">Current page does not contain text 'edited text 9'.</msg>
+<status status="PASS" endtime="20100722 13:41:05.186" starttime="20100722 13:41:04.154"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20100722 13:41:05.186" starttime="20100722 13:40:59.029"></status>
+</test>
+<test critical="yes" name="FailedSearchTest" timeout="">
+<doc></doc>
+<kw type="kw" name="SeleniumLibrary.Set Selenium Speed" timeout="">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${delay}</arg>
+</arguments>
+<status status="PASS" endtime="20100722 13:41:05.186" starttime="20100722 13:41:05.186"></status>
+</kw>
+<kw type="kw" name="SelectFromMenu" timeout="">
+<doc></doc>
+<arguments>
+<arg>tablehideform:mi2</arg>
+</arguments>
+<kw type="kw" name="SeleniumLibrary.Click Element" timeout="">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='iconform:menuGroup']</arg>
+<arg>dont_wait</arg>
+</arguments>
+<msg timestamp="20100722 13:41:06.217" html="no" level="INFO">Clicking element 'xpath=//*[@id='iconform:menuGroup']'.</msg>
+<status status="PASS" endtime="20100722 13:41:06.217" starttime="20100722 13:41:05.186"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Element" timeout="">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='${item}']</arg>
+</arguments>
+<msg timestamp="20100722 13:41:08.263" html="no" level="INFO">Clicking element 'xpath=//*[@id='tablehideform:mi2']'.</msg>
+<status status="PASS" endtime="20100722 13:41:08.263" starttime="20100722 13:41:06.217"></status>
+</kw>
+<status status="PASS" endtime="20100722 13:41:08.263" starttime="20100722 13:41:05.186"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Wait Until Page Contains Element" timeout="">
+<doc>Waits until element specified with `locator` appears on current page or `timeout` expires.</doc>
+<arguments>
+<arg>xpath=//*[@id='searchForm']</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" endtime="20100722 13:41:09.279" starttime="20100722 13:41:08.263"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain Textfield" timeout="">
+<doc>Verifies text field identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='searchForm:name']</arg>
+</arguments>
+<msg timestamp="20100722 13:41:10.311" html="no" level="INFO">Current page contains text field 'xpath=//*[@id='searchForm:name']'.</msg>
+<status status="PASS" endtime="20100722 13:41:10.311" starttime="20100722 13:41:09.279"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain Textfield" timeout="">
+<doc>Verifies text field identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='searchForm:quan']</arg>
+</arguments>
+<msg timestamp="20100722 13:41:11.325" html="no" level="INFO">Current page contains text field 'xpath=//*[@id='searchForm:quan']'.</msg>
+<status status="PASS" endtime="20100722 13:41:11.325" starttime="20100722 13:41:10.311"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='searchForm:name']</arg>
+<arg>edited text ${rowId}</arg>
+</arguments>
+<msg timestamp="20100722 13:41:12.358" html="no" level="INFO">Typing text 'edited text 9' into text field 'xpath=//*[@id='searchForm:name']'</msg>
+<status status="PASS" endtime="20100722 13:41:12.358" starttime="20100722 13:41:11.325"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='searchForm:quan']</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20100722 13:41:13.388" html="no" level="INFO">Typing text '1' into text field 'xpath=//*[@id='searchForm:quan']'</msg>
+<status status="PASS" endtime="20100722 13:41:13.388" starttime="20100722 13:41:12.358"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Button" timeout="">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='searchForm:search']</arg>
+<arg>dont_wait</arg>
+</arguments>
+<msg timestamp="20100722 13:41:14.404" html="no" level="INFO">Clicking button 'xpath=//*[@id='searchForm:search']'.</msg>
+<status status="PASS" endtime="20100722 13:41:14.404" starttime="20100722 13:41:13.388"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Wait Until Page Contains Element" timeout="">
+<doc>Waits until element specified with `locator` appears on current page or `timeout` expires.</doc>
+<arguments>
+<arg>xpath=//*[@id='resultForm:taskList']</arg>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20100722 13:41:20.311" html="no" level="FAIL">Element 'xpath=//*[@id='resultForm:taskList']' did not appear in '5s'</msg>
+<status status="FAIL" endtime="20100722 13:41:20.311" starttime="20100722 13:41:14.404"></status>
+</kw>
+<tags>
+</tags>
+<status status="FAIL" endtime="20100722 13:41:20.325" starttime="20100722 13:41:05.186">Element 'xpath=//*[@id='resultForm:taskList']' did not appear in '5s'</status>
+</test>
+<status status="FAIL" endtime="20100722 13:41:20.325" starttime="20100722 13:40:06.733"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="6">Critical Tests</stat>
+<stat fail="1" pass="6">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" doc="Beantest" pass="6">Beantest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
