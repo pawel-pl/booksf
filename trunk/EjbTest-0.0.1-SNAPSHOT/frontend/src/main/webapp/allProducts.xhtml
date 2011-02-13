@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<a4j:loadBundle basename="messages" var="msg" />
+<a4j:loadScript src="js/jquery.notice.js" />
+<a4j:loadScript src="js/overrides.js"/>
+<a4j:loadScript src="/js/servicesInventory.js" />
+
+<a4j:loadStyle src="css/connectivity.css" />
+<a4j:loadStyle src="css/dialog.css" />
+<a4j:loadStyle src="css/jquery.notice.conn.css" />
+<a4j:loadStyle src="css/jquery.notice.css" />
+<a4j:loadStyle src="css/main.css" />
+<a4j:loadStyle src="css/natcommon.css" />
+<a4j:loadStyle src="css/orangeTouch.css" />
+<a4j:loadStyle src="css/otFontCuts.css" />
+<a4j:loadStyle src="css/servicesInventory.css" />
+<a4j:loadStyle src="css/STYLE.CSS" />
+<a4j:loadStyle src="css/tables.css" />
+<a4j:loadStyle src="css/viewTunnelNonTe.css" />
+
+<ui:composition template="template.xhtml">
+	<ui:define name="title">${msg.all_products_titel}</ui:define>
+	<ui:define name="body">
+		<f:view>
+			<script language="javascript" type="text/javascript">
+		        //<![CDATA[
+	        jQuery("#products").ready((function() {	
+				 jQuery("#products:sdt tr").each(function() {
+			    var tr = this;
+			    var counter = 0;
+			    jQuery("td", tr).each(function(index, value) {
+			      var td = jQuery(this);
+			
+			      if (td.text() == "") {
+			        counter++;
+			        td.remove();
+			      }
+			    });
+			    if (counter !== 0) {
+			    	jQuery("td", tr)
+			        .attr('colSpan', '' + parseInt(counter + 1,10) + '');
+			    }
+			  });
+			
+			  //$('td.colspans').each(function(){
+			    //var td = $(this);
+			    //var colspans = [];
+			
+			    //td.siblings().each(function() {
+			      //colspans.push(($(this).attr('colSpan')) == null ? 1 : $(this).attr('colSpan'));
+			   // });
+			
+			    //td.text(colspans.join(','));
+			  //});
+			
+			})); 
+		        
+		        //]]>
+		    </script>        	
+			<a4j:form id="products">
+			
+				<h:selectOneRadio value="#{myFirstJasperReportsBean.exportOption}">
+					<f:selectItem itemValue="PDF" itemLabel="PDF"/>
+					<f:selectItem itemValue="HTML" itemLabel="HTML"/>
+					<f:selectItem itemValue="EXCEL" itemLabel="EXCEL"/>
+					<f:selectItem itemValue="RTF" itemLabel="RTF"/>
+				</h:selectOneRadio>
+				<h:commandButton  action="#{myFirstJasperReportsBean.execute}" value="Get Report" target="_blank"/>
+				
+				<rich:panel id="paths_scrollabletable"
+							style="border-style:none">
+					<rich:scrollableDataTable var="cap" cellpadding="0" cellspacing="0" 
+											  value="#{pathListBean.pathListEmpty}" rows="1" columns="6"
+											  rendered="#{empty pathListBean.pathList}" id="sdt"   width="500px">
+
+						<rich:column>
+							<f:facet name="header"><h:outputText value="#{msg.path_pathName}"/></f:facet>
+						</rich:column>
+
+						<rich:column>
+							<f:facet name="header"><h:outputText value="#{msg.path_operationalState}"/></f:facet>
+						</rich:column>
+
+						<rich:column>
+							<f:facet name="header"><h:outputText value="#{msg.path_layer}"/></f:facet>
+						</rich:column>
+
+						<rich:column>
+							<f:facet name="header"><h:outputText value="#{msg.path_bandwidth}"/></f:facet>
+							<h:outputText value="#{msg.path_noPath}" />
+						</rich:column>
+
+						<rich:column>
+							<f:facet name="header"><h:outputText value="#{msg.path_actualCreationState}"/></f:facet>
+						</rich:column>
+
+						<rich:column>
+							<f:facet name="header"><h:outputText value="#{msg.path_requiredCreationState}"/></f:facet>
+						</rich:column>				
+
+					</rich:scrollableDataTable>								
+				</rich:panel>
+				<a4j:commandButton id="exportPathButton"  value="Export Path"
+					onclick="updateExportPath('PRINT'); helperUtils.showDialog('exportPathPanel');return false;" limitToList="true" />
+			</a4j:form>
+			<ui:include src="exportPath.xhtml"/>
+			<rich:spacer height="7" />
+		</f:view>
+	</ui:define>
+</ui:composition>
+
+</html>

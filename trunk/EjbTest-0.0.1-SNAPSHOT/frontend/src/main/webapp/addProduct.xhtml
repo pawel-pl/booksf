@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<a4j:loadBundle basename="messages" var="msg" />
+
+<ui:composition template="template.xhtml">
+
+	<ui:define name="title">${msg.all_products_titel}</ui:define>
+	<ui:define name="body">
+		<f:view>
+			<rich:panel header="#{msg.all_products_titel}" width="500">
+				<a4j:form id="addForm">
+					<h:panelGrid columns="3" style="margin:20">
+						<h:outputText value="Name" />
+						<h:inputText value="#{AddBean.addProductDTO.name}" id="name">
+							<rich:ajaxValidator event="onblur" />
+						</h:inputText>
+						<rich:message for="name" />
+						<h:outputText value="Quantity" />
+						<h:inputText value="#{AddBean.addProductDTO.quantity}" id="quan" name="quan">
+							<rich:ajaxValidator event="onblur" />
+						</h:inputText>
+						<rich:message for="quan" />
+						<h:outputText value="Price" />
+						<h:inputText value="#{AddBean.addProductDTO.price}" id="price" name="price">
+							<rich:ajaxValidator event="onblur" />
+						</h:inputText>
+						<rich:message for="price" />
+						<h:outputText value="Supplier" />
+						<rich:inplaceSelect value="#{AddBean.addProductDTO.supplier}" defaultLabel="Choose supplier" required="true" id="supList">
+							<f:selectItems value="#{AddBean.suppliers}" id="sup"/>
+							<rich:ajaxValidator event="onblur" />
+						</rich:inplaceSelect> 
+						<rich:message for="supplier"/>
+						<h:outputText value="Description" />
+						<h:inputTextarea id="description" name="description" rows="3" cols="35" value="#{AddBean.addProductDTO.description}">
+							<rich:ajaxValidator event="onblur" />
+						</h:inputTextarea>
+						<rich:message for="description"/>
+					</h:panelGrid>
+					<a4j:commandButton action="#{AddBean.addProduct}" value="Add Product"
+						 id="addProduct" oncomplete="alert('Product was added')"/>
+				</a4j:form>
+
+			</rich:panel>
+			<rich:spacer height="7" />
+		</f:view>
+	</ui:define>
+</ui:composition>
+</html>

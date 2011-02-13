@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+	
+	<a4j:loadBundle basename="messages" var="msg" />
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/connectivity.css" />
+		<link rel="stylesheet" type="text/css" href="css/dialog.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.notice.conn.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.notice.css" />
+		<link rel="stylesheet" type="text/css" href="css/otFontCuts.css" />
+		<link rel="stylesheet" type="text/css" href="css/servicesInventory.css" />
+		<link rel="stylesheet" type="text/css" href="css/tables.css" />
+		<link rel="stylesheet" type="text/css" href="css/viewTunnelNonTe.css" />
+		<title><ui:insert name="title">TITEL</ui:insert></title>
+	</head>
+	<body bgcolor="ffffff">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td width="800" align="center" colspan="3" background="images/navtop.jpg"
+					height="75"><u><font size="+3">BEAN TEST</font></u></td>
+			</tr>
+		</table>
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td width="135" align="center" colspan="3" background="images/navleft.jpg"
+					style="background-repeat: no-repeat"
+					height="328" valign="top"><br/><br/><br/>           
+					    <h:form id="form">
+					    <h:panelGrid columns="2" columnClasses="cols,cols" width="200">
+					    <rich:panelMenu style="width:170px"  mode="ajax" id="menuPanel" 
+					        iconExpandedGroup="disc" iconCollapsedGroup="disc" 
+					        iconExpandedTopGroup="chevronUp" iconGroupTopPosition="right" 
+					        iconCollapsedTopGroup="chevronDown">
+					        <rich:panelMenuGroup id="menuGroup" label="#{msg.mainMenu}">
+					            <rich:panelMenuItem id="mi1" label="#{msg.showAllProducts}" action="#{MenuBean.showAllProducts}"/>
+					            <rich:panelMenuItem id="mi2" label="Search product" action="#{MenuBean.search}"/>
+								<rich:panelMenuItem id="mi3" label="Add product" action="#{MenuBean.addProduct}"/>
+					        </rich:panelMenuGroup>
+					    </rich:panelMenu>
+					    </h:panelGrid>
+					    </h:form>
+				</td>
+				<td width="15">&nbsp;</td>
+				<td width="550" valign="top" colspan="3" height="328"><br></br>
+					<ui:insert name="body">&nbsp;Text text text text text text text text text text text
+					text text text text text text text text text text text text text text
+					text text text text<br></br></ui:insert>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+		</table>
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td width="800">
+				<div align="center"><font size="2">${msg.footer_msg}</font></div>
+				</td>
+			</tr>
+		</table>
+		<br></br>
+		<br></br>
+	</body>
+</html>
