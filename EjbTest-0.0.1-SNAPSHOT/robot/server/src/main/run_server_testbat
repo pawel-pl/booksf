@@ -1,0 +1,2 @@
+@echo on
+call runtest.bat testcases\EjbServerTest.txt

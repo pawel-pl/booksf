@@ -1,0 +1,41 @@
+@echo off
+set CP=.
+
+REM
+REM Ensure PYTHON_HOME has been set correctly
+REM
+if "%PYTHON_HOME%"==""  (
+    echo Environment variable PYTHON_HOME must be defined, exiting.
+    GOTO:EOF
+) else (
+    echo PYTHON_HOME=%PYTHON_HOME%
+)
+
+for /R lib %%G IN (*.jar) DO (
+    call :set_cp %%G
+)
+
+
+for %%j in (..\..\target\*.jar) do (
+    call :set_cp %%j
+)
+
+for %%j in (..\..\lib\*.jar) do (
+    call :set_cp %%j
+)
+
+set CLASSPATH=%CP%
+
+jybotIbm %*
+
+goto :eof
+
+
+
+:: Helper function for setting classpath. Needed because variables can't be 
+:: set inside for loop otherwise. (How braindead is that??)
+:: See for example http://www.ss64.com/nt/for.html
+
+:set_cp
+     set CP=%CP%;%1
+goto :eof

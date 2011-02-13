@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20100722 13:41:31.841" generator="Robot 2.1.3 (Jython 2.5.1 on java1.5.0)">
+<suite source="e:\java\workspace\ejbtest\robot\server\src\main\testcases\ejbservertest.txt" name="Ejbservertest">
+<doc/>
+<metadata>
+</metadata>
+<test critical="yes" timeout="" name="FindAllProducts">
+<doc/>
+<kw timeout="" type="set" name="${products} = robot.server.ejb.test.BeanTestLibrary.Find All Products">
+<doc/>
+<arguments>
+</arguments>
+<msg level="INFO" timestamp="20100722 13:41:32.575" html="no">log4j:WARN No appenders could be found for logger (org.jnp.interfaces.TimedSocketFactory).
+log4j:WARN Please initialize the log4j system properly.</msg>
+<msg level="INFO" timestamp="20100722 13:41:32.575" html="no">${products} = [1, 2, 3, 4, 5, 6, 7, 25, 44, 54, 55]</msg>
+<status starttime="20100722 13:41:32.232" endtime="20100722 13:41:32.575" status="PASS"/>
+</kw>
+<kw timeout="" type="kw" name="BuiltIn.Should Not Be Empty">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${products}</arg>
+</arguments>
+<msg level="INFO" timestamp="20100722 13:41:32.591" html="no">Length is 11</msg>
+<status starttime="20100722 13:41:32.575" endtime="20100722 13:41:32.591" status="PASS"/>
+</kw>
+<tags>
+</tags>
+<status starttime="20100722 13:41:32.232" endtime="20100722 13:41:32.591" status="PASS"/>
+</test>
+<status starttime="20100722 13:41:31.920" endtime="20100722 13:41:32.591" status="PASS"/>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat doc="Ejbservertest" fail="0" pass="1">Ejbservertest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
