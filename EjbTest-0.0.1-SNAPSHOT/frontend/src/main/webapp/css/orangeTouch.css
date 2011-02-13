@@ -1,0 +1,168 @@
+body, p, td{
+	font-size:10pt; 
+	color:#000000; 
+	font-family:Arial, Helvetica, sans-serif; 
+	margin:0px; 	
+}
+th {
+	font-weight:normal; 
+	color:#000066;
+	text-align:left;
+}
+h1 {
+	font-weight:bold; 
+	font-size:12pt; 
+	color:#000066; 
+	margin-bottom:12px;
+}
+h2{
+	font-weight:bold; 
+	color:#000066; 
+	font-size:10pt;
+}
+h3, h4 , h5, h6{
+	font-weight:bold;
+	color:#000066; 
+	font-size:10pt;
+}
+
+/*** START: BREADCRUMBS ***/
+.breadcrumbs {
+	padding-left:12px;
+	border: none;	
+}
+
+.otBC, ul, li {
+	font-size:10pt;
+	font-weight:bold;
+	color:#000066;
+	list-style-type:none;
+    padding:0px;
+    margin:0px;
+}
+
+.otBC li {         
+	float:left;
+}
+
+.otBC li a {         
+	font-weight:normal;
+	color:#000066;
+	text-decoration:underline;
+	background:url(../images/breadcrumb.gif) no-repeat right center;         
+	display:block;         
+	padding:0px 17px 0px 0px;
+}
+
+/*** END: BREADCRUMBS ***/
+
+/*** START: DIALOG ***/
+.otDialog .rich-mp-content {
+	border-color: #666666 !important;
+	padding: 0px;
+}
+
+.modeless .rich-mpnl-mask-div {
+	display:none;
+	z-index: 5000 !important;
+}
+
+/* create NE Device dialog */
+.command-bar {
+	text-align: right;
+	padding: 12px 18px;
+	background-color: #D2D2D2;
+	border-top: 1px solid #666666;
+}
+
+.command-bar input.button {
+	margin-bottom: 0px !important;
+	margin-top: 0px !important;
+	padding: 1px 6px 3px;
+}
+
+.button:hover {
+	border: 1px solid orange;
+    background-color: white;
+    background-image: none; 
+}
+
+.button[disabled], .button[disabled]:hover {
+	background-image: none;  
+	background-color: #E6E6E6;
+	border: 1px solid #797997;
+}
+
+.button-spacing-left {
+	margin-left: 12px;
+}
+
+.button-yes-no {
+	margin-left: 12px;
+	width: 38px;
+}
+
+.dialog-content-body {
+	margin: 12px;
+	padding: 0px;
+}
+
+form.dialog-content {
+	/*remove default margin*/
+	margin: 0px;
+}
+
+.dialog-content-body td {
+	vertical-align:top;	
+}
+
+a.closeButton {
+	display: block;
+	width: 38px;
+	height: 16px;
+	background: url(../images/close_16x38_two_states.png) no-repeat;
+	background-position: 0px 0px;
+}
+
+a.closeButton:hover {
+	/* change the button to the hover state by shifting the image */
+	background-position: 0px -16px;
+}
+
+/*** END: DIALOG ***/
+
+/*** START: Feedback Messages ***/
+.warning-feedback-box, .info-feedback-box {
+	padding-left: 44px;
+	margin-bottom: 12px;
+}
+
+.warning-feedback-box .rich-panel-body, .info-feedback-box .rich-panel-body{
+	padding: 10px 0px;
+}
+
+.warning-feedback-box {
+	border: 1px solid #FF9900;
+	background: url(../images/m_warning32.png) no-repeat 6px 3px;
+}
+
+.warning-feedback-text, .info-feedback-text {
+	font-weight: bold;
+	font-size: 10pt;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.warning-feedback-text {
+	color: #EE7700;
+}
+
+.info-feedback-box {
+	border: 1px solid #0B0C8B;
+	background: url(../images/m_info32.png) no-repeat 7px 3px;
+}
+
+.info-feedback-text {
+	color: #0000FF;
+}
+
+/*** END: Feedback Messages **/

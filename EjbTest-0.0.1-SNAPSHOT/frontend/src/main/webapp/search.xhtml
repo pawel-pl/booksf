@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<a4j:loadBundle basename="messages" var="msg" />
+
+<ui:composition template="template.xhtml">
+
+	<ui:define name="title">${msg.all_products_titel}</ui:define>
+	<ui:define name="body">
+		<f:view>
+			<rich:panel header="#{msg.all_products_titel}" width="500">
+				<a4j:form id="searchForm">
+					<h:panelGrid columns="3" style="margin:20">
+						<h:outputText value="Name" />
+						<h:inputText value="#{SearchBean.searchDTO.name}" id="name">
+							<rich:ajaxValidator event="onblur" />
+						</h:inputText>
+						<rich:message for="name" />
+						<h:outputText value="Quantity" />
+						<h:inputText value="#{SearchBean.searchDTO.quantity}" id="quan">
+							<rich:ajaxValidator event="onblur" />
+						</h:inputText>
+						<rich:message for="quan" />
+						<h:outputText value="Supplier" />
+						<rich:inplaceSelect value="#{SearchBean.searchDTO.supplier}" defaultLabel="Choose supplier" id="supplier">
+							<f:selectItems value="#{SearchBean.suppliers}" />
+							<rich:ajaxValidator event="onblur" />
+						</rich:inplaceSelect> 
+						<rich:message for="supplier"/>
+						<!-- <rich:comboBox  suggestionValues="#{SearchBean.searchDTO.supplier}" selectFirstOnUpdate="false" defaultLabel="Choose supplier">
+    						<f:selectItems value="#{SearchBean.suppliers}" var="h" label="#{h.get}"/>
+						</rich:comboBox> -->
+						<!--<h:selectOneMenu id="selectSup" value="#{SearchBean.searchDTO.supplier}">
+							<f:selectItems value="#{SearchBean.suppliers}"/>
+						</h:selectOneMenu>-->
+					</h:panelGrid>
+					<a4j:commandButton action="#{SearchBean.search}" value="Search"
+						reRender="output" id="search" />
+				</a4j:form>
+				
+				<a4j:outputPanel id="output">
+					<a4j:form rendered="#{not empty SearchBean.products}" id="resultForm">
+						<rich:dataTable value="#{SearchBean.products}" var="prod"
+							rowClasses="row1, row2" id="taskList" rows="4"
+							columnClasses="100,150,150,150"
+							onRowMouseOver="this.style.backgroundColor='#B5F3FB'"
+							onRowMouseOut="this.style.backgroundColor='#{a4jSkin.rowBackgroundColor}'"
+							width="350">
+							<f:facet name="header">
+								<rich:columnGroup>
+
+									<rich:column colspan="5">
+										<h:outputText value="#{msg.footer_msg}" />
+									</rich:column>
+
+									<rich:column breakBefore="true">
+										<h:outputText value="NAME" />
+									</rich:column>
+
+									<rich:column>
+										<h:outputText value="PRICE" />
+									</rich:column>
+
+									<rich:column>
+										<h:outputText value="QUANTITY" />
+									</rich:column>
+
+									<rich:column>
+										<h:outputText value="DESCRIPTION" />
+									</rich:column>
+
+									<rich:column>
+										<h:outputText value="SUPPLIER" />
+									</rich:column>
+
+								</rich:columnGroup>
+							</f:facet>
+
+							<rich:column>
+								<f:facet name="header">
+									<h:outputText value=" "
+										title="Hack due to bug. Shuold be remoevd till release"></h:outputText>
+								</f:facet>
+								<h:outputText value="#{prod.name}" />
+
+							</rich:column>
+
+							<rich:column>
+								<h:outputText value="#{prod.price}" />
+
+							</rich:column>
+
+							<rich:column>
+								<h:outputText value="#{prod.quantity}" />
+							</rich:column>
+
+							<rich:column>
+								<h:outputText value="#{prod.description}" />
+							</rich:column>
+
+							<rich:column>
+								<h:outputText value="#{prod.supplier.description}" />
+							</rich:column>
+
+						</rich:dataTable>
+						<rich:datascroller align="left" for="taskList" maxPages="20"
+							width="350" />
+					</a4j:form>
+				</a4j:outputPanel>
+			</rich:panel>
+
+			<rich:spacer height="7" />
+		</f:view>
+	</ui:define>
+</ui:composition>
+
+</html>

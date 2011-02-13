@@ -1,0 +1,26 @@
+/* FIX: to allow having one dialog above other dialog */
+.dialogLevel1  .rich-mpnl-mask-div {  /* thin gray layer behind dialog */
+	z-index : 1150 !important;
+	cursor: default;
+}
+.dialogLevel1 .rich-mpnl_panel {	/* dialog */
+	z-index : 1200 !important;
+}
+
+.dialogLevel2 .rich-mpnl-mask-div {  /* thin gray layer behind dialog */
+	z-index : 1250 !important;
+	cursor: default;
+}
+
+.dialogLevel2 .rich-mpnl_panel {	/* dialog */
+	z-index : 1300 !important;
+}
+
+.dialogLevel3 .rich-mpnl-mask-div {  /* thin gray layer behind dialog */
+	z-index : 1350 !important;
+	cursor: default !important;
+}
+
+.dialogLevel3 .rich-mpnl_panel {	/* dialog */
+	z-index : 1400 !important;
+}

@@ -1,0 +1,284 @@
+.fullWidth {
+	width: 100% !important;	
+}
+
+.otTable .table-checkboxAlign {
+	padding: 1px 3px !important;
+}
+
+.dr-table-subheadercell {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	text-align: left;
+}
+
+.dr-table-cell {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	height: 16px;
+}
+
+.otTable th.rich-sdt-header-cell div, .otTable th {
+	text-align: left;
+	height: 18px;
+}
+
+.otTable {
+	border-collapse: separate!important;
+	border: 1px solid #797997 !important;
+}
+
+/*hide fake column*/
+.otTable .dr-sdt-c-f {
+	display: none;	
+}
+
+.otTable .dr-sdt-hsep {
+	background-image: none !important; /*hide separator line*/
+}
+
+.otTable .dr-table-headercell {
+	text-align: left;
+	padding: 0px 12px 0px 4px;
+}
+
+.otTable .dr-table-subheadercell {
+	padding: 2px;
+}
+
+.otTable .extdt-subheadercell {
+	padding: 0px 3px;	
+}
+
+.otTable .rich-table-subheader input[type=text] {
+	width: 100%;
+}
+
+.otTable th input[type="text"] {
+	border: 0px solid white !important; /** border:none doesn't work in IE **/
+	padding: 2px 0px !important;
+	display: block;
+}
+
+.otTable th .sortedAsc, .otTable th .sortedDesc, .otTable th span {
+	display: block;
+	padding-right: 16px;
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+
+.otTable th .sortedAsc {
+	background-image: url("../webuif/images/sort_icon_asc.gif");
+}
+
+.otTable th .sortedDesc{
+	background-image: url("../webuif/images/sort_icon_desc.gif");
+}
+
+.otTable tr {
+	color: #333333 !important;	
+}
+
+.otTable tr.odd {
+	background-color: #e6e6e6;
+}
+
+.otTable tr.even {
+	background-color: #eeeeee; 
+}
+
+.otTable tr.selected {
+	background-color: #FFDD99 !important;
+}
+
+.otTable .mouseOver {
+	background-color: #BBD6FC !important;
+}
+
+.otTable > tbody > tr > td {
+	padding: 1px 12px 1px 3px;
+	font: 10pt Arial;
+	color: #333333;
+	white-space: nowrap;
+}
+
+.otTable .rich-table-footercell {
+  border: 0px;
+}
+
+.otTable tr td.rich-table-cell{
+	border: 0px;
+	border-left: 1px solid #797997;
+}
+
+.otTable tr td.rich-table-cell:first-child {
+	border-left: 0px solid #797997;
+}
+
+.otTable .dr-sdt-cbody, .otTable .rich-extdt-cell {
+	height: 18px;
+	padding: 1px 3px;	
+}
+
+/*** Non sortable table headers ***/
+.otTable .header, .otTable .rich-sdt-header-cell, .otTable .dr-table-headercell {
+	font: 10pt Arial;
+	color: #000066;
+	background-image: none !important;
+	background-color: #e6e6e6;
+	border: 0px;
+	border-left: 1px solid #797997;
+	border-bottom: 1px solid #797997;
+}
+
+.otTable .header:first-child, .otTable .rich-sdt-header-cell:first-child, .otTable .dr-table-headercell:first-child {
+	border-left: 0px;
+}
+
+/*** Sortable table headers ***/
+.otTable .headerSortable {
+	font: 10pt Arial;
+	color: #000066; /* should act as link */
+	background: #eeeeee url(../images/button_gradient_h18.gif) repeat-x center center;
+	padding: 1px 3px 1px 3px;
+	white-space: nowrap;
+	border: 0px;
+	border-bottom: 1px solid #797997;
+	border-left: 1px solid #797997;
+}
+.otTable .headerSortable th:first-child {
+	border-left: 0px;
+}
+
+/*** jobDetails scrollable table ***/
+.scrollableTableContainer {
+	position: relative;
+	padding-top: 21px\9;
+	margin: 0 auto;
+}
+
+.innerDiv {
+	overflow-y: scroll\9;
+	overflow-x: hidden\9;
+	width: auto\9;
+	height: 92px;
+	height: 71px\9;
+	border-bottom: 1px solid #C4C0C9;
+}
+
+.scrollableTable {
+	border-left: 0px;
+	border-top: 0px;
+	border-collapse: separate;
+	width: 100%;
+	table-layout: auto;
+	word-wrap: break-word;
+}
+
+/*** All browsers except IE ***/
+html>/*/*/body .scrollableTable tbody {
+	height: 71px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.scrollableTable tbody td img{
+	padding-top: 2px;
+}
+
+/*** For IE7 and above ***/
+*:first-child+html .scrollableTableContainer thead tr {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border-left: 1px solid #C4C0C9;
+}
+
+/*** All browsers except IE ***/
+html>/*/*/body .scrollableTable tbody tr{
+	width: 98%;
+	overflow: hidden;
+}
+
+/*** For IE7 and above ***/
+*:first-child+html .scrollableTable tbody tr {
+	border-top: 1px solid #C4C0C9;
+	border-bottom: 0px;
+}
+
+.scrollableTable tbody tr:first-child td {
+	border-top: 0px;
+}
+
+.scrollableTable tbody tr td {
+	border-top: 1px solid #C4C0C9;
+	border-bottom: 0px;
+}
+
+.scrollableTableContainer thead tr th{
+	border-top: 1px solid #C4C0C9;
+	border-right: 1px solid #C4C0C9\9;
+	border-bottom: 1px solid #C4C0C9;
+}
+
+/*** All browsers except IE ***/
+html>/*/*/body .scrollableTableContainer thead tr th, .scrollableTable tbody td {
+	padding-bottom: 2px;
+}
+
+.scrollableTableContainer thead tr th:first-child, .scrollableTableContainer tbody tr td:first-child {
+	border-left: 1px solid #C4C0C9;
+	padding-top: 1px;
+}
+
+/** Sort icons - used if default sorting is overriden **/
+.otTable .sort-icon {
+	height: 15;
+	width: 15;
+	cursor: pointer;
+	float: right;
+}
+
+.otTable .rich-dtascroller-table, 
+.otTable .rich-dtascroller-table tr .rich-datascr-button,
+.tableFooter .rich-datascr-button {
+	background: none;
+}
+
+.otTable tfoot td.rich-table-footercell {
+	background-color: white;
+	border-top: 1px solid #797997;
+	border-right: 0px;
+}
+
+.tableFooter > table{
+	border: 1px solid #797997;
+}
+
+.otTable tfoot td.rich-table-footercell td.rich-datascr-inact:hover {
+	text-decoration: underline;
+}
+
+.otTable tfoot .items-label, .tableFooter  .items-label{
+	background: none;
+	border: none;
+	color: #000066;
+	font: bold 10pt Arial;
+}
+
+.otTable tfoot .page-number-input, .tableFooter .page-number-input{
+	margin-left: 12px;
+	margin-right: 2px;
+	text-align: right;
+	width: 50px;
+	vertical-align: middle;
+}
+
+.otTable tfoot .total-page-number, .tableFooter .total-page-number{
+	margin-right: 12px;
+	vertical-align: middle;
+}
+
+.otTable tfoot .items-ppage-input , .tableFooter  .items-ppage-input{
+	margin-right: 6px;
+}

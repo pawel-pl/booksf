@@ -1,0 +1,700 @@
+.groupPanel {
+    border: none;
+    padding: 0px !important;
+}
+
+.rich-tree-node-highlighted {
+	color: #797997;
+}
+
+.rich-tree-node-selected {
+	background-color: #bbd6fc;
+}
+ 
+.rich-tree-border {
+	margin-top: 6px;
+	border: 1px solid #797997;
+	overflow: auto;
+}
+
+.extendMesh .rich-tree-border {
+	height: 420px;
+}
+
+.removeMesh .rich-tree-border {
+	height: 450px;
+}
+
+.removeMesh .meshTreeWithMsgAndText {
+	height: 417px;
+}
+
+.removeMesh .meshTreeWithMsg {
+    height: 461px;
+}
+
+.range-label {
+	color: #000066;
+}
+
+/** messages **/
+
+.warning_msg, .error_msg, .info_msg {
+    padding: 2px 0 1px 28px;
+	font-size: 10pt;
+	display: block;
+	margin-bottom: 12px;
+    font-weight: bold;
+}
+
+/** warning messages **/
+
+.warning_msg {
+	background: transparent url(../images/m_warning16.png) 6px center no-repeat;
+    border: 1px solid #ff8000;
+    color: #ee7700;
+}
+
+/** error messages **/
+
+.error_msg {
+	background: transparent url(../images/m_error16.png) 6px center no-repeat;
+    border: 1px solid #bf1b00;
+    color: #ff0000;
+}
+
+/** info messages **/
+
+.info_msg {
+	background: transparent url(../images/m_info16.png) 6px center no-repeat;
+    border: 1px solid #0b0c8b;
+    color: #0000ff;
+}
+
+.groupPanelHeader , .groupPanelHeaderNoTop{
+    border: none;
+    background: transparent none;
+    padding-left: 0;
+}
+
+.groupPanelHeader{
+    margin: 12px 0;
+}
+
+.groupPanelHeaderNoTop{
+    margin: 0 0 12px 0;
+}
+
+.groupPanelBody {
+    padding: 0;
+}
+
+.stepTitle {
+    padding: 12px 0;
+    display: block;
+}
+
+.wrapperPanel {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.floatContentLeft * {
+	float: left;
+}
+
+.clearFloat  {
+	clear: both;
+}
+
+.floatContentLeft br {
+	float: none;
+}
+
+.dr-rich-tool-tip {
+	text-align: left;
+}
+
+.msgTooltip {
+	border-color: #666666;
+	background-color: #FFF5C9;
+	font-size: 10pt;
+	text-align: left;
+	padding:6px;
+}
+
+/*** START: DIALOG ***/
+.otDialog .rich-mp-content {
+	border-color: #666666 !important;
+	z-index: 2000;
+}
+
+/** to get the dialog handles for resizing on top **/
+.rich-mpnl-resizer { 
+   z-index: 2001;
+}
+
+.otDialog .rich-mp-content, .otDialog .rich-mpnl-body {
+	margin: 0;
+	padding: 0;
+}
+
+.otDialog .rich-mp-content, .posRelative {
+	position: relative;
+}
+
+.dialog-content-body {
+	font-size: 10pt;
+	margin: 12px 12px 59px 12px;
+	padding: 0;
+}
+
+/** For dialogs without command bars **/
+.dialog-content-body-noCB {
+	font-size: 10pt;
+	display: block;
+	margin: 12px 12px 12px 12px;
+	padding: 0;
+}
+
+.modeless .rich-mpnl-mask-div {
+	display: none;
+	z-index: 5000 !important;
+}
+
+.dr-mpnl-mask-div {
+	z-index: 1050 !important;
+}
+
+.rich-mp-content .rich-mpnl-header {
+    background: none;
+    border: none;
+    color: #000066;
+    padding-left: 12px;
+    font-size: 10pt;
+}
+
+.otDialog .rich-mpnl-controls {
+	right: 12px;
+	top: 3px;
+}
+
+.otDialog .dialog-command-bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.wizard .dialog-command-bar {
+	background: none !important;
+	border-top: none !important;	
+}
+
+.wizard .dialog-content-body {
+	margin: 6px 6px 47px !important;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 12px;
+	background-color: white;  	
+}
+
+.wizard .rich-mp-content {
+	background-color: #cccccc;
+}
+
+.wizard .rich-mp-content, .wizard .rich-mpnl-shadow {
+	border-radius: 3px;
+	-moz-border-radius: 3px;  		
+}
+
+/** command bar for dialogs (ok, cancel, etc) **/
+.dialog-command-bar {
+	background-color: #D2D2D2;
+	border-top: 1px solid #666666;
+	padding: 12px;
+	text-align: right;
+}
+
+a.closeButton {
+	display: block;
+	width: 38px;
+	height: 16px;
+	background: url(../images/close_16x38_two_states.png) no-repeat;
+	background-position: 0 0;
+}
+
+a.closeButton:hover {
+	/* change the button to the hover state by shifting the image */
+	background-position: 0 -16px;
+}
+
+/** removes outline in focused modalpanel **/
+div.noDialogFocusOutline {
+    outline: 0;
+}
+
+/** Fix for dialogs to influence window's scroll bars from 
+   https://jira.jboss.org/browse/RF-2802 can be removed once bug is fixed in richfaces **/
+.rich-modalpanel {
+	position: static !important;
+	z-index: 1100 !important;
+}
+
+.rich-mpnl_panel {
+	position: absolute;
+	z-index: 1100 !important;
+} 
+
+/** TO BE REMOVED WHEN COMMON NO LONGER RUINS IT(dialog-content-body td) **/
+.dialogAlign td{
+	vertical-align: middle !important;
+	vertical-align: baseline !important\9; /* Hack for >=IE6 */	
+}
+
+/** TO BE REMOVED WHEN CALYPSO NO LONGER RUINS IT(tagGroupRowSubTitle) **/
+.subtitleAlign{
+	padding-left: 0px !important;
+}
+
+/*** END: DIALOG ***/
+
+/* TODO: merge with .dialog-command-bar */
+/* command bar (ok, cancel, etc) */
+.command-bar {
+	/*use other rule when dialogs are used*/
+	padding: 12px 0;
+}
+
+.command-bar input.button, .dialog-command-bar input.button{
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+	padding: 0 6px;
+}
+
+form input.defaultButton, table input.defaultButton {
+	border-color: #8daef5;
+}
+
+.button:hover {
+	border: 1px solid orange;
+    background-color: white;
+    background-image: none; 
+}
+
+.button[disabled], .button[disabled]:hover {
+	background-image: none;  
+	background-color: #E6E6E6;
+	border: 1px solid #797997;
+}
+
+.button-spacing-left {
+	margin-left: 12px;
+}
+
+.button-big-spacing-left {
+	margin-left: 24px;
+}
+
+/* BEGIN Styles for controls of rich:datascroller */
+
+.datascroller-button-first {
+    background: transparent url("../webuif/images/arrow_first_ot.gif") no-repeat center; 
+    border: 0; 
+    width: 15px; 
+    height: 15px;
+    padding: 0px;
+}
+
+.datascroller-button-previous {
+    background: transparent url("../webuif/images/arrow_previous_ot.gif") no-repeat center; 
+    border: 0; 
+    width: 15px; 
+    height: 15px;
+    padding: 0px;
+}
+
+.datascroller-button-next {
+    background: transparent url("../webuif/images/arrow_next_ot.gif") no-repeat center; 
+    border: 0; 
+    width: 15px; 
+    height: 15px;
+    padding: 0px;
+}
+
+.datascroller-button-last {
+    background: transparent url("../webuif/images/arrow_last_ot.gif") no-repeat center; 
+    border: 0; 
+    width: 15px; 
+    height: 15px;
+    padding: 0px;
+}
+
+/* END Styles for controls of rich:datascroller */
+
+input.buttonAfterTable {
+    margin: 12px 0px 12px 0px !important;    
+}
+
+.browseButton {
+    vertical-align:top !important;
+    margin-left: 6px;
+}
+
+/* BEGIN Styles for next and back buttons in dialogs */
+
+.dialog-command-bar input.backButton {
+	background: url("../images/arrow_left.gif") no-repeat #E6E6E6;
+	background-position: 0px -2px !important\9;
+	padding-left: 10px !important;
+}
+
+.dialog-command-bar input.backButton:hover {
+	border: 1px solid orange;
+    background: url(../images/arrow_left_enabled.gif) no-repeat white;
+	background-position: 6px 3px;
+	background-position: 6px 1px\9; 
+}
+
+.dialog-command-bar input.backButton[disabled], .dialog-command-bar input.backButton[disabled]:hover {
+	background: url(../images/arrow_left_disabled.gif) no-repeat #E6E6E6;
+	background-position: 6px 3px;
+	background-position: 6px 1px\9;
+	border: 1px solid #797997;
+}
+
+.dialog-command-bar input.nextButton {
+	background: url("../images/arrow_right.gif") no-repeat #E6E6E6;
+	background-position: 0px -2px\9; 
+	text-align: right;
+	padding-right: 22px !important;
+}
+
+.dialog-command-bar input.nextButton:hover{
+	border: 1px solid orange;
+    background: url(../images/arrow_right_enabled.gif) no-repeat white;
+	background-position: 45px 3px;
+    background-position: 45px 1px\9;
+}
+
+.dialog-command-bar input.nextButton[disabled], .dialog-command-bar input.nextButton[disabled]:hover {
+	background: url(../images/arrow_right_disabled.gif) no-repeat #E6E6E6;
+	background-position: 45px 3px;
+	background-position: 45px 1px\9;
+	border: 1px solid #797997;
+}
+
+/* END Styles for next and back buttons in dialogs */
+
+/* BEGIN Styles for tabs used in service details */
+
+.rich-tabpanel-content, .pageMargin {
+	padding: 12px;
+}
+
+.rich-tabpanel-content {
+	border-color: #797997;
+}
+
+/** active tab* */
+.dr-tbpnl-tbtopbrdr {
+	border-color: #797997;
+}
+.rich-tabhdr-side-border {
+	background-color: #797997;
+	background-image: none;
+	border-top: 1px solid white;
+}
+
+/** pad first tab **/
+.rich-tabpanel .rich-tab-bottom-line {
+	border-color: #797997;
+	padding-left: 12px;
+}
+
+html .rich-tab-bottom-line a {
+    color: #000000;
+}
+
+/** make active tab taller **/
+.dr-tbpnl-tb-act {
+	padding-top: 2px;
+}
+
+/** make inactive tab shorter **/
+.dr-tbpnl-tbcell-inact {
+	padding-top: 5px;
+}
+
+.rich-tab-active {
+    background-color: #FFFFFF;
+    background-image: none;
+    border-color: #8DAEF5;
+    padding-bottom: 4px; 
+    padding-left: 14px; 
+    padding-right: 14px; 
+    font-weight: bold;
+}
+
+.rich-tab-inactive {
+	background-color: #F1F1F1; 
+    background-image: none;
+  	border-color: #F1F1F1; 
+  	padding-bottom: 1px;
+    padding-left: 14px; 
+    padding-right: 14px;
+    padding-top: 0px; 
+}
+
+.rich-tab-inactive:hover, .rich-tab-active:hover {
+    border-color: #FF9900;
+    text-decoration: underline;
+}
+
+/* END Styles for tabs used in service details */
+
+table.formTable {
+	border-collapse: separate;
+	border-spacing:0 6px;
+}
+
+.horizontalScrollbar {
+	overflow-x: auto;
+	overflow-y: hidden \9;
+	display: block;
+}
+
+.horizontalScrollbar .scrollMarginIE {
+	margin-bottom: 16px \9;
+	width:100%;
+}
+
+textarea.code {
+	color: #000000;
+	font-family: monospace;
+	width: 100%;
+	padding: 2px 5px !important
+}
+
+.handCursor {
+	cursor: pointer;
+}
+
+.dep-indentation {
+	margin-left: 24px !important;
+}
+
+.bottomSpacing {
+	margin-bottom: 6px;
+}
+
+.leftSpacing {
+	padding-left: 6px;	
+}
+
+.verticalSpacing > td, .verticalSpacingNoFirst > td  {
+	padding-top: 6px;
+}
+
+table tbody > .verticalSpacingNoFirst:first-child > td {
+	padding-top: 0px;
+}
+
+.headerHeight {
+	height: 18px;	
+}
+
+.hidden {
+    display: none;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.break {
+    display: block;
+}
+
+.dialog-command-bar img {
+	margin-top:4px;
+	float:left;
+	cursor: pointer;
+}
+
+.ajax-loader {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.input-ajax-loader {
+    display: inline;
+    margin-left: 3px;
+    margin-right: 3px;
+    vertical-align: text-bottom;
+    vertical-align: baseline\9;
+}
+
+.noVerticalMargin {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.noBottomMargin {
+    margin-bottom: 0 !important;
+}
+
+.smallDropDown, .smallLabel {
+    width: 60px;
+}
+
+.wideInput {
+    width: 331px;
+}
+
+.alignRight, .numericField {
+    text-align: right;
+}
+
+.alignLeft {
+	text-align: left;
+}
+
+.fieldMessage {
+    color: #FF0000;
+}
+
+/** fix for alignment of label in table (e.g. in tunnelNonTe.xhtml ) */
+.tableTopAlign > tbody > tr:first-child > td:first-child {
+    padding-top:3px;
+    vertical-align:top;
+}
+
+/** loading box **/
+.ajaxLoadingBox {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -40px;
+    margin-top: -14px;
+    background: white url("../images/ajax_progress.gif") no-repeat 5px 5px;
+    padding: 6px 5px 5px 26px;
+    border: 1px solid #797997;
+    vertical-align: middle;
+}
+
+.spaceAbove {
+	display:block;
+	padding-top:12px;
+}
+
+/** create-ELine dialog **/
+.create-eline-body {
+	height: 425px;
+	overflow: auto;
+}
+
+/** create-satop dialog **/
+.create-satop-body {
+	height: 313px;
+	overflow: auto;
+}
+
+/** create-atmopsn dialog **/
+.create-atmopsn-body {
+	height: 366px;
+	overflow: auto;
+}
+
+.atmopsn-review-table {
+    width: 100%;
+}
+
+.pathRouteTable {
+    width: 778px;
+}
+
+table.atmopsn-spinner-width > tbody > tr > td > input[type=text] {
+    width: 97px;
+}
+
+table.atmopsn-maxNumCells-spinner-width > tbody > tr > td > input[type=text] {
+    width: 34px;
+}
+
+/*** Temporary class for demo integration */
+.mainMenuItem {
+	color: black !important;
+	font-weight: bold;
+	padding: 0 6px 0 6px;
+}
+
+.mainMenuItem:hover {
+	background-color: white;
+	border: 1px solid orange;
+	padding: 2px 5px;
+    text-decoration: underline;
+}
+
+.selectedNes {
+	font-weight:bold;
+}
+
+.endpointMappingMenu-width {
+	width: 65px;
+}
+
+.checkboxMargin {
+	margin: 1px 6px 1px 1px;
+	margin-right: 4px\9; /* Hack for >=IE6 */
+	margin-left: -3px\9; /* Hack for >=IE6 */
+	padding: 0px;
+	vertical-align: middle;
+}
+
+label.checkboxLabel {
+	vertical-align: middle;
+	color: #000000;
+}
+
+.noCellSpacing {
+	border-spacing: 0px;
+}
+
+input[type=radio] {
+	margin-top: 2px;
+	margin-top: -2px\9;
+}
+
+.alignTop, .otDialog .multipleRadioAlign > tbody > tr > td:first-child {
+	vertical-align: top !important;
+}
+
+/** columns styles - add new one if needed **/
+.col5 { width: 5%; }
+.col10 { width: 10%; }
+.col15 { width: 15%; }
+.col20 { width: 20%; }
+.col25 { width: 25%; }
+.col30 { width: 30%; }
+.col35 { width: 35%; }
+.col40 { width: 40%; }
+.col45 { width: 45%; }
+.col50 { width: 50%; }
+.col55 { width: 55%; }
+.col60 { width: 60%; }
+.col65 { width: 65%; }
+.col70 { width: 70%; }
+.col75 { width: 75%; }
+.col80 { width: 80%; }
+.col85 { width: 85%; }
+.col90 { width: 90%; }
+.col95 { width: 95%; }
+.col100 { width: 100%; }
+
+.colLeft { text-align: left; }
+.colRight { text-align: right; }
+.colCenter { text-align: center; }
+.colBold { font-weight: bold; }

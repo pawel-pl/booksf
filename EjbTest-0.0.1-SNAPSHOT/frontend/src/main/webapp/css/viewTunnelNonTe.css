@@ -1,0 +1,22 @@
+.lspDetailPanel{
+	margin-top: 5px;
+	width: 200px;
+}
+
+.lspDetailPanelBody {
+	overflow-y: auto;
+	overflow-x: auto;
+	height: 100px;
+}
+.lspCell {
+	border: none;
+}	
+
+.lspCell td {
+	border: none;
+	text-align:center;
+}
+
+.lspCell td:hover{
+	background-color: #EBF2F5;
+}

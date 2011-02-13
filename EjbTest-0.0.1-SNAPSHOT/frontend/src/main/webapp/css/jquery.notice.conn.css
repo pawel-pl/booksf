@@ -1,0 +1,81 @@
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.notice-wrap {
+	position: fixed;
+	bottom: 10px;
+	right: 26px; /* 10px + 16px, since 16px is the default scrollbar size in Windows */
+	width: 250px;
+	z-index: 9999;
+}
+
+* html .notice-wrap {
+	position: absolute;		
+}
+ 
+.notice-item {
+	background: #ffffff;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radious: 6px;
+	color: #000000;
+	padding: 6px 6px 6px 6px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	border: 1px solid #797997;
+	display: block;
+	position: relative;
+	margin: 12px 0 0 0;
+	min-height: 40px;
+}
+
+.notice-error {
+  border: 1px solid #bf1b00;
+  color: #ff0000;
+}
+
+.notice-error .notice-item-body{
+  padding-left: 20px;
+  background: url(../webuif/images/error_16.gif) no-repeat;
+}
+
+.notice-warning {
+  border: 1px solid #ff8000;
+  color: #ee7700;
+}
+
+.notice-warning .notice-item-body{
+  padding-left: 20px;
+  background: url(../webuif/images/m_warning16.gif) no-repeat;
+}
+
+.notice-info {
+    border: 1px solid #0b0c8b;
+    color: #0000ff;
+}
+
+.notice-info .notice-item-body{
+    padding-left: 20px;
+    background: url(../webuif/images/info_16.gif) no-repeat;
+}
+
+.notice-item-close {
+    color: #000000;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+    float: right;
+	cursor: pointer;
+}
+
+.notice-item-body {
+    margin: 0 0 0 0;
+}
+
+.notice-item-title {
+  font-weight: bold;
+}

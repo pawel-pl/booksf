@@ -1,0 +1,140 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:cc="http://webui.nsn.com/calypso"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<a4j:loadBundle basename="nat-resources" var="msg" />
+	<a4j:loadScript src="resource:///org/richfaces/renderkit/html/scripts/jquery/jquery.js" />
+	<!-- load the missing jquery-patch too -->
+	<a4j:loadScript src="resource:///org/richfaces/renderkit/html/scripts/jquery.hotkeys.js" />
+    <a4j:loadScript src="/js/utils.js"/>
+    <a4j:loadScript src="/js/path.js"/>
+
+	<script language="javascript" type="text/javascript">
+        //<![CDATA[
+	        
+	        jQuery("#exportPathForm").ready((function() {
+					
+				 jQuery("#exportPathForm:sdt tr").each(function() {
+			    var tr = this;
+			    var counter = 0;
+			    jQuery("td", tr).each(function(index, value) {
+			      var td = jQuery(this);
+			
+			      if (td.text() == "") {
+			        counter++;
+			        td.remove();
+			      }
+			    });
+			    if (counter !== 0) {
+			    	jQuery("td", tr)
+			        .attr('colSpan', '' + parseInt(counter + 1,10) + '');
+			    }
+			  });
+			
+			  //$('td.colspans').each(function(){
+			    //var td = $(this);
+			    //var colspans = [];
+			
+			    //td.siblings().each(function() {
+			      //colspans.push(($(this).attr('colSpan')) == null ? 1 : $(this).attr('colSpan'));
+			   // });
+			
+			    //td.text(colspans.join(','));
+			  //});
+			
+			}));        
+        //]]>
+    </script>
+    
+	<rich:modalPanel id="exportPathPanel" styleClass="otDialog" width="526" height="463" resizeable="false"
+			>
+		<f:facet name="header">
+			<h:panelGroup id="headerGroup">
+				<h:outputText value="#{msg.printPathTitle}" rendered="#{pathListBean.exportType=='PRINT'}"/>
+				<h:outputText value="#{msg.exportPathTitle}" rendered="#{pathListBean.exportType=='CSV'}"/>
+			</h:panelGroup>
+		</f:facet>
+		<f:facet name="controls">
+            <a id="hidelinkExportPath" class="closeButton" onclick="Richfaces.hideModalPanel('exportPathPanel'); return false;" href="#" ></a>
+        </f:facet>
+        
+        <rich:hotKey key="ESC" handler="Richfaces.hideModalPanel('exportPathPanel'); return false;"  selector="#exportPathPanelContainer" href="#" />
+        <rich:hotKey key="return" href="#" selector="#exportPathPanelContainer" handler="exportPathInst.handleReturnKey(); event.stopPropagation(); event.preventDefault(); return false;"/>
+        
+        <a4j:form id="exportPathForm">
+				<rich:panel id="paths_scrollabletable"
+							style="border-style:none">
+					<rich:scrollableDataTable var="cap" cellpadding="0" cellspacing="0" 
+											  value="#{pathListBean.pathListEmpty}" rows="1" columns="6"
+											  rendered="#{empty pathListBean.pathList}" id="sdt"   width="500px">
+
+						<rich:column>
+							<f:facet name="header"><h:outputText value="#{msg.path_pathName}"/></f:facet>
+						</rich:column>
+
+						<rich:column>
+							<f:facet name="header"><h:outputText value="#{msg.path_operationalState}"/></f:facet>
+						</rich:column>
+
+						<rich:column>
+							<f:facet name="header"><h:outputText value="#{msg.path_layer}"/></f:facet>
+						</rich:column>
+
+						<rich:column>
+							<f:facet name="header"><h:outputText value="#{msg.path_bandwidth}"/></f:facet>
+							<h:outputText value="#{msg.path_noPath}" />
+						</rich:column>
+
+						<rich:column>
+							<f:facet name="header"><h:outputText value="#{msg.path_actualCreationState}"/></f:facet>
+						</rich:column>
+
+						<rich:column>
+							<f:facet name="header"><h:outputText value="#{msg.path_requiredCreationState}"/></f:facet>
+						</rich:column>				
+
+					</rich:scrollableDataTable>								
+				</rich:panel>
+        	<h:inputHidden id="exportType" value="#{pathListBean.exportType}" />
+        	<div class="dialog-content-body">
+	        	<rich:panel id="contentSeparatorPanel" styleClass="groupPanel" bodyClass="groupPanelBody" 
+	        			headerClass="groupPanelHeaderNoTop subtitleGroup" header="#{msg.contentSeparatorHeader}" rendered="#{pathListBean.exportType=='CSV'}">
+	                <h:panelGrid id="contentSeparatorGrid" columns="2" cellspacing="0" cellpadding="0" styleClass="dialogAlign" rowClasses="verticalSpacingNoFirst">
+	                	<h:outputLabel for="contentSeparatorInput" id="contentSeparatorInputLabel" value="#{msg.contentSeparatorLabel}" />
+	                    <h:selectOneMenu id="contentSeparatorInput" value="#{pathListBean.contentSeparator}" styleClass="alignLeft" style="display: block;">
+							<f:selectItems value="#{pathListBean.contentSeparatorsList}" />
+	                    </h:selectOneMenu>
+	                </h:panelGrid>
+		      	</rich:panel>
+		 		<rich:panel id="columnSelectorPanel" styleClass="groupPanel" bodyClass="groupPanelBody" 
+		 				headerClass="groupPanelHeader subtitleGroup" header="#{msg.columnSelectorHeader}">
+		            <ui:include src="columnSelector.xhtml"/>
+		 		</rich:panel>
+				<div class="dialog-command-bar" id="buttonsId">
+					<a4j:outputPanel id="helpIcon">
+			        	<cc:help id="ExportPathHelp" helpId="connectivity" helpKey="export_path" resizable="true" 
+	                             height="600" width="800" scrollbars="true" location="" type="image"
+	                             tooltip="#{msg.exportPath_help}" image="/webuif/images/t_nsn_help_basis16.png"/>
+			      	</a4j:outputPanel>
+					<h:commandButton  id="csvExportButton" styleClass="button button-big-spacing-left" value="#{msg.exportCSV}" 
+	                                   action="#{pathListBean.exportToCSV}" 
+	                                   rendered="#{pathListBean.exportType=='CSV'}"/>
+               
+	               <h:commandButton id="printButton" styleClass="button button-big-spacing-left" value="#{msg.exportPrint}"
+	               		onclick="window.open('html/nat-ce-service-inventory/showPaths/printPage.jsf','printPage'); return false;"
+	               		rendered="#{pathListBean.exportType=='PRINT'}"/>
+	                
+	                <a4j:commandButton id="cancelButton" value="#{msg.exportPathCancel}" styleClass="button button-spacing-left"
+						onclick="helperUtils.hideDialog('exportPathPanel')" type="reset" />
+				</div>
+					
+				<a4j:jsFunction name="updateExportPath" reRender="exportPathForm, headerGroup" limitToList="true">
+						<a4j:actionparam name="exportType" converter="stringToExportTypeConverter" assignTo="#{pathListBean.exportType}"/>
+				</a4j:jsFunction>
+			</div>
+		</a4j:form>
+	</rich:modalPanel>
+</ui:composition>

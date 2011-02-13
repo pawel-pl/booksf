@@ -1,0 +1,765 @@
+@IMPORT url("orangeTouch.css");
+
+/* resizable panels */
+.vertical-splitter { /* splits between tree and map */
+	cursor: col-resize;
+	font-size: 3pt;
+	position: absolute;
+	width: 5px;
+	background-color: silver;
+	z-index: 1049 !important;
+}
+
+.horizontal-splitter { /* splits between tree/map and details area */
+	cursor: row-resize;
+	font-size: 3pt;
+	position: absolute;
+	width: 100%;
+	height: 4px;
+	background-color: silver;
+	z-index: 1049 !important;
+}
+
+.phantom-splitter {
+	/* bar that appears while one of the splitters is being dragged (like a preview bar) */
+	display: none;
+	font-size: 3pt;
+	position: absolute;
+	background-color: silver;
+	z-index: 1050 !important;
+}
+
+.tree-pane {
+	overflow: auto; 
+	border-right: 2px solid white;
+	border-bottom: 2px solid white;
+}
+
+.map-pane {
+	border-left: 2px solid white;
+	border-bottom: 2px solid white;
+}
+
+.details-pane {
+	border-top: 2px solid white;
+}
+.rich-tool-tip {
+	background-color: #eef2f8;
+	border-color: #7196c8;
+	z-index:1200 !important;
+}
+
+.rich-tree-node-selected span{
+    background-color: #C2E0FF;
+}
+
+.rich-tree-node-text{
+	color:#000000 !important;
+}
+
+.rich-menu-item-hover, .rich-menu-group-hover {
+	background-color: #C2E0FF;	
+	border-color: #B1ADA7
+}
+
+.rich-mp-content .rich-mpnl-header {
+    background: none;
+    border: none;
+    color: #000066;
+    padding-left: 12px;
+    font-size:10pt;
+}
+
+
+.pic{
+    margin-bottom: -4px;
+	margin-right: 2px;
+}
+
+.barsearch {
+	height: 16px;
+	width: 100px;
+}
+
+.alarmData {
+	font-weight: bold;
+}
+
+form {
+	margin: 0px;
+}
+
+.rich-modalpanel, .rich-mpnl_panel {
+	z-index: 1100 !important;
+}
+
+.mapContextMenu, .treeContextMenu, .NSNSubMenu, .mapContextMenu div {
+	z-index: 1200 !important;
+}
+
+#about_pane {
+	z-index:1300 !important;
+}
+
+label {
+	line-height:1.7;
+	vertical-align: top;
+}
+
+.error-label {
+	color:	red;
+}
+
+.content-area {
+	height: 100%;
+}
+
+/** inventory area **/
+/*.dr-mpnl-pnl {
+	overflow: auto !important
+}*/
+
+.rich-mpnl-body {
+	height: 92%;
+	width: 99%;
+	padding: 0px;
+}
+
+.rich-mpnl-body .content, .nopadding {
+	padding: 0px;
+}
+
+.inventory-layout, .inventory-display-area {
+	padding: 0px;
+	margin: 0px;
+	width: 100%;	
+}
+
+.inventory-form {
+	margin: 0px;
+	padding: 0px;	
+}
+
+.inventory-layout {
+	border: 0px !important;	
+}
+
+.inventory-layout td {
+	padding: 0px;	
+	vertical-align: top;
+}
+
+.inventory-filter-area .rich-panel-body, .inventory-display-area .rich-panel-body {
+	padding: 0px;
+}
+
+.inventory-filter-area {
+	border: none; 
+}
+
+.inventory-filter-width {
+	width: 200px; 
+}
+
+.inventory-display-area {
+	border: none;	
+}
+
+.inventory-filter-list {
+	overflow: auto; 
+	border: 1px solid #CCCCCC;	
+}
+
+/*hide fake column*/
+.pl-table .dr-sdt-c-f {
+	display: none;	
+}
+
+.pl-table {
+	width: 500% !important;
+	height:100px;
+	padding: 0px;
+	border: 1px solid #797997;
+}
+
+.pl-table .dr-sdt-hsep {
+	/*hide separator line*/
+	background-image: none !important;	
+}
+
+/*hide fake column*/
+.inventory-table .dr-sdt-c-f {
+	display: none;	
+}
+
+
+
+.inventory-table, .dialog-content-body .extdt-maindiv ,.dialog-content-sbnetwork-body {
+	width: 100% !important; 
+	padding: 0px;
+	border: 1px solid #797997;
+}
+
+.inventory-table .dr-sdt-hsep {
+	/*hide separator line*/
+	background-image: none !important;	
+}
+
+#inventory-table-toolbar .table-actions {
+	float: right;
+}
+
+#inventory-table-toolbar .table-context {
+	float: left;
+}
+
+#inventory-table-toolbar {
+	overflow: hidden;
+	width: 100%;
+}
+
+.clear {
+	clear: both;
+	height: 0px;	
+}
+
+.alignRight	{
+	text-align: right;
+}
+
+.alignLeft{
+	text-align: left;
+}
+
+.inventory-table th.rich-sdt-header-cell div, .otTable th {
+	text-align: left;
+ }
+
+.inventory-table tr .otTable tr {
+	color: #333333 !important;	
+	font-weight:normal;
+	font-size:10pt;
+	height:16px;
+}
+
+
+.inventory-table tr.odd, .otTable tr.odd {
+	background-color:#e6e6e6;
+	border-right: #cfcfcf 1px solid;
+	border-top: #e6e6e6 0px solid;
+	border-left: #cfcfcf 0px solid;
+	border-bottom: #e6e6e6 1px solid;
+}
+
+.inventory-table tr.even, .otTable tr.even {
+	background-color: #eeeeee;
+	border-right: #cfcfcf 1px solid; /* make sure there is only 1px divider between cells */
+	border-top: #eeeeee 0px solid;
+	border-left: #cfcfcf 0px solid;
+	border-bottom: #eeeeee 1px solid;
+}
+
+.inventory-table tr.odd.selected, .otTable tr.odd.selected ,
+.inventory-table tr.even.selected, .otTable tr.even.selected {
+	background-color: #C2E0FF;
+}
+
+.inventory-table td, .otTable td {
+	border-bottom: 0px !important;
+	color: #333333 !important;
+}
+
+.inventory-table .dr-sdt-cbody, .otTable .dr-sdt-cbody, .otTable .rich-extdt-cell {
+	height: 18px;
+	padding: 1px 3px;	
+}
+
+.inventory-table .header, .inventory-table .rich-sdt-header-cell,
+.otTable .header, .otTable .rich-sdt-header-cell{
+	/*sortable table headers*/
+	font-size: 10pt;
+	font-family: Arial,Helvetica, sans-serif;
+	color: #000066 !important; /* should act as link */
+	background-color: #eeeeee;
+	background-image: url(../images/button_gradient_h18.gif);
+	background-repeat: repeat-x;
+	background-position: center center;
+	border-bottom: 1px solid #797997;
+	border-right: 1px solid #797997;
+	white-space: nowrap;
+}
+
+.otTable .extdt-subheadercell {
+	padding: 0px 3px;	
+}
+
+.ottableNumber{
+	padding-left:12px;
+	padding-right:1px;
+	text-align:right;
+	border-right:#cfcfcf 1px inset;
+	white-space:nowrap;
+}
+
+.ottableText{
+	padding-left:1px;
+	padding-right:12px;
+	text-align:left;
+	white-space:nowrap;
+}
+
+.ottableButton{
+	padding-left:15px;
+	padding-right:1px;
+	border: none;
+	float: right;		
+	font-family: Arial,Helvetica, sans-serif;
+	background-image: url(../images/toolbarIcons/t_delete.gif);
+	background-repeat: no-repeat;	
+	background-position: left top;
+	white-space:nowrap;
+}
+
+/*****************************/
+html, body {
+	height: 100%;
+}
+/*** Orange touch *****************/
+label, .label {
+	color: #000066;
+	font-size: 10pt;
+	font-family: Arial,Helvetica, sans-serif;
+	white-space:nowrap;
+}
+
+.textQuery {
+	font-size: 10pt;
+	color:	#000033;
+	font-weight: normal;
+}
+
+label-black, .label-black {
+	color: #000000;
+	font-size: 9pt;
+	font-family: Arial,Helvetica, sans-serif;
+	white-space:nowrap;
+}
+
+.title {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000066;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+.title-lv2 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000066;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+.title-lv3 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000066;
+	font-size: 10pt;
+}
+
+
+/**************************/
+
+.right-separator {
+	border-right: 1px solid black;
+	padding-right: 5px;
+}
+
+.table-action {
+	padding-left: 5px;
+}
+
+.action-print {
+	padding-left: 18px;
+	background: url("../images/icons/t_print16.gif") no-repeat
+}
+
+.action-save {
+	padding-left: 18px;
+	background: url("../images/icons/t_save16.gif") no-repeat
+}
+
+.hiT7300 {
+	padding-left: 18px;
+	background: url("../images/netypes/hit7300_orange16.png") no-repeat 0 2px
+}
+
+.junipermx {
+	padding-left: 18px;
+	background: url("../images/netypes/junipermx_orange16.png") no-repeat 0 2px
+}
+
+/* an area which makes the mouse as a hand */
+.cursor-hand {
+	cursor: pointer;
+}
+
+.create-subnetwork-dialog {
+	height:		190px;
+	width:		250px;
+}
+
+.spinnerWithUnit {
+	float:left;
+}
+.spinnerWithUnit input.rich-spinner-input {
+	text-align: right;
+	border: 1px solid #797997 !important;
+}
+
+.spinnerWithUnit .dr-spnr-e {
+	border-style:none !important;
+}
+
+.unit {
+	clear: both;
+	margin-left: 6px;
+}
+
+/*** Mandatory field **/
+
+.otformRow .otIFmandatoryError
+{
+	background-color: rgb(255, 0, 0);
+	border: 2px solid #ff0000; 
+}
+
+.otformRow input, .spinnerWithUnit input.rich-spinner-input, .otformRow select {
+	margin-left:0px;
+	height:18px;
+	border: 1px solid #797997;
+	font-family: Arial,Helvetica, sans-serif;
+	color:#000000 !important;
+}
+
+/**Added color attribute bcos calypso still has blue color for inputtext [subnetworkName]*/
+input.medium-width {
+	width: 300px;	
+}
+
+input.small {
+	width: 200px;
+}
+.otformRow textarea {
+	border: 1px solid #797997;
+	font-size: 10pt;
+	font-family: Arial,Helvetica, sans-serif;
+}
+
+textarea {
+	border: 1px solid #797997;
+	font-size: 10pt;
+	font-family: Arial,Helvetica, sans-serif;
+}
+
+.otformRow textarea.description {
+	margin-left:0px;
+}
+
+/**Added color attribute bcos calypso still has blue color for inputtext [subnetworkName]*/
+.otformRow textarea.description, textarea.medium-size {
+	width: 304px;
+	height:54px;
+	color:#000000 !important; 
+}
+
+.otSBformRow .otmandatoryGroup{
+  width: 8px;
+  height:21px;
+  position: absolute;
+  margin-top:1px;
+  
+  background: url("../images/mandatory_body.png") repeat-y 0 0px;
+  margin-left: -8px;
+}
+.otSBformRow .otmandatoryBorderTop{
+  width: 7px;
+  height: 14px;
+  margin: -1px 0px 0px 1px;
+  position: absolute;
+  background: url("../images/mandatory_top_bottom.png") no-repeat top right;
+}
+.otSBformRow .otmandatoryBorderBottom{
+  width: 7px;
+  height:22px;
+  margin: 0px 0px 0px 1px;
+  position: absolute;
+  background: url("../images/mandatory_top_bottom.png") no-repeat bottom right;
+}
+.otSBformRow .otasterisk{
+  background: url("../images/mandatory_asterisk.png") no-repeat 0 50%;
+  width: 8px;
+  height: 23px;
+  position: absolute;
+  bottom: 1px;
+  right: 0px;
+  margin: -2px 0px;
+}
+
+
+.small-margin-top {
+  margin-top: 5px;
+}
+/***   control for taking the complete blockarea */
+.blockComplete {
+	display:block;
+	width:100%;
+}
+	
+.output-style{
+	color: black;
+	}
+
+.portTree {
+	overflow: auto;
+	width: 250px;
+	height: 200px;
+	border: 1px solid #797997;
+}
+
+.portTree table {
+	display: block;
+}
+
+.portTree .rich-tree-node-handleicon {
+	display: none;	
+}
+
+.portTree .dr-tree-h-ic-img-md {
+	display: none;	
+}
+.porttreelist {
+ 	text-align:center;
+ 	color: #000000;
+}
+
+.nohighlight {
+	text-decoration: none;
+	}
+
+.block {
+	display: block;
+}
+
+.draggable {
+	border: 1px solid #cccccc;
+	padding: 2px;
+	/*to be over the context menu and modeless dialog*/ 
+	z-index: 1300;
+}
+.draggable img {
+	vertical-align: middle;
+	margin-right: 2px;
+}
+
+.treeNodeSelected {
+    font-family: Tahoma, Arial, Helvetica;
+    background-color: #e6e6e6;
+}
+
+/** Assign NEs **/
+.listShuttle .rich-shuttle-source-caption, 
+.listShuttle .rich-shuttle-target-caption {
+	font-weight: normal !important;
+	color: #000066; 	
+	font-size: 10pt !important;
+	font-family: Arial,Helvetica, sans-serif;
+	padding: 0 0 6px 0;
+}
+
+.listShuttle .rich-shuttle-target-caption {
+	padding-left: 12px;
+}
+
+.listShuttle .rich-shuttle-controls {
+	padding: 0px;	
+}
+
+.listShuttle .rich-shuttle-source-items {
+	margin: 0 12px 0 0;	
+}
+.listShuttle .rich-shuttle-target-items {
+	margin: 0 0 0 12px;
+}
+
+/** Physical Trail Properties */
+.formGrid {
+	border-collapse: collapse;
+}
+.formGrid td{
+	padding-bottom: 6px;
+}
+
+.formGrid td span{
+	color: black;
+}
+
+.group-left-indent {
+	margin-left: 12px;
+}
+
+.group-top-margin {
+	margin-top: 12px;
+}
+
+.column-left-spacing {
+	margin-left: 80px;
+}
+
+.column-left-spacing-indented {
+	margin-left: 92px;
+}
+
+.label-margin-right {
+	margin-right: 12px;
+}
+
+.form-field-margin {
+	margin-bottom: 6px;
+}
+
+/************/
+
+.hiddenForm {
+	height: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+/********/
+
+.wrapper-panel {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+}
+
+.margin-label {
+	margin-left: 12px;
+}
+
+.infotip-grid {
+	border-collapse: collapse;
+}
+
+.infotip-grid td {
+	color: black;
+	margin: 0px;	
+}
+
+.infotip-grid td.label {
+	color: #000066;
+	padding-right: 6px;
+}
+
+input.large-width {
+	width :500px;
+	overflow: hidden;
+	margin-bottom: 3px !important;
+	margin-top: 3px !important;	
+	margin-left: 3px !important;
+}
+
+.filterButton{
+	width: 55px;
+	height: 22px;
+	margin-bottom: 6px !important;
+	margin-left: 12px !important;
+	margin-top: -1px !important;
+}
+.ajaxLoadingImage {
+    position:absolute;
+    top: 95%;
+    left: 50%;
+    margin-left: -58px;
+    margin-top: -30px;
+    background: url("../images/ajax_progress.gif") no-repeat 5px 5px;
+    padding: 6px 5px 5px 26px;
+    border: 1px solid #797997;
+    vertical-align: middle;
+    /*to be on top of all other controls*/ 
+    z-index: 9999;
+}
+.otBgDialog .otmandatoryGroup{
+  width: 8px;
+  height:21px;
+  position: absolute;
+  margin-top:13px;  
+  background: url("../images/mandatory_body.png") repeat-y 0 0px;
+  margin-left: -8px;
+}
+.otBgDialog .otmandatoryBorderTop{
+  width: 7px;
+  height: 16px;
+  margin: -1px 0px 0px 1px;
+  position: absolute;
+  background: url("../images/mandatory_top_bottom.png") no-repeat top right;
+}
+.otBgDialog .otmandatoryBorderBottom{
+  width: 7px;
+  height:21px;
+  margin: 0px 0px 0px 1px;
+  position: absolute;
+  background: url("../images/mandatory_top_bottom.png") no-repeat bottom right;
+}
+.otBgDialog .otasterisk{
+  background: url("../images/mandatory_asterisk.png") no-repeat 0 50%;
+  width: 8px;
+  height: 23px;
+  position: absolute;
+  bottom: 1px;
+  right: 0px;
+  margin: -2px 0px;
+}
+
+.command-bar input.button, .dialog-command-bar input.button {
+	margin-bottom:0 !important;
+	margin-top:0 !important;
+	padding:0 6px;
+	width:70px;
+}
+
+otSBDialog .dialog-command-bar {
+	background-color:#D2D2D2;
+	border-top:1px solid #666666;
+	padding:12px;
+	text-align:right;
+}
+
+
+/** product banner alignment fix **/
+.pbLinkIcon, .pbLinkIcon_ie {
+	background-color: white; 
+	border: 1px solid transparent;
+	vertical-align: middle;
+	
+}
+
+.toolbartool a img {
+	vertical-align: middle; 
+	border: 1px solid transparent;
+}
+
+.toolbartool a:hover img {
+	border-width: 1px !important;
+}
+
+
+.toolbartool a {
+	vertical-align: middle;
+	display: block;
+}
+/***********************************/
+.otDialog1 .dialog-command-bar {	
+	bottom: 0;
+	left: 0;
+	right: 0;
+}

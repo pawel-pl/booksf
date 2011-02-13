@@ -1,0 +1,31 @@
+/* services Table Fix */
+.fixedLength {	  
+	cursor: pointer;
+	padding-right: 15px;
+}
+
+
+/*hacks to have style on services table controls*/
+/*
+#servicesTableControls .items-label {
+	background:none repeat scroll 0 0 transparent;
+	border:medium none;
+	color: #000066 !important;
+	font:bold 10pt Arial !important;
+}
+#servicesTableControls .page-number-input {
+	margin-left:12px;
+	margin-right:2px;
+	text-align:right;
+	vertical-align:middle;
+	width:50px;
+}
+#servicesTableControls .items-ppage-input {
+	margin-right:6px;
+}
+#servicesTableControls {
+	margin-top: 3px;
+}
+#servicesTableControls table {
+	border: none !important;
+}*/
