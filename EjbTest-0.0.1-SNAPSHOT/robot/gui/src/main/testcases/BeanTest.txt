@@ -1,0 +1,86 @@
+*** Settings ***
+Library         SeleniumLibrary  ${EMPTY}  ${EMPTY}  4449  ${EMPTY}
+
+*** Variables ***
+${address}  localhost:8080
+${context}  /EjbTestApp
+${delay}  1s
+${rowId}  9
+
+*** Test Cases ***
+Open browser
+    Open Browser  http://${address}${context}  firefox
+
+MenuTest
+    Set Selenium Speed  ${delay}
+    Wait Until Page Contains Element  xpath=//*[@id='form']  5s
+
+AddProduct
+    Set Selenium Speed  ${delay}
+    selectFromMenu  tablehideform:mi3
+    Wait Until Page Contains Element  xpath=//*[@id='addForm']  5s
+     Page Should Contain Textfield   xpath=//*[@id='addForm:name']
+     Page Should Contain Textfield   xpath=//*[@id='addForm:quan']
+     Page Should Contain Textfield   xpath=//*[@id='addForm:price']
+    Page Should Contain Element  xpath=//*[@id='addForm:description']
+    Page Should Contain Element  xpath=//*[@id='addForm:supList']  new prod 1
+     Input Text  xpath=//*[@id='addForm:name']  new prod 1
+     Input Text  xpath=//*[@id='addForm:quan']  34
+     Input Text  xpath=//*[@id='addForm:price']  34
+     Input Text  xpath=//*[@id='addForm:description']  description
+     Input Text  xpath=//*[@id='addForm:supListvalue']  1
+    Click Button  xpath=//*[@id='addForm:addProduct']  dont_wait
+    Alert Should Be Present  Product was added
+
+EditProduct
+    Set Selenium Speed  ${delay}
+    selectFromMenu  tablehideform:mi1
+    Click Element  xpath=//*[@id='products:productsList:${rowId}:editBtn']  dont_wait
+    Wait Until Page Contains Element  xpath=//*[@id='editProductForm']  5s
+     Page Should Contain Textfield   xpath=//*[@id='editProductForm:name']
+     Page Should Contain Textfield   xpath=//*[@id='editProductForm:quan']
+     Page Should Contain Textfield   xpath=//*[@id='editProductForm:price']
+     Page Should Contain Textfield   xpath=//*[@id='editProductForm:description']
+     Input Text  xpath=//*[@id='editProductForm:name']  edited text ${rowId}
+     Input Text  xpath=//*[@id='editProductForm:quan']  ${rowId}
+     Input Text  xpath=//*[@id='editProductForm:price']  ${rowId}
+     Input Text  xpath=//*[@id='editProductForm:description']  edited text ${rowId}
+    Click Button  xpath=//*[@id='editProductForm:editProduct']  dont_wait
+    Wait Until Page Contains Element  xpath=//*[@id='products:productsList']  5s
+    Page Should Contain  edited text ${rowId}
+
+SearchTest
+    Set Selenium Speed  ${delay}
+    selectFromMenu  tablehideform:mi2
+    Wait Until Page Contains Element  xpath=//*[@id='searchForm']  5s
+     Page Should Contain Textfield   xpath=//*[@id='searchForm:name']
+     Page Should Contain Textfield   xpath=//*[@id='searchForm:quan']
+     Input Text  xpath=//*[@id='searchForm:name']  edited text ${rowId}
+     Input Text  xpath=//*[@id='searchForm:quan']  1
+    Click Button  xpath=//*[@id='searchForm:search']  dont_wait
+    Wait Until Page Contains Element  xpath=//*[@id='resultForm:taskList']  5s
+
+RemoveProduct
+    Set Selenium Speed  ${delay}
+    selectFromMenu  tablehideform:mi1
+    Click Element  xpath=//*[@id='products:productsList:${rowId}:removeBtn']  dont_wait
+    Wait Until Page Contains Element  xpath=//*[@id='products:productsList']  5s
+    Page Should Not Contain  edited text ${rowId}
+
+FailedSearchTest
+    Set Selenium Speed  ${delay}
+    selectFromMenu  tablehideform:mi2
+    Wait Until Page Contains Element  xpath=//*[@id='searchForm']  5s
+     Page Should Contain Textfield   xpath=//*[@id='searchForm:name']
+     Page Should Contain Textfield   xpath=//*[@id='searchForm:quan']
+     Input Text  xpath=//*[@id='searchForm:name']  edited text ${rowId}
+     Input Text  xpath=//*[@id='searchForm:quan']  1
+    Click Button  xpath=//*[@id='searchForm:search']  dont_wait
+    Wait Until Page Contains Element  xpath=//*[@id='resultForm:taskList']  5s
+
+*** Keywords ***
+selectFromMenu
+    [Arguments]  ${item}
+    Click Element  xpath=//*[@id='iconform:menuGroup']  dont_wait
+    Click Element  xpath=//*[@id='${item}']
+
