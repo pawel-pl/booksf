@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>EjbTest</artifactId>
+		<groupId>EjbTest</groupId>
+		<version>1.0</version>
+	</parent>
+	<groupId>EjbTest</groupId>
+	<artifactId>ear</artifactId>
+	<packaging>ear</packaging>
+	<name>${project.artifactId}</name>
+	<dependencies>
+		<dependency>
+			<groupId>EjbTest</groupId>
+			<artifactId>core</artifactId>
+			<type>ejb</type>
+			<version>${project.parent.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>EjbTest</groupId>
+			<artifactId>frontend</artifactId>
+			<type>war</type>
+			<version>${project.parent.version}</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<finalName>EjbTest</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<modules>
+						<ejbModule>
+							<groupId>EjbTest</groupId>
+							<artifactId>core</artifactId>
+						</ejbModule>
+						<webModule>
+							<groupId>EjbTest</groupId>
+							<artifactId>frontend</artifactId>
+							<contextRoot>EjbTest</contextRoot>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<configuration>
+							<tasks>
+								<delete
+									dir="${env.JBOSS_HOME}/server/default/deploy/${project.build.finalName}.ear"
+									quiet="true" />
+								<copy
+									file="${project.build.directory}/${project.build.finalName}.ear"
+									tofile="${env.JBOSS_HOME}/server/default/deploy/${project.build.finalName}.ear"
+									overwrite="true" />
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
