@@ -10,6 +10,8 @@ import core.ejb.model.Customer;
 @Remote
 public interface TravelAgentRemote {
 
+    public void testMessaging();
+    
     public void removeAndMerge();
     
     public void merge();

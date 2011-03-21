@@ -2,6 +2,8 @@ package client.ctx.provider;
 
 import java.util.Hashtable;
 
+import javax.jms.Queue;
+import javax.jms.QueueConnectionFactory;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
@@ -33,6 +35,8 @@ public class ServiceLocator {
 		return sl;
 	}
 	
+	public static final String CONNECTION_FACTORY = "ConnectionFactory";
+	public static final String sl2MdbQueue = "/queue/sl2mdb";
 	public static final String TRAVEL_AGENT_NAME = "EjbTest/TravelAgentBean/remote";
 	public static final String TX_TRAVEL_AGENT_NAME = "EjbTest/TransactionPersistenceContextBean/remote";
 	public static final String EX_TRAVEL_AGENT_NAME = "EjbTest/ExtendedPersistenceContextBean/remote";
@@ -55,6 +59,16 @@ public class ServiceLocator {
 	private Object lookup(String beanName) throws Exception {
 		
 		return ctx.lookup(beanName);
+	}
+	
+	public QueueConnectionFactory getConnectionFactory() throws Exception {
+		
+		return (QueueConnectionFactory)lookup(CONNECTION_FACTORY);
+	}
+	
+	public Queue getSl2MdbQueue() throws Exception {
+		
+		return (Queue)lookup(sl2MdbQueue);
 	}
 	
 	private static InitialContext getContext() throws Exception{

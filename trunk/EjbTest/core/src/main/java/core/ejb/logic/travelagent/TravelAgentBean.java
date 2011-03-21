@@ -2,7 +2,14 @@ package core.ejb.logic.travelagent;
 
 import java.util.List;
 
+import javax.annotation.Resource;
 import javax.ejb.Stateful;
+import javax.jms.Connection;
+import javax.jms.JMSException;
+import javax.jms.Queue;
+import javax.jms.QueueConnectionFactory;
+import javax.jms.Session;
+import javax.jms.TextMessage;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
@@ -27,20 +34,56 @@ public class TravelAgentBean implements TravelAgentRemote {
     private EntityManager manager;
     private Customer cust = null;
 
+    @Resource(mappedName = "java:/JmsXA")
+    private QueueConnectionFactory jmsConnFactory;
+
+    @Resource(mappedName = "/queue/sl2mdb")
+    private Queue sl2MdbQueue;
+
+    @Resource(mappedName = "queue/mdb2mdb")
+    private Queue mdb2MdbQueue;
+
+    public void testMessaging() {
+
+	System.out.println("Test Messaging");
+	Connection conn = null;
+	try {
+	    conn = jmsConnFactory.createConnection();
+	    javax.jms.Session session = conn.createSession(true,
+		    Session.SESSION_TRANSACTED);
+	    javax.jms.MessageProducer producer = session
+		    .createProducer(sl2MdbQueue);
+	    TextMessage msg = session.createTextMessage("Stateless to MDB");
+	    msg.setStringProperty("type", "type1");
+	    msg.setJMSReplyTo(mdb2MdbQueue);
+	    producer.send(msg);
+	} catch (Exception ex) {
+	    ex.printStackTrace();
+	} finally {
+	    if (conn != null) {
+		try {
+		    conn.close();
+		} catch (JMSException e) {
+		    e.printStackTrace();
+		}
+	    }
+	}
+    }
+
     public void removeAndMerge() {
 
 	try {
 	    mgm = factory.createEntityManager();
 	    cust = mgm.find(Customer.class, 1l);
 	    mgm.remove(cust);
-	    //mgm.merge(cust);
+	    // mgm.merge(cust);
 	} catch (Exception ex) {
 	    ex.printStackTrace();
 	}
     }
 
     public void merge() {
-	
+
 	mgm.joinTransaction();
 	mgm.clear();
 	mgm.merge(cust);
@@ -67,8 +110,8 @@ public class TravelAgentBean implements TravelAgentRemote {
     }
 
     public List<?> executeNativeQuery(String query, String mappingName) {
-	
-	System.out.println("Executing query: "+query);
+
+	System.out.println("Executing query: " + query);
 	return manager.createNativeQuery(query, mappingName).getResultList();
     }
 
