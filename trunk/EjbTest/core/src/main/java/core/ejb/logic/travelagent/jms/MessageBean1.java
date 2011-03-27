@@ -1,4 +1,4 @@
-package core.ejb.logic.travelagent.jms;
+/*package core.ejb.logic.travelagent.jms;
 
 import javax.annotation.Resource;
 import javax.ejb.ActivationConfigProperty;
@@ -60,3 +60,4 @@ public class MessageBean1 implements MessageListener {
     }
 
 }
+*/

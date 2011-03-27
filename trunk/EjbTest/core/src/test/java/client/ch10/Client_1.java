@@ -10,17 +10,25 @@ import javax.jms.Session;
 import javax.jms.TextMessage;
 
 import client.ctx.provider.ServiceLocator;
+import core.ejb.logic.travelagent.TestBeanRemote;
 import core.ejb.logic.travelagent.TravelAgentRemote;
 import core.ejb.model.Address;
+import core.ejb.model.Book;
 import core.ejb.model.CreditCard;
 import core.ejb.model.Customer;
+import core.ejb.model.Reader;
 import core.ejb.model.Reservation;
 
 public class Client_1 {
     public static void main(String[] args) {
 	try {
-	    TravelAgentRemote travelAgent = ServiceLocator.getInstance()
-		    .getTravelAgent();
+	    /*
+	     * TravelAgentRemote travelAgent = ServiceLocator.getInstance()
+	     * .getTravelAgent();
+	     */
+
+	    TestBeanRemote testBean = ServiceLocator.getInstance()
+		    .getTestBean();
 
 	    // initDB();
 
@@ -41,8 +49,15 @@ public class Client_1 {
 	     * 
 	     * System.out.println(result);
 	     */
-	    travelAgent.testMessaging();
-	    sendMessage();
+	    // travelAgent.testMessaging();
+	    // sendMessage();
+	    // travelAgent.persistModel(1);
+	    
+	    //addReadersToDB();
+	    //String query="select r.age from Reader r group by r.age having r.age > avg(r.age)";
+	    //testBean.executeJpaQuery(query);
+	    //testBean.compareReferances();
+	    testBean.mandatoryTransaction();
 
 	} catch (Exception ne) {
 	    ne.printStackTrace();
@@ -65,6 +80,20 @@ public class Client_1 {
 	producer.send(msg);
 
 	conn.close();
+    }
+
+    private static void addReadersToDB() throws Exception {
+
+	TravelAgentRemote travelAgent = ServiceLocator.getInstance()
+		.getTravelAgent();
+
+	for (int i = 0; i < 2; i++) {
+	    Set<Book> books = new HashSet<Book>();
+	    for (int j = 0; j < 2; j++) {
+		books.add(new Book("title " + j));
+	    }
+	    travelAgent.persistEntity(new Reader(i, books));
+	}
     }
 
     @SuppressWarnings("unused")
