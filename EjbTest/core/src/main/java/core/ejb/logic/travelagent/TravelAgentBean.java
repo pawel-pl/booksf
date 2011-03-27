@@ -3,13 +3,9 @@ package core.ejb.logic.travelagent;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.ejb.EJB;
 import javax.ejb.Stateful;
-import javax.jms.Connection;
-import javax.jms.JMSException;
-import javax.jms.Queue;
 import javax.jms.QueueConnectionFactory;
-import javax.jms.Session;
-import javax.jms.TextMessage;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
@@ -23,8 +19,10 @@ import core.ejb.model.ComponentParam;
 import core.ejb.model.Customer;
 import core.ejb.model.CustomerPK;
 import core.ejb.model.Dog;
+import core.ejb.model.Model;
 
 @Stateful
+@javax.annotation.Resource(name="jms/factory", type=javax.jms.QueueConnectionFactory.class, mappedName="java:/JmsXA")
 public class TravelAgentBean implements TravelAgentRemote {
 
     @PersistenceUnit(unitName = "titan")
@@ -34,18 +32,30 @@ public class TravelAgentBean implements TravelAgentRemote {
     private EntityManager manager;
     private Customer cust = null;
 
-    @Resource(mappedName = "java:/JmsXA")
+    @EJB
+    private SLInter slBean;
+    
+    @Resource(name = "jms/factory")
     private QueueConnectionFactory jmsConnFactory;
 
-    @Resource(mappedName = "/queue/sl2mdb")
+/*    @Resource(mappedName = "/queue/sl2mdb")
     private Queue sl2MdbQueue;
 
     @Resource(mappedName = "queue/mdb2mdb")
-    private Queue mdb2MdbQueue;
+    private Queue mdb2MdbQueue;*/
 
+    public void persistModel(int id) {
+	
+	System.out.println("Delegate: "+manager.getDelegate());
+	Model m = new  Model(id);
+	manager.persist(m);
+	Model findModel = slBean.findById(Model.class, id);
+	System.out.println("End");
+    }
+    
     public void testMessaging() {
 
-	System.out.println("Test Messaging");
+/*	System.out.println("Test Messaging");
 	Connection conn = null;
 	try {
 	    conn = jmsConnFactory.createConnection();
@@ -67,7 +77,7 @@ public class TravelAgentBean implements TravelAgentRemote {
 		    e.printStackTrace();
 		}
 	    }
-	}
+	}*/
     }
 
     public void removeAndMerge() {

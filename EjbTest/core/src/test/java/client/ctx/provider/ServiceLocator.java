@@ -8,6 +8,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 
 import core.ejb.logic.travelagent.ExtendedPersistenceContextRemote;
+import core.ejb.logic.travelagent.TestBeanRemote;
 import core.ejb.logic.travelagent.TransactionPersistenceContextRemote;
 import core.ejb.logic.travelagent.TravelAgentRemote;
 
@@ -38,12 +39,18 @@ public class ServiceLocator {
 	public static final String CONNECTION_FACTORY = "ConnectionFactory";
 	public static final String sl2MdbQueue = "/queue/sl2mdb";
 	public static final String TRAVEL_AGENT_NAME = "EjbTest/TravelAgentBean/remote";
+	public static final String TEST_BEAN_NAME = "EjbTest/TestBean/remote";
 	public static final String TX_TRAVEL_AGENT_NAME = "EjbTest/TransactionPersistenceContextBean/remote";
 	public static final String EX_TRAVEL_AGENT_NAME = "EjbTest/ExtendedPersistenceContextBean/remote";
 	
 	public TravelAgentRemote getTravelAgent() throws Exception {
 		
 		return (TravelAgentRemote)lookup(TRAVEL_AGENT_NAME);
+	}
+	
+	public TestBeanRemote getTestBean() throws Exception {
+		
+		return (TestBeanRemote)lookup(TEST_BEAN_NAME);
 	}
 	
 	public TransactionPersistenceContextRemote getTxTravelAgent() throws Exception {
