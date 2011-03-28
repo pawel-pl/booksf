@@ -10,12 +10,16 @@ import javax.jms.Session;
 import javax.jms.TextMessage;
 
 import client.ctx.provider.ServiceLocator;
+import core.ejb.logic.travelagent.BMTBeanRemote;
+import core.ejb.logic.travelagent.StatefulBeanRemote;
 import core.ejb.logic.travelagent.TestBeanRemote;
 import core.ejb.logic.travelagent.TravelAgentRemote;
 import core.ejb.model.Address;
 import core.ejb.model.Book;
 import core.ejb.model.CreditCard;
 import core.ejb.model.Customer;
+import core.ejb.model.Model;
+import core.ejb.model.ModelId;
 import core.ejb.model.Reader;
 import core.ejb.model.Reservation;
 
@@ -27,9 +31,9 @@ public class Client_1 {
 	     * .getTravelAgent();
 	     */
 
-	    TestBeanRemote testBean = ServiceLocator.getInstance()
-		    .getTestBean();
-
+	    TestBeanRemote testBean = ServiceLocator.getInstance().getTestBean();
+	    StatefulBeanRemote sfBean = ServiceLocator.getInstance().getStatefulBean();
+	    BMTBeanRemote bmtBean = ServiceLocator.getInstance().getBMTBean();
 	    // initDB();
 
 	    // travelAgent.removeAndMerge();
@@ -54,16 +58,31 @@ public class Client_1 {
 	    // travelAgent.persistModel(1);
 	    
 	    //addReadersToDB();
-	    //String query="select r.age from Reader r group by r.age having r.age > avg(r.age)";
-	    //testBean.executeJpaQuery(query);
+	    String query="select r from Book b inner join b.reader r";
+	    testBean.executeJpaQuery(query);
 	    //testBean.compareReferances();
-	    testBean.mandatoryTransaction();
+	    //testBean.mandatoryTransaction();
+	    //testBean.exceptionTest();
+	    //sfBean.noTransactionMethod();
+	    //testBean.notSupportedTransaction();
+	    //bmtBean.methodWithUserTx();
+	    //testBean.exceptionWithoutTransactionPropagationTest();
+	    //testBean.exceptionWithTransactionPropagationTest();
+	    //findModelById(testBean, 1);
+	    
 
 	} catch (Exception ne) {
 	    ne.printStackTrace();
 	}
     }
 
+    private static void findModelById(TestBeanRemote testBean, int id){
+	
+	    testBean.persist(new Model(1));
+	    Model m = testBean.find(Model.class, new ModelId(1));
+	    System.out.println(m);
+    }
+    
     private static void sendMessage() throws Exception {
 
 	QueueConnectionFactory jmsConnFactory = ServiceLocator.getInstance()
