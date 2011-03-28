@@ -1,14 +1,32 @@
 package core.ejb.model;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.SecondaryTable;
+import javax.persistence.Version;
 
 @Entity
-public class Model {
+@SecondaryTable(name="Version_Table")
+@IdClass(ModelId.class)
+public class Model implements Serializable{
     
-    @Id
     private int id;
 
+    private int version;
+
+    public Model() {
+	
+    }
+    
+    public Model(int id) {
+	this.id = id;
+    }
+
+    @Id
     public int getId() {
         return id;
     }
@@ -17,12 +35,14 @@ public class Model {
         this.id = id;
     }
 
-    public Model() {
-	
+    @Version
+    @Column(name="version_number",  table="Version_Table")
+    private int getVersion() {
+        return version;
     }
-    
-    public Model(int id) {
-	this.id = id;
+
+    public void setVersion(int version) {
+        this.version = version;
     }
     
     

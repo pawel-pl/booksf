@@ -13,10 +13,8 @@
  */
 package core.ejb.logic.travelagent;
 
-import javax.ejb.Remote;
+@javax.ejb.Remote
+public interface StatefulBeanRemote {
 
-@Remote
-public interface SLInter {
-
-    public <T> T findById(Class<T> clazz, int id);
+    public void noTransactionMethod();
 }

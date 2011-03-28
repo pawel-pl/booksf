@@ -13,10 +13,21 @@
  */
 package core.ejb.logic.travelagent;
 
-import javax.ejb.Remote;
+import javax.ejb.EJB;
+import javax.ejb.Stateful;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 
-@Remote
-public interface SLInter {
+@Stateful
+public class StatefulBean implements StatefulBeanRemote {
 
-    public <T> T findById(Class<T> clazz, int id);
+    @EJB
+    private TestBeanRemote testBean;
+
+    @TransactionAttribute(TransactionAttributeType.NEVER)
+    public void noTransactionMethod() {
+
+	System.out.println("NOT_SUPPORTED");
+	testBean.requiresNewTransaction();
+    }
 }

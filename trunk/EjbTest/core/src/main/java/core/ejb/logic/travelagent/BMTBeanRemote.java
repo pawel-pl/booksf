@@ -16,7 +16,7 @@ package core.ejb.logic.travelagent;
 import javax.ejb.Remote;
 
 @Remote
-public interface SLInter {
+public interface BMTBeanRemote {
 
-    public <T> T findById(Class<T> clazz, int id);
+    public void methodWithUserTx();
 }

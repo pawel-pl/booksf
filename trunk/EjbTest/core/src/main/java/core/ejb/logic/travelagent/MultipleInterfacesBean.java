@@ -13,10 +13,9 @@
  */
 package core.ejb.logic.travelagent;
 
-import javax.ejb.Remote;
+import javax.ejb.Stateless;
 
-@Remote
-public interface SLInter {
+@Stateless
+public class MultipleInterfacesBean implements Inter1, Inter2{
 
-    public <T> T findById(Class<T> clazz, int id);
 }
