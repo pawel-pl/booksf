@@ -13,10 +13,9 @@
  */
 package core.ejb.logic.travelagent;
 
-import javax.ejb.Remote;
+import javax.ejb.Local;
 
-@Remote
-public interface SLInter {
+@Local
+public interface Inter1 {
 
-    public <T> T findById(Class<T> clazz, int id);
 }

@@ -11,12 +11,16 @@
  *
  * LISBON
  */
-package core.ejb.logic.travelagent;
+package core.ejb.logic.travelagent.exception;
 
-import javax.ejb.Remote;
+import javax.ejb.ApplicationException;
 
-@Remote
-public interface SLInter {
+@ApplicationException(rollback=false)
+public class AppException extends Exception {
 
-    public <T> T findById(Class<T> clazz, int id);
+    private static final long serialVersionUID = -7940081356529111783L;
+    
+    public AppException(String s){
+	super(s);
+    }
 }
