@@ -14,6 +14,6 @@ FROM rides AS rid
 ORDER BY cnt.votes DESC  limit 10
  *
  */
-public class TablePersons {
+public class FavoriteRideId {
 
 }
