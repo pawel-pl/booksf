@@ -1,6 +1,7 @@
 package nvidia;
 
 //out of int range 
+//Given two numbers "a" and "b" and an average formula (a+b)/2. Find one condition where it wont work. Also, give solution to it
 public class Average {
 
 	public static void main(String[] args) {
