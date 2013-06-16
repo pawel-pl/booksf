@@ -3,7 +3,7 @@ package nvidia;
 /*
  * http://www.geeksforgeeks.org/find-subarray-with-given-sum/ // continous subarray which adds to a given number
  */
-public class FindSubArr {
+public class FindSubArrEqToSum {
 
 	/**
 	 * @param args
