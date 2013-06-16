@@ -7,7 +7,6 @@ import java.util.Arrays;
  * http://stackoverflow.com/questions/5380568/algorithm-to-find-k-smallest-numbers-in-array-of-n-items
  * http://crackprogramming.blogspot.fi/2012/11/find-kth-largest-integer-given-integer.html
  * http://stackoverflow.com/questions/13023188/smallest-subset-of-array-whose-sum-is-no-less-than-key
- * http://www.geeksforgeeks.org/largest-subarray-with-equal-number-of-0s-and-1s/
  * http://www.careercup.com/question?id=14491723
  */
 public class SelectKth {
