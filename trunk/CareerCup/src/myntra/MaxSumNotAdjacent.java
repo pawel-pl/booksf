@@ -7,6 +7,9 @@ package myntra;
  *     10  1   3   25
  * in  10  1   13  35 
  * ex  0   10  10  13
+ * 
+ * ex - max sum excluding current element
+ * in - max sum including current element 
  */
 public class MaxSumNotAdjacent {
 
