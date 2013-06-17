@@ -8,6 +8,10 @@ public class Node {
 	public Node next;
 	public int d;
 
+	public Node() {
+		
+	}
+	
 	public Node(int d) {
 		this.d = d;
 	}
