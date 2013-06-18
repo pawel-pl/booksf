@@ -7,6 +7,10 @@ package datastruct;
  * http://www.careercup.com/question?id=16487673
  * http://www.careercup.com/question?id=15424845
  * http://www.careercup.com/question?id=18479662
+ * http://www.careercup.com/question?id=16662664
+ * http://www.careercup.com/question?id=14494708
+ * 
+ *  http://www.cs.uml.edu/~jlu1/doc/codes/lruCache.html
  */
 public class HashTable {
 

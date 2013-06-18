@@ -6,6 +6,7 @@ package datastruct;
  * http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=usingTries
  * 
  * http://www.careercup.com/question?id=16171693
+ * http://www.careercup.com/question?id=10358342
  */
 public class Trie {
 

@@ -1,4 +1,4 @@
-package morgan;
+package morganstanley;
 
 /*
  * http://stackoverflow.com/questions/726756/print-two-dimensional-array-in-spiral-order
@@ -38,8 +38,7 @@ public class SpiralMatrix {
 		for (int i = 0; i < n; i++) {
 			// top right
 			for (int j = i; j <= z - i; j++) {
-				int k = i;
-				System.out.printf("%d ", a[k][j]);
+				System.out.printf("%d ", a[i][j]);
 			}
 			// right down
 			for (int j = i + 1; j <= z - i; j++) {
@@ -64,13 +63,11 @@ public class SpiralMatrix {
 	 */
 	public static void main(String[] args) {
 
-/*		int[][] m = { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 }, { 16, 17, 18, 19, 20 },
+		int[][] m = { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 }, { 16, 17, 18, 19, 20 },
 				{ 21, 22, 23, 24, 25 } };
 		printMatrix(5, m);
 		System.out.println();
-		printMatrix2(5, m);*/
-
-		System.out.println(Math.log(10));
+		printMatrix2(5, m);
 	}
 
 }
