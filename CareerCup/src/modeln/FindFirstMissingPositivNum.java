@@ -3,6 +3,11 @@ package modeln;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+ * 1) Sort
+ * 2) Gauss
+ * 3) min, max pointers
+ */
 public class FindFirstMissingPositivNum {
 
 	/**
@@ -10,8 +15,8 @@ public class FindFirstMissingPositivNum {
 	 */
 	public static void main(String[] args) {
 
-		int a[] = {0,1,2};
-		//int a[] = { 3, 4, -1, 1 };
+		//int a[] = {0,1,2};
+		int a[] = { 3, 4, -1, 1 };
 		int max = Integer.MIN_VALUE;
 		int sum = 0;
 		int arrSum = 0;
