@@ -23,6 +23,8 @@ package common;
  * 
  * nvidia.TransfexYbitsInXPortion (y + (x - 1)) / x
  * nvidia.Average x/2 + y/2 + (x%2 + y%2)/2
+ * 
+ * linkedin.Power
  */
 public class Formulas {
 
