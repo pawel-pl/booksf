@@ -39,7 +39,7 @@ public class VendingMachineDP {
 		System.out.println(Arrays.toString(t[0]));
 		for (int i = 1; i < coins.length; i++) {
 			int coin = coins[i];
-			for (int j = 0; j < t[0].length - coin; j++) {
+			for (int j = 0; j < t[i].length - coin; j++) {
 				int val = t[i][j] != INF ? t[i][j] : t[i - 1][j]; // the value
 																	// might
 																	// have been
