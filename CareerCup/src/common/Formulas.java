@@ -25,6 +25,8 @@ package common;
  * nvidia.Average x/2 + y/2 + (x%2 + y%2)/2
  * 
  * linkedin.Power
+ * 
+ * a9.Rand7Generator
  */
 public class Formulas {
 
