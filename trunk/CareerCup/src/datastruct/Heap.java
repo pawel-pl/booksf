@@ -11,6 +11,8 @@ package datastruct;
  * http://www.careercup.com/question?id=15424845
  * 
  * http://www.cs.cmu.edu/~adamchik/15-121/lectures/Binary%20Heaps/heaps.html
+ * http://www.careercup.com/question?id=12404685
+ * http://www.careercup.com/question?id=15026898
  */
 public class Heap {
 
