@@ -13,8 +13,8 @@ import java.util.Random;
  * You could actually roll exactly 3 times, get a number in the range 0-215 and take that modulo 8. Since each bucket would have 27 values exactly, 
  * this would be equiprobable. No such finite solution is available for 5 and 7 because they are coprime. More generally, the roll number needs to contain 
  * all the distinct prime factors contained in the target number for a finite solution to be available. 5 does not have as factors all the distinct prime 
- * factors of 7. 6 does in fact have as factors all the distinct prime factors of 8.
- */
+ * factors of 7. 6 does in fact have as factors all the distinct prime factors of 8. 
+ */ 
 public class Rand7Generator {
 
 	public static void main(String[] args) {
