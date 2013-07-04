@@ -5,6 +5,7 @@ package common;
  * http://www.careercup.com/question?id=14667688
  * http://www.careercup.com/question?id=14419725
  * http://www.careercup.com/question?id=5534786915401728
+ * http://www.careercup.com/question?id=17330675
  * 
  * - types of joins
  */
