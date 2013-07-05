@@ -10,7 +10,7 @@ public class FindMultiply {
 	 */
 	public static void main(String[] args) {
 
-		int n = 25;
+		int n = 12;
 		printDivisors(n);
 		System.out.println("*****************************");
 		printDivisors2(n);
