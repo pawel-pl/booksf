@@ -9,10 +9,15 @@ public class ProductWithoutLoopAndMulti {
 
 		int a = -2;
 		int b = -4;
-		int result = prod(Math.abs(a), Math.abs(b));
-		if ((a < 0 && b > 0) || (a > 0 && b < 0)) {
-			result *= -1;
+		if(a < 0 && b < 0) {
+			a = Math.abs(a);
+			b = Math.abs(b);
+		} else if (b < 0) {
+			int temp = a;
+			a = b;
+			b = temp;
 		}
+		int result = prod(a, b);
 		System.out.println(result);
 	}
 

@@ -38,20 +38,17 @@ public class FindKthNumberWithPrimes357 {
 			}
 			queues.get(minQueue).removeFirst();
 			numbers.add(min);
-			for (int j = minQueue; j < 3; j++) {
-				switch (j) {
-				case 0:
-					q3.add(min * 3);
-					break;
-				case 1:
-					q5.add(min * 5);
-					break;
-				case 2:
-					q7.add(min * 7);
-					break;
-				}
+			switch (minQueue) {
+			case 0:
+				q3.add(min * 3);
+			case 1:
+				q5.add(min * 5);
+			case 2:
+				q7.add(min * 7);
+
 			}
 		}
+
 		System.out.println(numbers);
 	}
 
