@@ -61,6 +61,6 @@ public class SortList {
 		tail = prev;
 	    }
 	}
-	//Node.printList(head);
+	Node.printList(head);
     }
 }
