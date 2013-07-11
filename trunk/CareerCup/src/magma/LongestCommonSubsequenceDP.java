@@ -73,15 +73,15 @@ public class LongestCommonSubsequenceDP {
 	}
     }
 
-    private static void printMatrix(int[][] m) {
+	private static void printMatrix(int[][] m) {
 
-	for (int i = 0; i < m.length; i++) {
-	    for (int j = 0; j < m[0].length; j++) {
-		System.out.print(m[i][j] + " ");
-	    }
-	    System.out.println();
+		for (int i = 0; i < m.length; i++) {
+			for (int j = 0; j < m[0].length; j++) {
+				System.out.print(m[i][j] + " ");
+			}
+			System.out.println();
+		}
 	}
-    }
 
     public static void lcs(String a, String b) {
 
