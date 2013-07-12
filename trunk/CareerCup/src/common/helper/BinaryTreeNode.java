@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public class BinaryTreeNode extends TreeNode {
 
+	public BinaryTreeNode left;
+	public BinaryTreeNode right;
+	
 	public BinaryTreeNode(BinaryTreeNode left, BinaryTreeNode right, int value) {
 
 		if (children == null) {

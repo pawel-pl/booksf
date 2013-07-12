@@ -8,7 +8,7 @@ import common.helper.BinaryTreeNode;
  * http://www.youtube.com/watch?v=50v1sJkjxoc
  * http://www.youtube.com/watch?v=hv-mJUs5mvU
  */
-public class BTIterative {
+public class BTTraversalIterative {
 
 	/**
 	 * @param args
@@ -92,6 +92,34 @@ public class BTIterative {
 		}
 		while (!out.isEmpty()) {
 			System.out.print(out.pop().value + " ");
+		}
+	}
+
+	public static void zigzag(BinaryTreeNode node) {
+		
+		Stack<BinaryTreeNode> currentStack = new Stack<BinaryTreeNode>();
+		Stack<BinaryTreeNode> nextStack = new Stack<BinaryTreeNode>();
+		currentStack.add(node);
+		zigzag(currentStack, nextStack, true);
+	}
+
+	private static void zigzag(Stack<BinaryTreeNode> currentStack, Stack<BinaryTreeNode> nextStack, boolean reverse) {
+		
+		while (!currentStack.isEmpty()) {
+			BinaryTreeNode pop = currentStack.pop();
+			System.out.println(pop);
+			if (reverse) {
+				if (pop.left != null)
+					nextStack.push(pop.left);
+				if (pop.right != null)
+					nextStack.push(pop.right);
+			} else {
+				if (pop.right != null)
+					nextStack.push(pop.right);
+				if (pop.left != null)
+					nextStack.push(pop.left);
+			}
+			zigzag(nextStack, currentStack, !reverse);
 		}
 	}
 }
