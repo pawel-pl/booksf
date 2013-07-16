@@ -13,6 +13,9 @@ public class GeneratePalindromeDates {
 
 	public static void main(String[] args) {
 
+		String startDate = "12122020";
+		String endDate = "01012000";
+
 		char[] date = new char[8];
 		for (int i = 1; i <= 12; i++) {
 			String month = String.valueOf(i);
@@ -26,25 +29,26 @@ public class GeneratePalindromeDates {
 				}
 				String monthDay = month + day;
 				String year = new StringBuilder(monthDay).reverse().toString();
-				if(Integer.parseInt(day) > checkMaxDays(year, monthDay)) {
+				if (Integer.parseInt(day) > checkMaxDays(year, monthDay)) {
 					continue;
 				}
 				System.arraycopy(monthDay.toCharArray(), 0, date, 0, 4);
 				System.arraycopy(year.toCharArray(), 0, date, 4, 4);
 				System.out.println(Arrays.toString(date));
 			}
-			
+
 		}
-		
+
 	}
 
 	private static int checkMaxDays(String year, String month) {
-		
-		Calendar mycal = new GregorianCalendar(Integer.parseInt(year), Integer.parseInt(month)-1, 1);
+
+		Calendar mycal = new GregorianCalendar(Integer.parseInt(year), Integer.parseInt(month) - 1, 1);
 		System.out.println(mycal.getActualMaximum(Calendar.DAY_OF_MONTH));
 		return mycal.getActualMaximum(Calendar.DAY_OF_MONTH);
 
 	}
+
 	public static void generateDates(String start, String end) {
 
 	}
