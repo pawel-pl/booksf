@@ -7,7 +7,7 @@ public class FibUpToSum {
 	 */
 	public static void main(String[] args) {
 
-		System.out.println(fib(20, 0, 1));
+		System.out.println(fib(25, 0, 1));
 	}
 
 	public static int fib(int sum, int num1, int num2) {
@@ -20,9 +20,9 @@ public class FibUpToSum {
 		}
 		num1 += num2;
 		if (num1 > sum) {
-			return num1 - num2;
+			return num2;
 		}
 
-		return fib(sum, num1, num2);
+		return fib(sum, num2, num1);
 	}
 }
