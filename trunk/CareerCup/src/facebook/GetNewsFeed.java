@@ -22,4 +22,7 @@ class Update {
  */
 public class GetNewsFeed {
 
+	public void foo() {
+		System.out.println(getClass().getCanonicalName());
+	}
 }
