@@ -10,8 +10,8 @@ public class FindTripletInAr {
 	public static void main(String[] args) {
 
 		int[] a = { 5, 1, 6, 1, 1, 7 };
-		int[] a2 = { 6, 7, 3, 4, 8 };
-		triplet(a2);
+		//int[] a2 = { 6, 7, 3, 4, 8 };
+		triplet(a);
 
 	}
 
