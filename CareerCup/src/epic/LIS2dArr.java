@@ -37,6 +37,7 @@ public class LIS2dArr {
 				}
 			}
 		}
+		printMatrix(l);
 		int i = maxI;
 		int j = maxJ;
 		while (maxLength > 0) {
@@ -89,4 +90,14 @@ public class LIS2dArr {
 
 		return l[i][j];
 	}
+	
+	    private static void printMatrix(int[][] m) {
+
+		for (int i = 0; i < m.length; i++) {
+		    for (int j = 0; j < m[0].length; j++) {
+			System.out.print(m[i][j] + " ");
+		    }
+		    System.out.println();
+		}
+	    }
 }
