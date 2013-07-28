@@ -4,54 +4,58 @@ import java.util.ArrayList;
 
 public class BinaryTreeNode extends TreeNode {
 
-	public BinaryTreeNode left;
-	public BinaryTreeNode right;
-	
-	public BinaryTreeNode(BinaryTreeNode left, BinaryTreeNode right, int value) {
+    public BinaryTreeNode left;
+    public BinaryTreeNode right;
+    public BinaryTreeNode next;
 
-		if (children == null) {
-			children = new ArrayList<TreeNode>();
-		}
-		if (right == null && left == null) {
-			children.clear();
-		}
+    public BinaryTreeNode(BinaryTreeNode left, BinaryTreeNode right, int value) {
 
-		if (left != null) {
-			children.set(0, left);
-		}
-		if (right != null) {
-			children.set(1, right);
-		}
+	this.left = left;
+	this.right = right;
 
-		super.value = value;
+	if (children == null) {
+	    children = new ArrayList<TreeNode>();
+	}
+	if (right == null && left == null) {
+	    children.clear();
 	}
 
-	public TreeNode getLeft() {
-
-		if (children == null || children.isEmpty()) {
-			return null;
-		}
-
-		return children.get(0);
+	if (left != null) {
+	    children.set(0, left);
+	}
+	if (right != null) {
+	    children.set(1, right);
 	}
 
-	public TreeNode getRight() {
+	super.value = value;
+    }
 
-		if (children == null || children.isEmpty() || children.size() == 1) {
-			return null;
-		}
+    public TreeNode getLeft() {
 
-		return children.get(1);
-
+	if (children == null || children.isEmpty()) {
+	    return null;
 	}
 
-	public void setLeft(TreeNode left) {
+	return children.get(0);
+    }
 
-		children.set(0, left);
+    public TreeNode getRight() {
+
+	if (children == null || children.isEmpty() || children.size() == 1) {
+	    return null;
 	}
 
-	public void setRight(TreeNode right) {
+	return children.get(1);
 
-		children.set(1, right);
-	}
+    }
+
+    public void setLeft(TreeNode left) {
+
+	children.set(0, left);
+    }
+
+    public void setRight(TreeNode right) {
+
+	children.set(1, right);
+    }
 }
