@@ -1,5 +1,8 @@
 package adobe;
 
+/*
+ * http://www.careercup.com/question?id=14946895
+ */
 public class RandPermuteOfArr {
 
 	/**
