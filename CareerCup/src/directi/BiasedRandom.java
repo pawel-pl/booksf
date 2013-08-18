@@ -12,13 +12,13 @@ probability of 00 -> 0.6*0.4
  */
 public class BiasedRandom {
 
-	/*
-	 * int goodRandom(){
- int  i = biasedRandom();
-int j = RevbiasedRandon()
-if(i == j)//Probability of both 1 or both 0 is same i.e. is P(1-P)
-      return i;
-return goodRandom()
+/*
+int goodRandom(){
+	int  i = biasedRandom();
+	int j = RevbiasedRandon()
+	if(i == j)//Probability of both 1 or both 0 is same i.e. is P(1-P)
+      		return i;
+	return goodRandom()
 }
 
 int RevBiasedRandom(){

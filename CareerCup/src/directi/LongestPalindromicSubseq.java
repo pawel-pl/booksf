@@ -2,6 +2,8 @@ package directi;
 
 /*
  * http://www.geeksforgeeks.org/dynamic-programming-set-12-longest-palindromic-subsequence/
+ * 
+ * it equals with finding the longest common subsequence between one word (e.g. XAYBZBA) and its reverse (e.g. ABZBYAX).
  */
 public class LongestPalindromicSubseq {
 

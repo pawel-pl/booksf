@@ -2,46 +2,44 @@ package daptiv;
 
 /*
  * http://allisons.org/ll/AlgDS/Dynamic/Edit/
+ * http://programming4interviews.wordpress.com/2011/07/07/edit-distance-of-2-strings-using-dynamic-programming/
  */
 public class EditDistDP {
 
     public static void main(String[] args) {
 
-	editDistance("abde", "cde");
-	editDistance("appropriate meaning", "approximate matching");
-	editDistance("sport", "spot");
+	editDistance("adbec", "bcf");
+	// editDistance("abde", "cde");
+	// editDistance("appropriate meaning", "approximate matching");
+	// editDistance("sport", "spot");
     }
 
-    public static void editDistance(String a, String b) {
-
-	int[][] lengths = new int[b.length()][a.length()];
-	for (int i = 0; i < a.length(); i++) {
-	    if (a.charAt(i) == b.charAt(0)) {
-		lengths[0][i] = 0;
-	    } else if (i > 0) {
-		lengths[0][i] = lengths[0][i - 1] + 1;
-	    } else {
-		lengths[0][i] = 1;
-	    }
+    public static void editDistance(String s, String t) {
+	
+	int m = s.length();
+	int n = t.length();
+	int[][] d = new int[m + 1][n + 1];
+	for (int i = 0; i <= m; i++) {
+	    d[i][0] = i;
 	}
-	int v1 = 0;
-	int v2 = 0;
-	int v3 = 0;
-	for (int i = 1; i < b.length(); i++) {
-	    for (int j = 0; j < a.length(); j++) {
-		v1 = j == 0 ? 1 : lengths[i][j - 1] + 1; // left
-		v2 = lengths[i - 1][j] + 1; // above
-		v3 = j == 0 ? 0 : lengths[i - 1][j - 1]; // above - left
-		if (a.charAt(j) != b.charAt(i)) {
+	for (int j = 0; j <= n; j++) {
+	    d[0][j] = j;
+	}
+	int v1, v2, v3;
+	for (int j = 1; j <= n; j++) {
+	    for (int i = 1; i <= m; i++) {
+		v1 = d[i][j - 1] + 1;
+		v2 = d[i - 1][j] + 1;
+		v3 = d[i - 1][j - 1];
+		if (s.charAt(i - 1) != t.charAt(j - 1)) {
 		    v3 += 1;
 		}
-		lengths[i][j] = Math.min(v1, Math.min(v2, v3));
+		d[i][j] = Math.min(Math.min(v1, v2), v3);
+
 	    }
 	}
-
-	// read the substring out from the matrix
-	printMatrix(lengths);
-	System.out.println("Distance: " + lengths[lengths.length - 1][lengths[0].length - 1]);
+	printMatrix(d);
+	System.out.println(d[m][n]);
     }
 
     private static void printMatrix(int[][] m) {
