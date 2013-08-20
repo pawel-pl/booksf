@@ -1,6 +1,6 @@
 package barclays;
 
-public class RewriteTtheBehaviourByEncaps {
+public class RewriteTheBehaviourByEncaps {
 
     /*
      * public class C {
