@@ -8,7 +8,7 @@ public class MakeValidEquation {
 	public static void main(String[] args) {
 
 		int arr[] = { 1, 2, 3, 4, 5, 1 };
-		char[] res = new char[2 * arr.length + 2];
+		char[] res = new char[2 * arr.length - 1];
 		int currentSum = arr[0];
 		res[0] = (char) (arr[0] + '0');
 		makeValidEquation(1, 1, currentSum, res, arr);
