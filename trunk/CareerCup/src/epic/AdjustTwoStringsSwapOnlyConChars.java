@@ -23,7 +23,6 @@ public class AdjustTwoStringsSwapOnlyConChars {
 		while (i < s2.length) {
 			if (s2[i] == s1[i]) {
 				i++;
-				continue;
 			} else {
 				for (int j = i; j < s1.length - 1; j++) {
 					char temp = s1[j];
