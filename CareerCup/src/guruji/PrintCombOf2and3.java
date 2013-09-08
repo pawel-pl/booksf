@@ -6,7 +6,7 @@ public class PrintCombOf2and3 {
 
     public static void main(String[] args) {
 
-	int[] arr = { 1, 2, 3, 4 };
+	int[] arr = { 1, 2, 3, 4, 5 };
 	int n = 3;
 	for (int i = 2; i <= n; i++) {
 	    printComb(arr, 0, new int[i], 0);
@@ -21,7 +21,7 @@ public class PrintCombOf2and3 {
 	}
 	for (int i = start; i < arr.length; i++) {
 	    result[pos] = arr[i];
-	    printComb(arr, i + 1, result, pos + 1);
+	    printComb(arr, i + 2, result, pos + 1);
 	}
     }
 }

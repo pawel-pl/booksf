@@ -7,7 +7,7 @@ public class PrintWellOrderedPsw {
 	 */
 	public static void main(String[] args) {
 
-		printWellOrdered(0, 0, 3);
+		//printWellOrdered(0, 0, 3);
 		System.out.println("\n");
 		genPsw(0, 1, 5);
 	}
