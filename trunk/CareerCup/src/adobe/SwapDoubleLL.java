@@ -28,28 +28,28 @@ public class SwapDoubleLL {
 			return head;
 		}
 
-		Node current = head;
-		Node next = head.next;
-		current.next = null;
-		current.prev = null;
+		Node a = head;
+		Node b = head.next;
+		a.next = null;
+		a.prev = null;
 		int i = 0;
-		while (next != null && i < k - 1) {
-			Node temp = next.next;
-			next.next = current;
-			next.prev = current.prev;
-			current.prev = next;
-			current = next;
-			next = temp;
+		while (b != null && i < k - 1) {
+			Node temp = b.next;
+			b.next = a;
+			b.prev = a.prev;
+			a.prev = b;
+			a = b;
+			b = temp;
 			i++;
 		}
-		if (next != null) {
-			head.next = swapKElements(next, k);
+		if (b != null) {
+			head.next = swapKElements(b, k);
 			if (head.next != null) {
 				head.next.prev = head;
 			}
 		}
 
-		return current;
+		return a;
 	}
 
 	public static Node pairWiseSwap(Node root) {

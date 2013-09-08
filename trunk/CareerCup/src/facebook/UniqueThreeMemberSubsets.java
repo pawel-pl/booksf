@@ -9,8 +9,53 @@ public class UniqueThreeMemberSubsets {
      */
     public static void main(String[] args) {
 
-	int[] arr = { 2, 2, 2, 1, 1, 1, 4, 4, 4, 3, 3, 3, 5, 5 };
+	// int[] arr = { 2, 2, 2, 1, 1, 1, 4, 4, 4, 3, 3, 3, 5, 5 };
+	// int[] arr = { 1, 1, 2, 1, 1, 3 };
+	int[] arr = { 1, 1 };
 	// int[] arr = { 2, 2, 2 };
+	withDups(arr);
+    }
+
+    public static void withDups(int[] arr) {
+	
+	if (arr == null || arr.length < 3) {
+	    return;
+	}
+	Arrays.sort(arr);
+	int[] triplet = new int[3];
+	triplet[0] = arr[0];
+	triplet[1] = arr[1];
+	triplet[2] = arr[2];
+	System.out.println(Arrays.toString(triplet));
+	for (int i = 2; i < arr.length; i++) {
+	    if (arr[i] == triplet[2]) {
+		continue;
+	    }
+	    triplet[2] = arr[i];
+	    System.out.println(Arrays.toString(triplet));
+	}
+	for (int i = 3; i < arr.length; i++) {
+	    while (i < arr.length && arr[i] == triplet[0]) {
+		i++;
+	    }
+	    if (i == arr.length - 1) {
+		break;
+	    }
+	    triplet[0] = triplet[1];
+	    triplet[1] = arr[i];
+	    triplet[2] = arr[i + 1];
+	    System.out.println(Arrays.toString(triplet));
+	    for (int j = i + 2; j < arr.length; j++) {
+		if (arr[j] == triplet[2]) {
+		    continue;
+		}
+		triplet[2] = arr[j];
+		System.out.println(Arrays.toString(triplet));
+	    }
+	}
+    }
+
+    public static void withoutDups(int[] arr) {
 	Arrays.sort(arr);
 	int[] triplet = new int[3];
 	for (int i = 0; i < arr.length - 2;) {
@@ -32,41 +77,7 @@ public class UniqueThreeMemberSubsets {
 		}
 	    }
 	}
+
     }
 
-    public static void quickSort(int[] arr, int start, int end) {
-
-	int i = partition(arr, start, end);
-	if (i - 1 > start) {
-	    quickSort(arr, start, i - 1);
-	}
-	if (i < end) {
-	    quickSort(arr, i, end);
-	}
-    }
-
-    public static int partition(int[] arr, int start, int end) {
-
-	int pivot = arr[start + (end - start) / 2];
-	int i = start;
-	int j = end;
-
-	while (i <= j) {
-	    while (arr[i] < pivot) {
-		i++;
-	    }
-	    while (arr[j] > pivot) {
-		j--;
-	    }
-	    if (i <= j) {
-		int temp = arr[i];
-		arr[i] = arr[j];
-		arr[j] = temp;
-		i++;
-		j--;
-	    }
-	}
-
-	return i;
-    }
 }
