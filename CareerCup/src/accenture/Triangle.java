@@ -12,7 +12,6 @@ public class Triangle {
 			for (int j = numOfStars; j > 0; j--) {
 				System.out.print("*");
 			}
-
 			boolean printChar = false;
 			for (int j =  charsPerLine - 2 * numOfStars; j > 0; j--) {
 				if (printChar) {

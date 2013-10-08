@@ -18,6 +18,22 @@ public class TraverseTreeVerticaly {
 	 * 
 	 * Once we are done, we can print the lists, in sorted order of the vertical
 	 * number. // preorder trav
+	 * 
+	 * 
+	 * public void traverse_vertical(Tree tree)
+    {
+    	if(tree == null)
+    		return;
+    	
+    	stack.push(tree.element);
+    	traverse_vertical(tree.left);
+    	while(stack.size()!=0)
+    	{
+    		System.out.print(stack.pop());
+    	}
+    	traverse_vertical(tree.right);
+    	
+    }
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

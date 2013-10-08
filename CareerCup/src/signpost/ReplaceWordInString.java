@@ -7,7 +7,7 @@ public class ReplaceWordInString {
 	 */
 	public static void main(String[] args) {
 
-		System.out.println(reverseReplace("Hello World cats", "cats", "dogs"));
+		System.out.println(reverseReplace("Hello World cacats", "cats", "dogs"));
 	}
 
 	public static String reverseReplace(String str, String targeted, String replace) {

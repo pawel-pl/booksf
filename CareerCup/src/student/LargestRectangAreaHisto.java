@@ -46,8 +46,7 @@ public class LargestRectangAreaHisto {
 		// Now pop the remaining bars from stack and calculate area with every
 		// popped bar as the smallest bar
 		while (!s.empty()) {
-			tp = s.peek();
-			s.pop();
+			tp = s.pop();;
 			area_with_top = hist[tp] * (s.empty() ? i : i - s.peek() - 1);
 
 			if (max_area < area_with_top)

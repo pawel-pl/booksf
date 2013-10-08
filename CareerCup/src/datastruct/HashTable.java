@@ -9,11 +9,12 @@ package datastruct;
  * http://www.careercup.com/question?id=18479662
  * http://www.careercup.com/question?id=16662664
  * http://www.careercup.com/question?id=14494708
+ * http://www.careercup.com/question?id=22479671
  * 
- *  http://www.cs.uml.edu/~jlu1/doc/codes/lruCache.html
+ * http://www.cs.uml.edu/~jlu1/doc/codes/lruCache.html
  *  
- *  http://www.careercup.com/question?id=15422001
- *  http://www.careercup.com/question?id=17567670
+ * http://www.careercup.com/question?id=15422001
+ * http://www.careercup.com/question?id=17567670
  */
 public class HashTable {
 

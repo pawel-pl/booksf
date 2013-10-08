@@ -77,7 +77,7 @@ public class NumbersEqualToSum {
 					int remainder = r1 - a[j];
 					alreadyCompared.add(a[j]);
 					if (set.contains(remainder)) {
-						System.out.println("Find sun: " + sum + " = " + a[i] + " + " + a[j] + " + " + remainder);
+						System.out.println("Find sum: " + sum + " = " + a[i] + " + " + a[j] + " + " + remainder);
 					}
 				}
 			}

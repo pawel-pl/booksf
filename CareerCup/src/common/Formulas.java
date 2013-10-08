@@ -24,6 +24,8 @@ package common;
  * nvidia.TransfexYbitsInXPortion (y + (x - 1)) / x
  * nvidia.Average x/2 + y/2 + (x%2 + y%2)/2
  * 
+ * http://www.careercup.com/question?id=6153851690287104
+ * 
  * linkedin.Power
  * 
  * a9.Rand7Generator

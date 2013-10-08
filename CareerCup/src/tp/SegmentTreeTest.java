@@ -16,8 +16,10 @@ public class SegmentTreeTest {
 		build(0, 0, arr.length - 1);
 		printTree(treeSize);
 		// update(0, 0, arr.length - 1, 5, 9);
-		System.out.println(query(0, 0, arr.length-1, 6, 6));
-		//update(0, 0, arr.length - 1, 6, 7, 2);
+		System.out.println(query(0, 0, arr.length-1, 0, 1));
+		update(0, 0, arr.length - 1, 0, 1, 6);
+		printTree(treeSize);
+		System.out.println(query(0, 0, arr.length-1, 1, 1));
 		//printTree(treeSize);
 	}
 
