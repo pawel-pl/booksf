@@ -5,6 +5,6 @@ package chronus;
  * 
  * http://stackoverflow.com/questions/337664/counting-inversions-in-an-array
  */
-public class CountingUnversions {
+public class CountingInversions {
 
 }

@@ -10,7 +10,7 @@ public class LexicographicallyGreaterThanS {
     public static void main(String[] args) {
 
 	String s = "bcd";
-	System.out.println(countStrings(s.toCharArray(), 0, new char[s.length()], 'a' < s.charAt(0)));
+	System.out.println(countStrings(s.toCharArray(), 0, new char[s.length()], true));
     }
 
     public static int countStrings(char[] s, int pos, char[] res, boolean isPrevousSmaller) {
