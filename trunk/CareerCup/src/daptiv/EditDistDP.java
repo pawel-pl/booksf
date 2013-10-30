@@ -8,7 +8,12 @@ public class EditDistDP {
 
     public static void main(String[] args) {
 
-	editDistance("abxa", "axba");
+//	editDistance("abxa", "axba");
+	editDistance("ABCD", "ACD");
+	editDistance("ABCD", "AC");
+	editDistance("ABCD", "ADCB");
+	editDistance("ABCDE", "ADCE");
+	//editDistance("STOKROTKA", "DESKOROLKA");
 	// editDistance("abde", "cde");
 	// editDistance("appropriate meaning", "approximate matching");
 	// editDistance("sport", "spot");

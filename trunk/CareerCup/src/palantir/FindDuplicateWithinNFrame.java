@@ -17,18 +17,17 @@ public class FindDuplicateWithinNFrame {
 		HashSet<Integer> set = new HashSet<Integer>(n);
 
 		for (int i = 0; i < array.length; i++) {
-			Integer current = new Integer(array[i]);
 
 			// Duplicate found
-			if (set.contains(current)) {
+			if (set.contains(array[i])) {
 				return true;
 			}
 
 			// Always keep set size as n
 			if (i >= n) {
-				set.remove(new Integer(array[i - n]));
+				set.remove(array[i - n]);
 			}
-			set.add(current);
+			set.add(array[i]);
 		}
 
 		return false;

@@ -56,28 +56,35 @@ public class SortWith10MbMem {
 			}
 		}
 	}
+	
+	/*
+	 * 4  * 10 ^ 9 - numbers
+	 * 10 * 10 ^ 6 - mem
+	 * 10 ^ 9 / 10 ^ 6 = 10 ^ 3 * 4 - num of blocks
+	 * 10 ^ 6 - block size
+	 */
 
 	public static void findOpenNumber() throws FileNotFoundException {
 
-		int bitsize = 1048576; // 2^20 bits (2^17 bytes)
+		int blockSize = 1048576; // 2^20 bits (2^17 bytes)
 		int blockNum = 4096; // 2^12
-		byte[] bitfield = new byte[bitsize / 8];
+		byte[] bitfield = new byte[blockSize / 8];
 		int[] blocks = new int[blockNum];
 		int starting = -1;
 		Scanner in = new Scanner(new FileReader("d:/numbers.txt"));
 
 		while (in.hasNextInt()) {
 			int n = in.nextInt();
-			blocks[n / bitsize]++;
+			blocks[n / blockSize]++;
 		}
 
 		for (int i = 0; i < blocks.length; i++) {
-			if (blocks[i] < bitsize) {
+			if (blocks[i] < blockSize) {
 				/*
 				 * if value < 2^20, then at least 1 number is missing in that
 				 * section.
 				 */
-				starting = i * bitsize;
+				starting = i * blockSize;
 				break;
 			}
 		}
@@ -89,7 +96,7 @@ public class SortWith10MbMem {
 			 * If the number is inside the block that’s missing numbers, we
 			 * record it
 			 */
-			if (n >= starting && n < starting + bitsize) {
+			if (n >= starting && n < starting + blockSize) {
 				bitfield[(n - starting) / 8] |= 1 << ((n - starting) % 8);
 			}
 		}
