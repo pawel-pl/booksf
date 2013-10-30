@@ -1,6 +1,6 @@
 package riverbed;
 
-public class MergedPosition {
+public class ReturnKthLargestElIn2SortedArsPosition {
     
     public static int mergedPosition(int[] a, int[] b, int k) {
 	    int ai = 0;
