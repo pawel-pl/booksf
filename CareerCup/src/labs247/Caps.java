@@ -9,6 +9,25 @@ package labs247;
  But when asked C , he gave the correct answer 
  The question was...which color cap was C wearing?
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  A not know - B C canot have white
  B W - B would know it has B
  W B

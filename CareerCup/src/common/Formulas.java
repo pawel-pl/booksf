@@ -28,6 +28,10 @@ package common;
  * 
  * linkedin.Power
  * 
+ * nationalinstruments.ProbHitStumpTwice
+ * 
+ * http://www.careercup.com/question?id=13438685
+ * 
  * a9.Rand7Generator
  */
 public class Formulas {
