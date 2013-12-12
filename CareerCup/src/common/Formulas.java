@@ -32,6 +32,8 @@ package common;
  * 
  * http://www.careercup.com/question?id=13438685
  * 
+ * http://www.careercup.com/question?id=5969520652976128
+ * 
  * a9.Rand7Generator
  */
 public class Formulas {
