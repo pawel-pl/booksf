@@ -32,9 +32,9 @@ public class BSTToList {
 	}
 
 	BinaryTreeNode right = treeToList(root.right);
+	BinaryTreeNode left = treeToList(root.left);
 	BinaryTreeNode listNode = new BinaryTreeNode(null, null, root.value);
 	listNode.next = right;
-	BinaryTreeNode left = treeToList(root.left);
 	if (left != null) {
 	    BinaryTreeNode n = left;
 	    while (n.next != null) {
