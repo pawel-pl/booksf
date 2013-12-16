@@ -11,6 +11,7 @@ public class CountLetters {
 	 */
 	public static void main(String[] args) {
 		
+	    System.out.println('B' - 'A');
 		int[] counts = new int[26];
 
 	}

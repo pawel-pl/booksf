@@ -18,16 +18,14 @@ public class SortArr {
 	while (positivePtr >= 0 && negativePtr >= 0) {
 	    if (arr[positivePtr] < 0) {
 		positivePtr--;
+	    } else if (negativePtr >= positivePtr || arr[negativePtr] >= 0) {
+		negativePtr--;
 	    } else {
-		if (negativePtr >= positivePtr || arr[negativePtr] >= 0) {
-		    negativePtr--;
-		} else {
-		    int tmp = arr[positivePtr];
-		    arr[positivePtr] = arr[negativePtr];
-		    arr[negativePtr] = tmp;
-		    negativePtr--;
-		    positivePtr--;
-		}
+		int tmp = arr[positivePtr];
+		arr[positivePtr] = arr[negativePtr];
+		arr[negativePtr] = tmp;
+		negativePtr--;
+		positivePtr--;
 	    }
 	}
 	System.out.println(Arrays.toString(arr));
