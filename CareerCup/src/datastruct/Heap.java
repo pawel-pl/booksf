@@ -15,6 +15,7 @@ package datastruct;
  * http://www.careercup.com/question?id=15026898
  * http://www.careercup.com/question?id=17543678
  * http://www.careercup.com/question?id=5074105636225024
+ * http://stackoverflow.com/questions/5963983/find-the-minimum-number-of-elements-required-so-that-their-sum-equals-or-exceeds
  * 
  */
 public class Heap {
