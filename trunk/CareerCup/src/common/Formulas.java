@@ -12,7 +12,7 @@ package common;
  * 
  * thomsonreuters.TwoEggsProblem // triangular series 
  * 
- * http://www.careercup.com/question?id=16013665
+ * http://www.careercup.com/question?id=16013665 // paid amount
  * http://answers.yahoo.com/question/index?qid=20110403142621AAOioiu
  * 
  * http://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/
@@ -24,15 +24,17 @@ package common;
  * nvidia.TransfexYbitsInXPortion (y + (x - 1)) / x
  * nvidia.Average x/2 + y/2 + (x%2 + y%2)/2
  * 
- * http://www.careercup.com/question?id=6153851690287104
+ * http://www.careercup.com/question?id=6153851690287104 //rockets
  * 
  * linkedin.Power
  * 
  * nationalinstruments.ProbHitStumpTwice
  * 
- * http://www.careercup.com/question?id=13438685
+ * http://www.careercup.com/question?id=13438685 // India win
  * 
- * http://www.careercup.com/question?id=5969520652976128
+ * http://www.careercup.com/question?id=5969520652976128 // charge per calls
+ * 
+ * http://puddleofriddles.blogspot.com/2011/07/basketball-riddle.html
  * 
  * a9.Rand7Generator
  */
