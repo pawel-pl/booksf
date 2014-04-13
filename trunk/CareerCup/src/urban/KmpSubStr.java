@@ -18,9 +18,10 @@ public class KmpSubStr {
 	 */
 	public static void main(String[] args) {
 
+	    	System.out.println(Arrays.toString(computeFailure("AABAAC")));
 		// System.out.println(Arrays.toString(computeFailure("ABCDABD")));
 		//System.out.println(Arrays.toString(computeFailure("AABAACAABAA")));
-		System.out.println(Arrays.toString(computeKmpPrefix("AABAACAABAA")));
+		//System.out.println(Arrays.toString(computeKmpPrefix("AABAACAABAA")));
 		/*
 		 * System.out.println();
 		 * System.out.println(Arrays.toString(computeFailure("ABCDE")));

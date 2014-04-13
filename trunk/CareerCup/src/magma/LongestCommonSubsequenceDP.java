@@ -3,6 +3,7 @@ package magma;
 /*
  * http://www.ibm.com/developerworks/library/j-seqalign/
  * http://www.columbia.edu/~cs2035/courses/csor4231.F11/lcs.pdf
+ * http://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Longest_common_substring
  */
 public class LongestCommonSubsequenceDP {
 

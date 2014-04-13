@@ -7,7 +7,7 @@ public class LongestSubArr01 {
 //	 int a[] = { 1, 1, 1, 0, 0, 1, 1, 1, 0, 0 };
 //	 int a[] = {0, 0, 0, 0, 1, 1, 0, 0, 0 };
 	 //int a[] = {1, 0 };
-	int a[] = { 1, 0, 0, 1, 0, 0, 1, 0 };
+	int a[] = { 1, 0, 1 };
 	flipBits(a);
 
     }

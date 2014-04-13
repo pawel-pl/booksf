@@ -2,6 +2,10 @@ package amazon;
 
 /*
  * http://www.careercup.com/question?id=20038664
+ * http://www.careercup.com/question?id=4785236420329472#comment4785236420329472
+ * http://www.careercup.com/question?id=6345092675665920
+ * http://www.careercup.com/question?id=6588887669407744
+ * http://www.careercup.com/question?id=5955807912919040
  */
 public class TreeDepth {
 

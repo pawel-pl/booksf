@@ -9,7 +9,8 @@ public class SortArr {
 
     public static void main(String[] args) {
 
-	int[] arr = { 3, -1, -2, 2, 2, 3, 2, -6, 2, 3, -8, 0, 2 };
+	 int[] arr = { 3, -1, -2, 2, 2, 3, 2, -6, 2, 3, -8, 0, 2 };
+//	int[] arr = { -3, 4, 5 };
 
 	int positivePtr = arr.length - 1;
 	int negativePtr = arr.length - 1;
