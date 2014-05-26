@@ -9,9 +9,10 @@ package google;
  * http://www.careercup.com/question?id=6065702117048320 // random number not in K
  * http://www.careercup.com/question?id=5746897784406016 // GCD in matrix range - construct segment tree for each row
  * http://www.careercup.com/question?id=5940697714655232 // fill 2xn board with 2x1 squares. Fibonacci  num
- * http://www.careercup.com/question?id=5201559730257920
- * http://www.careercup.com/question?id=6609034656350208
+ * http://www.careercup.com/question?id=5201559730257920 // sort negative at beginning  
+ * http://www.careercup.com/question?id=6609034656350208 // log after years
  * http://www.careercup.com/question?id=5568707711467520 http://www.careercup.com/question?id=6278204062957568
+ * http://www.careercup.com/question?id=4669539153346560 // sort two seq
  * 
  */
 public class Links {
