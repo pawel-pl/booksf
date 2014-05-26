@@ -3,7 +3,6 @@ package facebook;
 public class AddBinaryNums {
 
     public static void main(String[] args) {
-
 	System.out.println(addBinaryNumbers("100011", "100100"));
 	System.out.println(addBinaryNumbers("1111001", "10010"));
 	System.out.println(addBinaryNumbers("01111111", "00101"));
